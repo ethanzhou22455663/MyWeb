@@ -4,6 +4,7 @@ import Hero from './sections/Hero';
 import Timeline from './sections/Timeline';
 import Skills from './sections/Skills';
 import Works from './sections/Works';
+import Life from './sections/Life';
 import About from './sections/About';
 import Contact from './sections/Contact';
 
@@ -20,6 +21,7 @@ export default function App() {
         <Timeline />
         <Skills />
         <Works />
+        <Life />
         <About />
         <Contact />
       </main>
