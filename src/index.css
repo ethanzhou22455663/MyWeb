@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   主题色 token：改这里，全站生效
+   格式: R G B 三个数字（不带 #，用空格分隔）
+   ============================================ */
+:root {
+  --c-bg: 5 5 7;            /* 页面底色 近黑 #050507 */
+  --c-surface: 18 18 20;    /* 卡片/区块底 #121214 */
+  --c-muted: 161 161 170;   /* 次要文字 #A1A1AA */
+  --c-accent: 233 165 194;  /* 品牌粉 #E9A5C2 */
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-white antialiased;
+    font-family: -apple-system, 'PingFang SC', 'Noto Sans SC', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  /* 版心容器：所有 section 内容包一层这个 */
+  .section-shell {
+    @apply mx-auto w-full max-w-[1440px] px-6 md:px-12;
+  }
+}

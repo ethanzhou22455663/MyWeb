@@ -1,0 +1,16 @@
+# 依赖
+node_modules
+
+# 构建产物 / 部署包（云端重新构建，不入库）
+dist
+deploy.zip
+
+# 旧项目（废弃，仅本地留存）
+app
+
+# 本地素材原文件（不进版本库）
+resources
+
+# 本地环境文件
+*.local
+.DS_Store
