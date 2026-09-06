@@ -2,7 +2,7 @@ import SectionTitle from '../components/ui/SectionTitle';
 import { skills } from '../content/skills';
 
 /**
- * 个人能力：Apple 风磨砂卡片网格
+ * 个人能力：左右对称卡片（文字一半 / 图片一半，桌面端一行两条）
  * 内容在 src/content/skills.ts 改，加技能 = 数组加一项
  * 图片：数据里填 image 字段显示真图，不填则显示大号文字图标
  */
@@ -11,33 +11,39 @@ export default function Skills() {
     <section id="skills" className="section-shell py-24">
       <SectionTitle eyebrow="CRAFT" title="技能与工具（占位，随时改）" />
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur transition-all duration-300 hover:border-accent/60 hover:shadow-[0_0_50px_rgb(var(--c-accent)/0.12)]"
+            className="group flex flex-col gap-5 rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur transition-all duration-300 hover:border-accent/60 hover:shadow-[0_0_50px_rgb(var(--c-accent)/0.12)] sm:flex-row sm:items-center"
           >
-            {/* 图片区：有 image 显示图片，没有则大号文字图标 */}
-            <div className="relative h-44 w-full overflow-hidden bg-accent/5">
+            {/* 左：文字（占一半，垂直居中） */}
+            <div className="flex flex-1 flex-col justify-center">
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-accent/10 font-display text-sm font-bold text-accent">
+                  {skill.monogram}
+                </span>
+                <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                {skill.description}
+              </p>
+            </div>
+
+            {/* 右：图片（桌面 50% 宽 / 192px 高；手机通栏） */}
+            <div className="h-40 w-full flex-shrink-0 overflow-hidden rounded-2xl bg-accent/5 sm:h-48 sm:w-1/2">
               {skill.image ? (
                 <img
                   src={skill.image}
                   alt={skill.name}
+                  loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center">
-                  <span className="font-display text-5xl font-bold text-accent/25">
-                    {skill.monogram}
-                  </span>
+                <div className="flex h-full w-full items-center justify-center font-display text-4xl font-bold text-accent/25">
+                  {skill.monogram}
                 </div>
               )}
-            </div>
-
-            {/* 文字区 */}
-            <div className="flex flex-1 flex-col gap-2 p-6">
-              <h3 className="font-medium text-white">{skill.name}</h3>
-              <p className="text-sm leading-relaxed text-muted">{skill.description}</p>
             </div>
           </div>
         ))}

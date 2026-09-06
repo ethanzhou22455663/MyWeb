@@ -17,7 +17,7 @@ export const skills: Skill[] = [
   { name: '法语', monogram: 'FR', description: '日常交流，持续学习中（占位）' },
   { name: '日语', monogram: 'JP', description: '能听能读，兴趣驱动（占位）' },
   { name: 'Unity 开发', monogram: 'U', description: '独立交付完整 2D / 3D 项目（占位）' },
-  { name: 'TypeScript / JavaScript', monogram: 'TS', description: '类型安全的工程实践（占位）' },
+  { name: 'TypeScript', monogram: 'TS', description: '类型安全的工程实践（占位）' },
   { name: '绘画', monogram: '绘', description: '板绘与速写，偶尔接稿（占位）' },
   { name: 'Vibe Coding', monogram: 'VC', description: '与 AI 结对，快速验证想法（占位）' },
   { name: 'Linux', monogram: 'Li', description: '日常主力系统，熟命令行（占位）' },
