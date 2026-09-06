@@ -1,5 +1,6 @@
 import SectionTitle from '../components/ui/SectionTitle';
 import PetGallery from '../components/ui/PetGallery';
+import { useUnlock } from '../context/UnlockContext';
 import { hobbies, pets, animeList, gameList } from '../content/life';
 
 // 悬浮高亮（和全站卡片一致的 hover 语言）
@@ -66,9 +67,22 @@ function MediaRow({
  * 内容全在 src/content/life.ts 改，全是占位
  */
 export default function Life() {
+  const { lock } = useUnlock();
+
   return (
     <section id="life" className="section-shell py-24">
-      <SectionTitle eyebrow="LIFE" title="生活（全是占位，随时改）" />
+      {/* 标题 + 锁回去按钮 */}
+      <div className="flex items-start justify-between gap-4">
+        <SectionTitle eyebrow="LIFE" title="生活（全是占位，随时改）" />
+        <button
+          onClick={lock}
+          title="重新锁定此板块"
+          aria-label="重新锁定生活板块"
+          className="mt-2 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-white/10 text-muted transition-all duration-300 hover:border-accent/60 hover:text-accent"
+        >
+          🔓
+        </button>
+      </div>
 
       <div className="space-y-20">
         {/* ============ 01 爱好：文字标签 ============ */}
