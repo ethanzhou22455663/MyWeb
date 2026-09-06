@@ -3,9 +3,8 @@ import PetGallery from '../components/ui/PetGallery';
 import { useUnlock } from '../context/UnlockContext';
 import { hobbies, pets, animeList, gameList } from '../content/life';
 
-// 悬浮高亮（和全站卡片一致的 hover 语言）
-const HOVER =
-  'transition-all duration-300 hover:border-accent/60 hover:shadow-[0_0_50px_rgb(var(--c-accent)/0.12)]';
+// 内容卡统一悬浮态（定义在 index.css 的 .card-hover），想改全站一起改
+const HOVER = 'card-hover';
 
 // 追番 / 游戏共用的列表行：左封面小图 + 标题进度 + 右侧状态徽章
 function MediaRow({

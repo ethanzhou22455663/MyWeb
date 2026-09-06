@@ -27,7 +27,7 @@ export default function Works() {
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {category.items.map((item) => {
                 const card = (
-                  <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur transition-all duration-300 hover:border-accent/60 hover:shadow-[0_0_50px_rgb(var(--c-accent)/0.12)]">
+                  <div className="card-hover group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur">
                     {/* 图片区 */}
                     <div className="relative aspect-[4/3] w-full overflow-hidden bg-accent/5">
                       {item.image ? (

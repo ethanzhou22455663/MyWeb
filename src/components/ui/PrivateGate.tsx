@@ -32,7 +32,7 @@ export default function PrivateGate({
       <SectionTitle eyebrow={eyebrow} title={title} />
 
       {/* 锁定占位卡 */}
-      <div className="flex flex-col items-center gap-5 rounded-3xl border border-white/10 bg-white/[0.03] px-8 py-16 text-center backdrop-blur transition-all duration-300 hover:border-accent/60 hover:shadow-[0_0_50px_rgb(var(--c-accent)/0.12)]">
+      <div className="card-hover flex flex-col items-center gap-5 rounded-3xl border border-white/10 bg-white/[0.03] px-8 py-16 text-center backdrop-blur">
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-3xl">
           🔒
         </div>

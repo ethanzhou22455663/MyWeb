@@ -15,7 +15,7 @@ export default function Skills() {
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className="group flex flex-col gap-5 rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur transition-all duration-300 hover:border-accent/60 hover:bg-accent/[0.15] hover:shadow-[0_0_50px_rgb(var(--c-accent)/0.12)] sm:flex-row sm:items-center"
+            className="card-hover group flex flex-col gap-5 rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur sm:flex-row sm:items-center"
           >
             {/* 左：文字（占一半，垂直居中） */}
             <div className="flex flex-1 flex-col justify-center">
