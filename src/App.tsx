@@ -2,6 +2,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './sections/Hero';
 import Timeline from './sections/Timeline';
+import Skills from './sections/Skills';
 import Works from './sections/Works';
 import About from './sections/About';
 import Contact from './sections/Contact';
@@ -17,6 +18,7 @@ export default function App() {
       <main>
         <Hero />
         <Timeline />
+        <Skills />
         <Works />
         <About />
         <Contact />
