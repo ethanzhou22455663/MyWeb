@@ -1,10 +1,61 @@
 import SectionTitle from '../components/ui/SectionTitle';
 import PetGallery from '../components/ui/PetGallery';
 import { useUnlock } from '../context/UnlockContext';
-import { hobbies, pets, animeList, gameList } from '../content/life';
+import {
+  hobbies,
+  pets,
+  animeBestPicks,
+  animeList,
+  gameBestPicks,
+  gameList,
+} from '../content/life';
 
 // 内容卡统一悬浮态（定义在 index.css 的 .card-hover），想改全站一起改
 const HOVER = 'card-hover';
+
+// 通用小标题（Best Picks 这类分段标）
+function SubLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <h4 className="mb-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-accent/70">
+      {children}
+    </h4>
+  );
+}
+
+// 精选竖版海报条：一排 2:3 竖版封面，卡片列表之上；cover 留空显示粉色占位
+// flex 均分：不管 4 张还是 5 张都单行撑满左右两边（不再靠左留白）；
+// 窄屏自动换行，末行同样顶满；标题压在海报底部渐变上，居中
+function BestPicks({
+  items,
+}: {
+  items: { title: string; cover?: string }[];
+}) {
+  return (
+    <div className="mb-10 flex flex-wrap gap-6">
+      {items.map((item) => (
+        <div key={item.title} className="group min-w-36 flex-1">
+          <div className="card-hover relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+            {item.cover && (
+              <img
+                src={item.cover}
+                alt={item.title}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            )}
+
+            {/* 标题压在海报上：底部渐变遮罩，文字居中 */}
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent px-3 pb-3.5 pt-12">
+              <h5 className="text-center text-lg font-semibold text-white drop-shadow">
+                {item.title}
+              </h5>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 // 追番 / 游戏共用的列表行：左封面小图 + 标题进度 + 右侧状态徽章
 function MediaRow({
@@ -154,13 +205,19 @@ export default function Life() {
           </div>
         </div>
 
-        {/* ============ 03 追番：竖封面条目 ============ */}
+        {/* ============ 03 追番：精选海报 + 竖封面条目 ============ */}
         <div>
           <div className="mb-6 flex items-baseline gap-4">
             <span className="font-display text-sm font-bold text-accent">03</span>
             <h3 className="text-2xl font-bold text-white">追番</h3>
             <span className="text-xs text-muted">{animeList.length} 部</span>
           </div>
+
+          {/* 精选海报（竖版占位） */}
+          <SubLabel>Best Picks</SubLabel>
+          <BestPicks items={animeBestPicks} />
+
+          {/* 条目列表 */}
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {animeList.map((anime) => (
               <MediaRow
@@ -175,13 +232,19 @@ export default function Life() {
           </div>
         </div>
 
-        {/* ============ 04 游戏：竖封面条目 ============ */}
+        {/* ============ 04 游戏：精选海报 + 竖封面条目 ============ */}
         <div>
           <div className="mb-6 flex items-baseline gap-4">
             <span className="font-display text-sm font-bold text-accent">04</span>
             <h3 className="text-2xl font-bold text-white">游戏</h3>
             <span className="text-xs text-muted">{gameList.length} 款</span>
           </div>
+
+          {/* 精选海报（荒野大镖客 / 空洞骑士 / 丝之歌 / 艾尔登法环 / 只狼） */}
+          <SubLabel>Best Picks</SubLabel>
+          <BestPicks items={gameBestPicks} />
+
+          {/* 条目列表 */}
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {gameList.map((game) => (
               <MediaRow

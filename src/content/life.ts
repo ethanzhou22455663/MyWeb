@@ -51,12 +51,20 @@ export const pets: Pet[] = [
 ];
 
 // ---- 追番 ----
+// bestPicks: 卡片列表上方的一排竖版精选海报（宽 2:3）
 export interface Anime {
   title: string;
   progress: string;      // 例如 "第二季 · 第8集"
   status: '追更中' | '已完结' | '想看';
   cover?: string;
 }
+
+export const animeBestPicks: Anime[] = [
+  { title: '精选番 A', progress: '', status: '想看' },   // cover 留空 = 竖版占位符
+  { title: '精选番 B', progress: '', status: '想看' },
+  { title: '精选番 C', progress: '', status: '想看' },
+  { title: '精选番 D', progress: '', status: '想看' },
+];
 
 export const animeList: Anime[] = [
   { title: '孤独摇滚！', progress: '第二季 · 第 8 集', status: '追更中' },
@@ -67,12 +75,21 @@ export const animeList: Anime[] = [
 ];
 
 // ---- 游戏 ----
+// bestPicks: 卡片列表上方的一排竖版精选海报（宽 2:3）
 export interface Game {
   title: string;
   platform: string;      // 例如 "PC / Steam"
   status: '在玩' | '通关' | '搁置';
   cover?: string;
 }
+
+export const gameBestPicks: Game[] = [
+  { title: '荒野大镖客', platform: '', status: '在玩' },
+  { title: '空洞骑士', platform: '', status: '在玩' },
+  { title: '丝之歌', platform: '', status: '在玩' },
+  { title: '艾尔登法环', platform: '', status: '通关' },
+  { title: '只狼', platform: '', status: '通关' },
+];
 
 export const gameList: Game[] = [
   { title: '艾尔登法环', platform: 'PC', status: '通关' },
