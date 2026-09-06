@@ -1,11 +1,13 @@
 // ============================================
 // 生活板块数据 ★ 全是占位，改这里就行 ★
 // 四个子块：爱好 / 宠物 / 追番 / 游戏
-// 图片字段都可选：填 public/images/ 下的路径就显示真图
+// 图片字段都可选：路径从 images.ts 取（import { img } 后填 img.xxx.yyy）
 //
 // 此板块默认锁定（全局密码一次解锁所有私密板块，密码在 access.ts 改）；
 // 想改回公开：把 App.tsx 里的 Life 直接渲染、去掉 PrivateGate 即可
 // ============================================
+
+import { img } from './images';
 
 // ---- 爱好：纯文字标签 ----
 export const hobbies: string[] = [
@@ -84,11 +86,11 @@ export interface Game {
 }
 
 export const gameBestPicks: Game[] = [
-  { title: '荒野大镖客', platform: '', status: '在玩' },
-  { title: '空洞骑士', platform: '', status: '在玩' },
-  { title: '丝之歌', platform: '', status: '在玩' },
-  { title: '艾尔登法环', platform: '', status: '通关' },
-  { title: '只狼', platform: '', status: '通关' },
+  { title: '荒野大镖客', platform: '', status: '在玩', cover: img.games.redDeadRedemption2 },
+  { title: '空洞骑士', platform: '', status: '在玩', cover: img.games.hollowKnight },
+  { title: '丝之歌', platform: '', status: '在玩', cover: img.games.silksong },
+  { title: '艾尔登法环', platform: '', status: '通关', cover: img.games.eldenRing },
+  { title: '只狼', platform: '', status: '通关', cover: img.games.sekiro },
 ];
 
 export const gameList: Game[] = [

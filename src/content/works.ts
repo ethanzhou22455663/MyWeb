@@ -4,7 +4,7 @@
 // 结构：分类 → 作品条目
 // - 加分类：往 workCategories 加一个对象
 // - 加作品：往对应分类的 items 里加一项（数量不限）
-// - image: 把图放 public/images/ 后填 '/images/xxx.png'
+// - image: 可选，图片从 images.ts 取（import { img } 后填 img.xxx.yyy）
 //   视频类（AI动画/游戏视频）现在也用封面图，真要内嵌播放器再说
 // - link: 可选，点击卡片跳转的链接（游戏试玩 / 工具地址 / B站视频页等）
 // - description 可整个删掉，不显示
