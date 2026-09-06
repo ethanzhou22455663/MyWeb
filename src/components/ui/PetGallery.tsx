@@ -17,8 +17,8 @@ export default function PetGallery({ media }: { media: PetMedia[] }) {
 
   return (
     <div>
-      {/* 竖版画布 3:4 */}
-      <div className="group relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-accent/5">
+      {/* 竖版画布 4:5（比 3:4 矮一点，别占太高） */}
+      <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-accent/5">
         {current.src ? (
           current.type === 'video' ? (
             <video

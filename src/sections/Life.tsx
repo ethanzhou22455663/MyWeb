@@ -1,6 +1,5 @@
 import SectionTitle from '../components/ui/SectionTitle';
 import PetGallery from '../components/ui/PetGallery';
-import { useUnlock } from '../context/UnlockContext';
 import {
   hobbies,
   pets,
@@ -24,7 +23,7 @@ function SubLabel({ children }: { children: React.ReactNode }) {
 
 // 精选竖版海报条：一排 2:3 竖版封面，卡片列表之上；cover 留空显示粉色占位
 // flex 均分：不管 4 张还是 5 张都单行撑满左右两边（不再靠左留白）；
-// 窄屏自动换行，末行同样顶满；标题压在海报底部渐变上，居中
+// 窄屏自动换行，末行同样顶满；标题在海报下方，居中粉色
 function BestPicks({
   items,
 }: {
@@ -34,23 +33,25 @@ function BestPicks({
     <div className="mb-10 flex flex-wrap gap-6">
       {items.map((item) => (
         <div key={item.title} className="group min-w-36 flex-1">
-          <div className="card-hover relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
-            {item.cover && (
+          <div className="card-hover aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+            {item.cover ? (
               <img
                 src={item.cover}
                 alt={item.title}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-            )}
-
-            {/* 标题压在海报上：底部渐变遮罩，文字居中 */}
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent px-3 pb-3.5 pt-12">
-              <h5 className="text-center text-lg font-semibold text-white drop-shadow">
+            ) : (
+              <div className="flex h-full w-full items-center justify-center px-2 text-center font-display text-sm font-bold text-accent/25">
                 {item.title}
-              </h5>
-            </div>
+              </div>
+            )}
           </div>
+
+          {/* 海报下方：居中白色标题 */}
+          <h5 className="mt-3 text-center text-base font-semibold text-white">
+            {item.title}
+          </h5>
         </div>
       ))}
     </div>
@@ -117,22 +118,9 @@ function MediaRow({
  * 内容全在 src/content/life.ts 改，全是占位
  */
 export default function Life() {
-  const { lock } = useUnlock();
-
   return (
     <section id="life" className="section-shell py-24">
-      {/* 标题 + 锁回去按钮 */}
-      <div className="flex items-start justify-between gap-4">
-        <SectionTitle eyebrow="LIFE" title="生活（全是占位，随时改）" />
-        <button
-          onClick={lock}
-          title="重新锁定此板块"
-          aria-label="重新锁定生活板块"
-          className="mt-2 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-white/10 text-muted transition-all duration-300 hover:border-accent/60 hover:text-accent"
-        >
-          🔓
-        </button>
-      </div>
+      <SectionTitle eyebrow="LIFE" title="生活（全是占位，随时改）" />
 
       <div className="space-y-20">
         {/* ============ 01 爱好：文字标签 ============ */}
@@ -196,7 +184,7 @@ export default function Life() {
 
                 {/* 下方：竖版画廊（左右切换，收窄居中） */}
                 {pet.media && pet.media.length > 0 && (
-                  <div className="mx-auto mt-5 w-4/5">
+                  <div className="mx-auto mt-5 w-3/5">
                     <PetGallery media={pet.media} />
                   </div>
                 )}

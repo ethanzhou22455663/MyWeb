@@ -28,8 +28,8 @@ export default function Works() {
               {category.items.map((item) => {
                 const card = (
                   <div className="card-hover group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur">
-                    {/* 图片区 */}
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-accent/5">
+                    {/* 图片区：扁一点的 16:10 */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-accent/5">
                       {item.image ? (
                         <img
                           src={item.image}
