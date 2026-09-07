@@ -25,8 +25,9 @@ export const site = {
 
   // ---- 首屏 ----
   hero: {
-    titleTop: 'HELLO',
-    titleBottom: 'WORLD',
+    // slogan：衬线斜体名句（拉丁 / 法语 / 英语皆可），sloganAccent 段粉色高亮
+    sloganLead: 'Per aspera',
+    sloganAccent: 'ad astra',
     subtitle: '这里写一句话介绍你自己，说明你是做什么的、擅长什么（占位文案，后续替换）',
     ctaPrimary: '查看作品',
     ctaSecondary: '联系我',

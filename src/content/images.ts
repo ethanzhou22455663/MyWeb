@@ -10,6 +10,9 @@
 // ============================================
 
 export const img = {
+  // ---- 站点头像（首屏 Hero 用）----
+  avatar: '/images/avatar.jpg',
+
   // ---- 技能卡 ----
   skills: {
     english:    '/images/skills/english.jpg',
