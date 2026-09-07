@@ -31,6 +31,20 @@ export const img = {
     sekiro:             '/images/games/sekiro.jpg',
   },
 
+  // ---- Galgame 精选海报 ----
+  galgames: {
+    atri:         '/images/games/atri.jpg',
+    sanobaWitch:  '/images/games/sanoba-witch.jpg',
+    tsukiOtome:   '/images/games/tsuki-ni-yorisou-otome-no-sahou.jpg',
+    amakano3:     '/images/games/amakano-3.jpg',
+    amakano2:     '/images/games/amakano-2.jpg',
+    yosugaNoSora: '/images/games/yosuga-no-sora.jpg',
+    makingLovers: '/images/games/making-lovers.jpg',
+    sugarStyle:   '/images/games/sugar-style.jpg',
+    limeLight:    '/images/games/limelight-lemonade-jam.jpg',
+    cafeStella:   '/images/games/cafe-stella-and-the-deaths-butterfly.jpg',
+  },
+
   // ---- 生活照片（仓鼠 / 毕业 / 校园 / 旅行，暂未使用）----
   life: {
     hamster1:    '/images/life/hamster-1.jpg',

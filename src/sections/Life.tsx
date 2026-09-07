@@ -6,6 +6,7 @@ import {
   animeBestPicks,
   animeList,
   gameBestPicks,
+  galBestPicks,
   gameList,
 } from '../content/life';
 
@@ -231,6 +232,11 @@ export default function Life() {
           {/* 精选海报（荒野大镖客 / 空洞骑士 / 丝之歌 / 艾尔登法环 / 只狼） */}
           <SubLabel>Best Picks</SubLabel>
           <BestPicks items={gameBestPicks} />
+
+          {/* Galgame 精选：两排各 5 张，版式同上 */}
+          <SubLabel>Galgame</SubLabel>
+          <BestPicks items={galBestPicks.slice(0, 5)} />
+          <BestPicks items={galBestPicks.slice(5)} />
 
           {/* 条目列表 */}
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
