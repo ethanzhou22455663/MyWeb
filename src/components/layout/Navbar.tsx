@@ -19,13 +19,6 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-
-        <a
-          href="#contact"
-          className="rounded-full border border-accent/40 px-4 py-1.5 text-sm text-accent transition-colors hover:bg-accent hover:text-bg"
-        >
-          {site.hero.ctaSecondary}
-        </a>
       </div>
     </header>
   );

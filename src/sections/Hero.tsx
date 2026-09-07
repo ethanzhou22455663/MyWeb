@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="relative flex-shrink-0">
           <div
             aria-hidden
-            className="absolute -inset-3 rounded-full border border-accent/20"
+            className="absolute -inset-3 rounded-full border-4 border-accent"
           />
           <img
             src={img.avatar}
