@@ -95,7 +95,7 @@ export const gameBestPicks: Game[] = [
 
 // Galgame 精选海报：游戏区主海报下面，两排各 5 张
 export const galBestPicks: Game[] = [
-  { title: 'Atri', platform: '', status: '通关', cover: img.galgames.atri },
+  { title: 'ATRI', platform: '', status: '通关', cover: img.galgames.atri },
   { title: '魔女的夜宴', platform: '', status: '通关', cover: img.galgames.sanobaWitch },
   { title: '近月少女的礼仪', platform: '', status: '通关', cover: img.galgames.tsukiOtome },
   { title: '甜蜜女友3', platform: '', status: '在玩', cover: img.galgames.amakano3 },
@@ -117,7 +117,7 @@ export const gameCollection: Game[] = [
   { title: '双人成行', platform: 'PC', status: '通关' },
   { title: '奥日与萤火意志', platform: 'PC', status: '通关' },
   { title: '奥日与黑暗森林', platform: 'PC', status: '通关' },
-  { title: '极限竞速：地平线5', platform: 'Xbox', status: '通关' },
+  { title: '极限竞速：地平线4', platform: 'Xbox', status: '通关' },
   { title: '哈迪斯', platform: 'Switch', status: '在玩' },
   { title: 'Neva', platform: 'PC', status: '在玩' },
   { title: '底特律：变人', platform: 'PC', status: '通关' },
@@ -129,10 +129,10 @@ export const gameCollection: Game[] = [
 
 // 条目列表：Galgame 清单（显示在海报区下方，cover 留空 = 首字占位）
 export const gameList: Game[] = [  { title: '美少女万华镜', platform: 'PC', status: '通关' },
-  { title: '完蛋！我被美女包围了1', platform: 'Steam', status: '通关' },
+  { title: '完蛋！我被美女包围了', platform: 'Steam', status: '通关' },
   { title: '完蛋！我被美女包围了2', platform: 'Steam', status: '在玩' },
   { title: '美女请别影响我学习', platform: 'Steam', status: '通关' },
-  { title: '美女请别影响我修仙', platform: 'Steam', status: '在玩' },
+  { title: '美女请别影响我成仙', platform: 'Steam', status: '在玩' },
   { title: 'Trouble Days', platform: 'Switch', status: '通关' },
   { title: '一生推不如一生恋', platform: 'PC', status: '通关' },
   { title: 'Fox Hime Zero', platform: 'Steam', status: '在玩' },
