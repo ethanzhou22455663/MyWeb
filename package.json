@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "poster": "node scripts/game-poster.mjs",
     "deploy": "tcb hosting deploy dist"
   },
   "dependencies": {
