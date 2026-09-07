@@ -2,7 +2,7 @@
 // 全站图片唯一入口 ★ 所有图片路径都在这登记，别手写字符串 ★
 //
 // 用法三步：
-//   1. 把图放进 public/images/ 下对应分类文件夹（skills / games / life）
+//   1. 把图放进 public/images/ 下对应分类文件夹（skills / games / anime / life）
 //   2. 在这里加一行：名字: '/images/分类/文件名'
 //   3. 内容文件里：import { img } from './images'，然后 img.games.eldenRing
 //
@@ -46,6 +46,30 @@ export const img = {
     sugarStyle:   '/images/games/sugar-style.jpg',
     limeLight:    '/images/games/limelight-lemonade-jam.jpg',
     cafeStella:   '/images/games/cafe-stella-and-the-deaths-butterfly.jpg',
+  },
+
+  // ---- 精选动漫海报（B 站番剧封面，scripts/anime-poster.mjs 下载）----
+  anime: {
+    bocchiTheRock:        '/images/anime/bocchi-the-rock.jpg',
+    loveLive:             '/images/anime/love-live.png',
+    sakuraQuest:          '/images/anime/sakura-quest.jpg',
+    kOn:                  '/images/anime/k-on.jpg',
+    yamaNoSusume:         '/images/anime/yama-no-susume.jpg',
+    yuruCamp:             '/images/anime/yuru-camp.png',
+    hibikeEuphonium:      '/images/anime/hibike-euphonium.png',
+    lycorisRecoil:        '/images/anime/lycoris-recoil.png',
+    wanderingWitchElaina: '/images/anime/wandering-witch-elaina.png',
+    minamiKe:             '/images/anime/minami-ke.png',
+    nonNonBiyori:         '/images/anime/non-non-biyori.png',
+    locodol:              '/images/anime/locodol.jpg',
+    schoolLive:           '/images/anime/school-live.jpg',
+    uraraMeirochou:       '/images/anime/urara-meirochou.jpg',
+    newGame:              '/images/anime/new-game.jpg',
+    tonariNoKyuuketsuki:  '/images/anime/tonari-no-kyuuketsuki-san.png',
+    blendS:               '/images/anime/blend-s.jpg',
+    shiroiSunaAquatope:   '/images/anime/shiroi-suna-no-aquatope.png',
+    cautiousHero:         '/images/anime/cautious-hero.jpg',
+    machikadoMazoku:      '/images/anime/machikado-mazoku.jpg',
   },
 
   // ---- 生活照片（仓鼠 / 毕业 / 校园 / 旅行，暂未使用）----

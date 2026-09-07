@@ -202,9 +202,12 @@ export default function Life() {
             <span className="text-xs text-muted">{animeList.length} 部</span>
           </div>
 
-          {/* 精选海报（竖版占位） */}
+          {/* 精选海报：4 排各 5 张，和游戏/Galgame 同一套 BestPicks 模板 */}
           <SubLabel>Best Picks</SubLabel>
-          <BestPicks items={animeBestPicks} />
+          <BestPicks items={animeBestPicks.slice(0, 5)} />
+          <BestPicks items={animeBestPicks.slice(5, 10)} />
+          <BestPicks items={animeBestPicks.slice(10, 15)} />
+          <BestPicks items={animeBestPicks.slice(15, 20)} />
 
           {/* 条目列表：通栏细线双栏清单 */}
           <MediaGrid items={animeList} />
