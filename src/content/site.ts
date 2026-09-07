@@ -11,7 +11,6 @@ export interface NavLink {
 export const site = {
   // ---- 基本信息 ----
   name: '你的名字',
-  role: '你的身份 / 一句话介绍（占位，待替换）',
 
   // ---- 顶部导航 ----
   nav: [
@@ -25,12 +24,10 @@ export const site = {
 
   // ---- 首屏 ----
   hero: {
-    // slogan：衬线斜体名句（拉丁 / 法语 / 英语皆可），sloganAccent 段粉色高亮
-    sloganLead: 'Per aspera',
-    sloganAccent: 'ad astra',
-    subtitle: '这里写一句话介绍你自己，说明你是做什么的、擅长什么（占位文案，后续替换）',
-    ctaPrimary: '查看作品',
-    ctaSecondary: '联系我',
+    // slogan：两行大字，sloganAccent 段粉色高亮
+    sloganLead: 'La vie n\'est',
+    sloganAccent: 'pas ailleurs',
+    subtitle: '真的要偷看我的网站吗？那...那就看吧',
   },
 
   // ---- 联系方式（全站只此一份）----

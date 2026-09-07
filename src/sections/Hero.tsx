@@ -29,33 +29,16 @@ export default function Hero() {
 
         {/* 右：文字（移动端随头像居中，桌面端左对齐） */}
         <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-accent">{site.role}</p>
-
           {/* 两行大字：上白下粉 */}
-          <h1 className="mt-6 text-[clamp(44px,7vw,104px)] font-bold leading-[0.95]">
+          <h1 className="text-[clamp(44px,7vw,104px)] font-bold leading-[0.95]">
             <span className="text-white">{site.hero.sloganLead}</span>
             <br />
             <span className="text-accent">{site.hero.sloganAccent}</span>
           </h1>
 
-          <p className="mx-auto mt-7 max-w-xl leading-relaxed text-muted md:mx-0">
+          <p className="mx-auto mt-8 max-w-xl text-[20px] leading-relaxed text-accent md:mx-0">
             {site.hero.subtitle}
           </p>
-
-          <div className="mt-9 flex justify-center gap-4 md:justify-start">
-            <a
-              href="#works"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-bg transition-opacity hover:opacity-90"
-            >
-              {site.hero.ctaPrimary}
-            </a>
-            <a
-              href="#contact"
-              className="rounded-full border border-white/20 px-6 py-3 text-sm transition-colors hover:border-white/50"
-            >
-              {site.hero.ctaSecondary}
-            </a>
-          </div>
         </div>
       </div>
     </section>
