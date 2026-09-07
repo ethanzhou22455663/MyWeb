@@ -1,50 +1,77 @@
 import SectionTitle from '../components/ui/SectionTitle';
-import { skills } from '../content/skills';
+import { skills, type Skill } from '../content/skills';
 
 /**
- * 个人能力：左右对称卡片（文字一半 / 图片一半，桌面端一行两条）
- * 内容在 src/content/skills.ts 改，加技能 = 数组加一项
- * 图片：数据里填 image 字段显示真图，不填则显示大号文字图标
+ * 技能板块：双栏档案列表（无卡片，hairline 横线整宽贯穿，左图右字）
+ * - 每行一条通栏细线，行内左右两格；奇数项时末行只占左格（半行）
+ * - 悬浮：格底色微亮 + 名称变粉 + 图片粉色光晕
+ * 数据在 src/content/skills.ts 改
  */
+
+// 单格：3:2 图片（不变形）+ 行号 / 大字名称 / 介绍
+function SkillCell({ skill, index }: { skill: Skill; index: number }) {
+  return (
+    <div className="group flex items-center gap-6 py-8 transition-colors duration-300 hover:bg-white/[0.02] md:gap-10">
+      {/* 图片：3:2 锁死，object-cover 不变形 */}
+      <div className="w-40 flex-shrink-0 overflow-hidden rounded-xl transition-shadow duration-500 group-hover:shadow-[0_0_40px_rgb(var(--c-accent)/0.15)] sm:w-56 md:w-80">
+        {skill.image ? (
+          <img
+            src={skill.image}
+            alt={skill.name}
+            loading="lazy"
+            className="aspect-[3/2] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex aspect-[3/2] w-full items-center justify-center border border-white/10 bg-white/[0.03] font-display text-3xl font-bold text-accent/40">
+            {skill.monogram}
+          </div>
+        )}
+      </div>
+
+      {/* 文字区 */}
+      <div className="min-w-0 flex-1 py-1">
+        <div className="flex items-baseline gap-4">
+          {/* 行号：display 字体，比等宽大一点 */}
+          <span className="font-display text-sm font-bold text-accent/60">
+            {String(index).padStart(2, '0')}
+          </span>
+          <h3 className="font-display text-2xl font-bold text-white transition-colors duration-300 group-hover:text-accent md:text-3xl">
+            {skill.name}
+          </h3>
+        </div>
+        <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted md:text-base">
+          {skill.description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function Skills() {
+  // 两两成行，行内再分左右格；奇数时最后一行只有左格
+  const rows: Skill[][] = [];
+  for (let i = 0; i < skills.length; i += 2) {
+    rows.push(skills.slice(i, i + 2));
+  }
+
   return (
     <section id="skills" className="section-shell py-24">
-      <SectionTitle eyebrow="CRAFT" title="技能与工具（占位，随时改）" />
+      <SectionTitle eyebrow="SKILLS" title="技能" />
 
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        {skills.map((skill) => (
+      <div className="border-b border-white/10">
+        {rows.map((row, rowIndex) => (
+          // 一行一条通栏细线，左右两格共用
           <div
-            key={skill.name}
-            className="card-hover group flex flex-col gap-5 rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur sm:flex-row sm:items-center"
+            key={rowIndex}
+            className="grid grid-cols-1 gap-x-12 border-t border-white/10 md:grid-cols-2"
           >
-            {/* 左：文字（占一半，垂直居中） */}
-            <div className="flex flex-1 flex-col justify-center">
-              <div className="flex items-center gap-4">
-                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-accent/10 font-display text-sm font-bold text-accent">
-                  {skill.monogram}
-                </span>
-                <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
-              </div>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {skill.description}
-              </p>
-            </div>
-
-            {/* 右：图片（桌面 50% 宽 / 192px 高；手机通栏） */}
-            <div className="h-40 w-full flex-shrink-0 overflow-hidden rounded-2xl bg-accent/5 sm:h-48 sm:w-1/2">
-              {skill.image ? (
-                <img
-                  src={skill.image}
-                  alt={skill.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center font-display text-4xl font-bold text-accent/25">
-                  {skill.monogram}
-                </div>
-              )}
-            </div>
+            {row.map((skill, cellIndex) => (
+              <SkillCell
+                key={skill.name}
+                skill={skill}
+                index={rowIndex * 2 + cellIndex + 1}
+              />
+            ))}
           </div>
         ))}
       </div>
