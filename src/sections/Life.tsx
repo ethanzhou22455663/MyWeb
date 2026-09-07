@@ -11,9 +11,6 @@ import {
   gameList,
 } from '../content/life';
 
-// 内容卡统一悬浮态（定义在 index.css 的 .card-hover），想改全站一起改
-const HOVER = 'card-hover';
-
 // 通用小标题（精选海报这类分段标）：大号加粗粉色，突出分段；上下对称留白
 function SubLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -60,56 +57,40 @@ function BestPicks({
   );
 }
 
-// 追番 / 游戏共用的列表行：左封面小图 + 标题进度 + 右侧状态徽章
-function MediaRow({
-  title,
-  sub,
-  status,
-  accent,
-  cover,
+// 追番 / 游戏共用的清单行：无卡片无封面，标题 + 右侧类型徽章（统一粉色）
+// odd 列右侧留白当栏距，细线通栏不断
+function MediaRow({ title, tag }: { title: string; tag?: string }) {
+  return (
+    <div className="group flex items-center justify-between gap-4 border-b border-white/10 py-4 transition-colors duration-300 hover:bg-white/[0.02] md:odd:pr-12">
+      <h4 className="min-w-0 truncate font-medium text-white transition-colors duration-300 group-hover:text-accent">
+        {title}
+      </h4>
+
+      {/* 类型徽章：只保留粉色一款；数据没填 tag 则不显示 */}
+      {tag && (
+        <span className="flex-shrink-0 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+          {tag}
+        </span>
+      )}
+    </div>
+  );
+}
+
+// 双栏清单容器：上下通栏细线，行内左右两格（奇数项时末行只占左格）
+function MediaGrid({
+  items,
+  className = '',
 }: {
-  title: string;
-  sub: string;
-  status: string;
-  accent: boolean; // 追更中/在玩 = 粉色徽章，其余灰色
-  cover?: string;
+  items: { title: string; tag?: string }[];
+  className?: string;
 }) {
   return (
-    <div
-      className={`flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur ${HOVER}`}
-    >
-      {/* 封面：竖版 3:4，没图显示首字 */}
-      <div className="flex h-20 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-accent/5">
-        {cover ? (
-          <img
-            src={cover}
-            alt={title}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <span className="font-display text-lg font-bold text-accent/25">
-            {title[0]}
-          </span>
-        )}
+    <div className={`border-b border-white/10 ${className}`}>
+      <div className="grid grid-cols-1 border-t border-white/10 md:grid-cols-2">
+        {items.map((item) => (
+          <MediaRow key={item.title} title={item.title} tag={item.tag} />
+        ))}
       </div>
-
-      {/* 标题 + 进度 */}
-      <div className="min-w-0 flex-1">
-        <h4 className="truncate font-medium text-white">{title}</h4>
-        <p className="mt-0.5 truncate text-xs text-muted">{sub}</p>
-      </div>
-
-      {/* 状态徽章 */}
-      <span
-        className={`flex-shrink-0 rounded-full px-3 py-1 text-xs ${
-          accent
-            ? 'bg-accent/10 font-medium text-accent'
-            : 'bg-white/5 text-muted'
-        }`}
-      >
-        {status}
-      </span>
     </div>
   );
 }
@@ -225,19 +206,8 @@ export default function Life() {
           <SubLabel>Best Picks</SubLabel>
           <BestPicks items={animeBestPicks} />
 
-          {/* 条目列表 */}
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            {animeList.map((anime) => (
-              <MediaRow
-                key={anime.title}
-                title={anime.title}
-                sub={anime.progress}
-                status={anime.status}
-                accent={anime.status === '追更中'}
-                cover={anime.cover}
-              />
-            ))}
-          </div>
+          {/* 条目列表：通栏细线双栏清单 */}
+          <MediaGrid items={animeList} />
         </div>
 
         {/* ============ 04 游戏：精选海报 + 竖封面条目 ============ */}
@@ -252,19 +222,8 @@ export default function Life() {
           <SubLabel>最佳游戏</SubLabel>
           <BestPicks items={gameBestPicks} />
 
-          {/* 玩过的游戏清单：和底部 Galgame 清单共用 MediaRow 样式 */}
-          <div className="mb-8 grid grid-cols-1 gap-4 lg:grid-cols-2">
-            {gameCollection.map((game) => (
-              <MediaRow
-                key={game.title}
-                title={game.title}
-                sub={game.platform}
-                status={game.status}
-                accent={game.status === '在玩'}
-                cover={game.cover}
-              />
-            ))}
-          </div>
+          {/* 玩过的游戏清单：和底部 Galgame 清单共用 MediaGrid 样式 */}
+          <MediaGrid className="mb-8" items={gameCollection} />
 
           {/* Galgame 精选：两排各 5 张，版式同上 */}
           <SubLabel>Galgame</SubLabel>
@@ -272,18 +231,7 @@ export default function Life() {
           <BestPicks items={galBestPicks.slice(5)} />
 
           {/* 条目列表 */}
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            {gameList.map((game) => (
-              <MediaRow
-                key={game.title}
-                title={game.title}
-                sub={game.platform}
-                status={game.status}
-                accent={game.status === '在玩'}
-                cover={game.cover}
-              />
-            ))}
-          </div>
+          <MediaGrid items={gameList} />
         </div>
       </div>
     </section>

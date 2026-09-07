@@ -63,86 +63,87 @@ export const pets: Pet[] = [
 // bestPicks: 卡片列表上方的一排竖版精选海报（宽 2:3）
 export interface Anime {
   title: string;
-  progress: string;      // 例如 "第二季 · 第8集"
-  status: '追更中' | '已完结' | '想看';
+  progress: string;      // 例如 "第二季 · 第8集"（列表已不显示，留档备用）
+  tag?: string;          // 右侧徽章：动漫类型，如 音乐 / 奇幻
   cover?: string;
 }
 
 export const animeBestPicks: Anime[] = [
-  { title: '精选番 A', progress: '', status: '想看' },   // cover 留空 = 竖版占位符
-  { title: '精选番 B', progress: '', status: '想看' },
-  { title: '精选番 C', progress: '', status: '想看' },
-  { title: '精选番 D', progress: '', status: '想看' },
+  { title: '精选番 A', progress: '' },   // cover 留空 = 竖版占位符
+  { title: '精选番 B', progress: '' },
+  { title: '精选番 C', progress: '' },
+  { title: '精选番 D', progress: '' },
 ];
 
 export const animeList: Anime[] = [
-  { title: '孤独摇滚！', progress: '第二季 · 第 8 集', status: '追更中' },
-  { title: '葬送的芙莉莲', progress: '全 28 集', status: '已完结' },
-  { title: 'GIRLS BAND CRY', progress: '全 13 集', status: '已完结' },
-  { title: '迷宫饭', progress: '第 1 季 · 第 5 集', status: '追更中' },
-  { title: '地。-关于地球的运动-', progress: '还没开始', status: '想看' },
+  { title: '孤独摇滚！', progress: '第二季 · 第 8 集', tag: '音乐·日常' },
+  { title: '葬送的芙莉莲', progress: '全 28 集', tag: '奇幻·冒险' },
+  { title: 'GIRLS BAND CRY', progress: '全 13 集', tag: '音乐·原创' },
+  { title: '迷宫饭', progress: '第 1 季 · 第 5 集', tag: '奇幻·美食' },
+  { title: '地。-关于地球的运动-', progress: '还没开始', tag: '历史·群像' },
 ];
 
 // ---- 游戏 ----
 // bestPicks: 卡片列表上方的一排竖版精选海报（宽 2:3）
 export interface Game {
   title: string;
-  platform: string;      // 例如 "PC / Steam"
-  status: '在玩' | '通关' | '搁置';
+  platform: string;      // 例如 "PC / Steam"（列表已不显示，留档备用）
+  tag?: string;          // 右侧徽章：游戏 / galgame 类型，如 魂类 / 纯爱
   cover?: string;
 }
 
 export const gameBestPicks: Game[] = [
-  { title: '荒野大镖客', platform: '', status: '在玩', cover: img.games.redDeadRedemption2 },
-  { title: '空洞骑士', platform: '', status: '在玩', cover: img.games.hollowKnight },
-  { title: '丝之歌', platform: '', status: '在玩', cover: img.games.silksong },
-  { title: '艾尔登法环', platform: '', status: '通关', cover: img.games.eldenRing },
-  { title: '只狼', platform: '', status: '通关', cover: img.games.sekiro },
+  { title: '荒野大镖客', platform: '', cover: img.games.redDeadRedemption2 },
+  { title: '空洞骑士', platform: '', cover: img.games.hollowKnight },
+  { title: '丝之歌', platform: '', cover: img.games.silksong },
+  { title: '艾尔登法环', platform: '', cover: img.games.eldenRing },
+  { title: '只狼', platform: '', cover: img.games.sekiro },
 ];
 
 // Galgame 精选海报：游戏区主海报下面，两排各 5 张
 export const galBestPicks: Game[] = [
-  { title: 'ATRI', platform: '', status: '通关', cover: img.galgames.atri },
-  { title: '魔女的夜宴', platform: '', status: '通关', cover: img.galgames.sanobaWitch },
-  { title: '近月少女的礼仪', platform: '', status: '通关', cover: img.galgames.tsukiOtome },
-  { title: '甜蜜女友3', platform: '', status: '在玩', cover: img.galgames.amakano3 },
-  { title: '甜蜜女友2', platform: '', status: '通关', cover: img.galgames.amakano2 },
-  { title: '缘之空', platform: '', status: '通关', cover: img.galgames.yosugaNoSora },
-  { title: 'Making＊Lovers', platform: '', status: '通关', cover: img.galgames.makingLovers },
-  { title: 'Sugar Style', platform: '', status: '通关', cover: img.galgames.sugarStyle },
-  { title: 'LimeLight Lemonade Jam', platform: '', status: '在玩', cover: img.galgames.limeLight },
-  { title: '星光咖啡馆与死神之蝶', platform: '', status: '通关', cover: img.galgames.cafeStella },
+  { title: 'ATRI', platform: '', cover: img.galgames.atri },
+  { title: '魔女的夜宴', platform: '', cover: img.galgames.sanobaWitch },
+  { title: '近月少女的礼仪', platform: '', cover: img.galgames.tsukiOtome },
+  { title: '甜蜜女友3', platform: '', cover: img.galgames.amakano3 },
+  { title: '甜蜜女友2', platform: '', cover: img.galgames.amakano2 },
+  { title: '缘之空', platform: '', cover: img.galgames.yosugaNoSora },
+  { title: 'Making＊Lovers', platform: '', cover: img.galgames.makingLovers },
+  { title: 'Sugar Style', platform: '', cover: img.galgames.sugarStyle },
+  { title: 'LimeLight Lemonade Jam', platform: '', cover: img.galgames.limeLight },
+  { title: '星光咖啡馆与死神之蝶', platform: '', cover: img.galgames.cafeStella },
 ];
 
 // 玩过的游戏清单：主海报与 Galgame 之间的条目表格（和底部 Galgame 清单同款样式）
 export const gameCollection: Game[] = [
-  { title: '黑暗之魂3', platform: 'PC', status: '通关' },
-  { title: '孤山独影', platform: 'PC', status: '在玩' },
-  { title: '隐形守护者', platform: 'PC', status: '通关' },
-  { title: 'GTA V', platform: 'PC', status: '通关' },
-  { title: '双影奇境', platform: 'PC', status: '通关' },
-  { title: '双人成行', platform: 'PC', status: '通关' },
-  { title: '奥日与萤火意志', platform: 'PC', status: '通关' },
-  { title: '奥日与黑暗森林', platform: 'PC', status: '通关' },
-  { title: '极限竞速：地平线4', platform: 'Xbox', status: '通关' },
-  { title: '哈迪斯', platform: 'Switch', status: '在玩' },
-  { title: 'Neva', platform: 'PC', status: '在玩' },
-  { title: '底特律：变人', platform: 'PC', status: '通关' },
-  { title: '最后生还者1', platform: 'PS5', status: '通关' },
-  { title: 'Ender Lilies', platform: 'PC', status: '通关' },
-  { title: '行尸走肉', platform: 'PC', status: '通关' },
-  { title: '植物大战僵尸1', platform: 'PC', status: '通关' },
+  { title: '黑暗之魂3', platform: 'PC', tag: '魂类' },
+  { title: '孤山独影', platform: 'PC', tag: '开放世界' },
+  { title: '隐形守护者', platform: 'PC', tag: '互动影像' },
+  { title: 'GTA V', platform: 'PC', tag: '开放世界' },
+  { title: '双影奇境', platform: 'PC', tag: '双人合作' },
+  { title: '双人成行', platform: 'PC', tag: '双人合作' },
+  { title: '奥日与萤火意志', platform: 'PC', tag: '银河恶魔城' },
+  { title: '奥日与黑暗森林', platform: 'PC', tag: '银河恶魔城' },
+  { title: '极限竞速：地平线4', platform: 'Xbox', tag: '竞速' },
+  { title: '哈迪斯', platform: 'Switch', tag: '肉鸽·动作' },
+  { title: 'Neva', platform: 'PC', tag: '平台·治愈' },
+  { title: '底特律：变人', platform: 'PC', tag: '互动电影' },
+  { title: '最后生还者1', platform: 'PS5', tag: '动作冒险' },
+  { title: 'Ender Lilies', platform: 'PC', tag: '银河恶魔城' },
+  { title: '行尸走肉', platform: 'PC', tag: '剧情冒险' },
+  { title: '植物大战僵尸1', platform: 'PC', tag: '塔防' },
 ];
 
-// 条目列表：Galgame 清单（显示在海报区下方，cover 留空 = 首字占位）
-export const gameList: Game[] = [  { title: '美少女万华镜', platform: 'PC', status: '通关' },
-  { title: '完蛋！我被美女包围了', platform: 'Steam', status: '通关' },
-  { title: '完蛋！我被美女包围了2', platform: 'Steam', status: '在玩' },
-  { title: '美女请别影响我学习', platform: 'Steam', status: '通关' },
-  { title: '美女请别影响我成仙', platform: 'Steam', status: '在玩' },
-  { title: 'Trouble Days', platform: 'Switch', status: '通关' },
-  { title: '一生推不如一生恋', platform: 'PC', status: '通关' },
-  { title: 'Fox Hime Zero', platform: 'Steam', status: '在玩' },
-  { title: 'Summer Pockets', platform: 'Switch', status: '通关' },
-  { title: '千恋万花', platform: 'PC', status: '通关' },
+// 条目列表：Galgame 清单（徽章用 galgame 的类型：纯爱 / 泣系 / 真人影视…）
+export const gameList: Game[] = [
+  { title: '美少女万华镜', platform: 'Steam', tag: '纯爱' },
+  { title: '完蛋！我被美女包围了', platform: 'Steam', tag: '真人影视' },
+  { title: '完蛋！我被美女包围了2', platform: 'Steam', tag: '真人影视' },
+  { title: '美女请别影响我学习', platform: 'Steam', tag: '真人影视' },
+  { title: '美女请别影响我成仙', platform: 'Steam', tag: '真人影视' },
+  { title: 'Trouble Days', platform: 'Switch', tag: '纯爱·日常' },
+  { title: '一生推不如一生恋', platform: 'PC', tag: '百合·喜剧' },
+  { title: 'Fox Hime Zero', platform: 'Steam', tag: '纯爱·兽耳' },
+  { title: 'Summer Pockets', platform: 'Switch', tag: '泣系·全龄' },
+  { title: '千恋万花', platform: 'PC', tag: '萌系·纯爱' },
 ];
