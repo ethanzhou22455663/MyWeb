@@ -115,7 +115,7 @@ function MediaRow({
 }
 
 /**
- * 生活板块：爱好(标签) / 宠物(圆形头像卡) / 追番(列表) / 游戏(列表)
+ * 生活板块：爱好(大字索引列表) / 宠物(圆形头像卡) / 追番(列表) / 游戏(列表)
  * 四种布局互不重复，刻意与作品(网格)、技能(半半卡片)区分开
  * 内容全在 src/content/life.ts 改，全是占位
  */
@@ -125,20 +125,38 @@ export default function Life() {
       <SectionTitle eyebrow="LIFE" title="生活（全是占位，随时改）" />
 
       <div className="space-y-20">
-        {/* ============ 01 爱好：文字标签 ============ */}
+        {/* ============ 01 爱好：大字索引列表（无卡片，悬停整行右移+名称变粉） ============ */}
         <div>
           <div className="mb-6 flex items-baseline gap-4">
             <span className="font-display text-sm font-bold text-accent">01</span>
             <h3 className="text-2xl font-bold text-white">爱好</h3>
+            <span className="text-xs text-muted">{hobbies.length} 项</span>
           </div>
-          <div className="flex flex-wrap gap-3">
-            {hobbies.map((hobby) => (
-              <span
-                key={hobby}
-                className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm text-muted backdrop-blur transition-all duration-300 hover:border-accent/40 hover:text-white"
+
+          <div className="divide-y divide-white/10 border-y border-white/10">
+            {hobbies.map((hobby, i) => (
+              <div
+                key={hobby.name}
+                className="group flex items-baseline gap-5 py-5 transition-all duration-300 hover:bg-white/[0.03] hover:pl-5 md:gap-8"
               >
-                {hobby}
-              </span>
+                {/* 行号：等宽字体 */}
+                <span className="font-mono text-sm font-bold text-accent/60">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+
+                {/* 爱好名：衬线（宋体系），字号收敛，悬停变粉 */}
+                <h4 className="font-serif text-2xl font-bold tracking-normal text-white transition-colors duration-300 group-hover:text-accent md:text-4xl">
+                  {hobby.name}
+                  <span className="ml-6 font-sans text-sm font-medium uppercase tracking-[0.2em] text-accent/70">
+                    {hobby.en}
+                  </span>
+                </h4>
+
+                {/* 一句话介绍：右侧基线对齐，窄屏隐藏 */}
+                <span className="ml-auto hidden pl-6 text-right text-sm leading-relaxed text-muted sm:block">
+                  {hobby.description}
+                </span>
+              </div>
             ))}
           </div>
         </div>

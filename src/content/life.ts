@@ -9,14 +9,21 @@
 
 import { img } from './images';
 
-// ---- 爱好：纯文字标签 ----
-export const hobbies: string[] = [
-  '公路骑行',
-  '胶片摄影',
-  '机械键盘',
-  '徒步',
-  '手冲咖啡',
-  '乐高积木',
+// ---- 爱好：名称 + 英文 + 一句话介绍（大字索引列表样式，无卡片无图标）----
+export interface Hobby {
+  name: string;
+  en: string; // 跟在中文名右侧的英文小字
+  description: string;
+}
+
+export const hobbies: Hobby[] = [
+  { name: '游戏', en: 'Gaming', description: 'Galgame、独立游戏、3A 都玩，成分复杂（占位）' },
+  { name: '动漫', en: 'Anime', description: '追新番也补老番，季度必看（占位）' },
+  { name: '语言', en: 'Languages', description: '英语、法语、日语，为了看懂原版（占位）' },
+  { name: '健身', en: 'Fitness', description: '力量训练，努力坚持每周三次（占位）' },
+  { name: '游泳', en: 'Swimming', description: '最放松的有氧，泡在水里思路最清晰（占位）' },
+  { name: '画画', en: 'Drawing', description: '从临摹开始练，目标是画出原创（占位）' },
+  { name: '编程', en: 'Coding', description: '白天写代码，晚上也写代码（占位）' },
 ];
 
 // ---- 宠物 ----
