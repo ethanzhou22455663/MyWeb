@@ -107,9 +107,28 @@ export const galBestPicks: Game[] = [
   { title: '星光咖啡馆与死神之蝶', platform: '', status: '通关', cover: img.galgames.cafeStella },
 ];
 
+// 玩过的游戏清单：主海报与 Galgame 之间的条目表格（和底部 Galgame 清单同款样式）
+export const gameCollection: Game[] = [
+  { title: '黑暗之魂3', platform: 'PC', status: '通关' },
+  { title: '孤山独影', platform: 'PC', status: '在玩' },
+  { title: '隐形守护者', platform: 'PC', status: '通关' },
+  { title: 'GTA V', platform: 'PC', status: '通关' },
+  { title: '双影奇境', platform: 'PC', status: '通关' },
+  { title: '双人成行', platform: 'PC', status: '通关' },
+  { title: '奥日与萤火意志', platform: 'PC', status: '通关' },
+  { title: '奥日与黑暗森林', platform: 'PC', status: '通关' },
+  { title: '极限竞速：地平线5', platform: 'Xbox', status: '通关' },
+  { title: '哈迪斯', platform: 'Switch', status: '在玩' },
+  { title: 'Neva', platform: 'PC', status: '在玩' },
+  { title: '底特律：变人', platform: 'PC', status: '通关' },
+  { title: '最后生还者1', platform: 'PS5', status: '通关' },
+  { title: 'Ender Lilies', platform: 'PC', status: '通关' },
+  { title: '行尸走肉', platform: 'PC', status: '通关' },
+  { title: '植物大战僵尸1', platform: 'PC', status: '通关' },
+];
+
 // 条目列表：Galgame 清单（显示在海报区下方，cover 留空 = 首字占位）
-export const gameList: Game[] = [
-  { title: '美少女万华镜', platform: 'PC', status: '通关' },
+export const gameList: Game[] = [  { title: '美少女万华镜', platform: 'PC', status: '通关' },
   { title: '完蛋！我被美女包围了1', platform: 'Steam', status: '通关' },
   { title: '完蛋！我被美女包围了2', platform: 'Steam', status: '在玩' },
   { title: '美女请别影响我学习', platform: 'Steam', status: '通关' },
@@ -119,6 +138,4 @@ export const gameList: Game[] = [
   { title: 'Fox Hime Zero', platform: 'Steam', status: '在玩' },
   { title: 'Summer Pockets', platform: 'Switch', status: '通关' },
   { title: '千恋万花', platform: 'PC', status: '通关' },
-  { title: '三色绘恋', platform: 'Steam', status: '通关' },
-  { title: 'Riddle Joker', platform: 'PC', status: '在玩' },
 ];

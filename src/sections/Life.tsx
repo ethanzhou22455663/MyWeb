@@ -7,16 +7,17 @@ import {
   animeList,
   gameBestPicks,
   galBestPicks,
+  gameCollection,
   gameList,
 } from '../content/life';
 
 // 内容卡统一悬浮态（定义在 index.css 的 .card-hover），想改全站一起改
 const HOVER = 'card-hover';
 
-// 通用小标题（Best Picks 这类分段标）
+// 通用小标题（精选海报这类分段标）：大号加粗粉色，突出分段；上下对称留白
 function SubLabel({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="mb-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-accent/70">
+    <h4 className="mb-8 mt-8 text-center font-display text-lg font-bold uppercase tracking-[0.15em] text-accent">
       {children}
     </h4>
   );
@@ -230,8 +231,22 @@ export default function Life() {
           </div>
 
           {/* 精选海报（荒野大镖客 / 空洞骑士 / 丝之歌 / 艾尔登法环 / 只狼） */}
-          <SubLabel>Best Picks</SubLabel>
+          <SubLabel>最佳游戏</SubLabel>
           <BestPicks items={gameBestPicks} />
+
+          {/* 玩过的游戏清单：和底部 Galgame 清单共用 MediaRow 样式 */}
+          <div className="mb-8 grid grid-cols-1 gap-4 lg:grid-cols-2">
+            {gameCollection.map((game) => (
+              <MediaRow
+                key={game.title}
+                title={game.title}
+                sub={game.platform}
+                status={game.status}
+                accent={game.status === '在玩'}
+                cover={game.cover}
+              />
+            ))}
+          </div>
 
           {/* Galgame 精选：两排各 5 张，版式同上 */}
           <SubLabel>Galgame</SubLabel>
