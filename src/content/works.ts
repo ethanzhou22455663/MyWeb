@@ -7,12 +7,14 @@
 // - image: 可选，图片从 images.ts 取（import { img } 后填 img.xxx.yyy）
 //   视频类（AI动画/游戏视频）现在也用封面图，真要内嵌播放器再说
 // - link: 可选，点击卡片跳转的链接（游戏试玩 / 工具地址 / B站视频页等）
+// - status: 可选，标题右侧的小标签（开发中 / 上线 / 停更 等），粉色胶囊样式
 // - description 可整个删掉，不显示
 // ============================================
 
 export interface WorkItem {
   image?: string;
   title: string;
+  status?: string;
   description?: string;
   link?: string;
 }
@@ -28,8 +30,8 @@ export const workCategories: WorkCategory[] = [
     id: 'unity',
     name: 'Unity 游戏',
     items: [
-      { title: '游戏作品 A（占位）', description: '一句话介绍玩法或亮点（占位）' },
-      { title: '游戏作品 B（占位）' },
+      { title: '游戏作品 A（占位）', status: '开发中', description: '一句话介绍玩法或亮点（占位）' },
+      { title: '游戏作品 B（占位）', status: '上线' },
     ],
   },
   {

@@ -45,7 +45,17 @@ export default function Works() {
                     </div>
                     {/* 文字区 */}
                     <div className="p-5">
-                      <h4 className="font-medium text-white">{item.title}</h4>
+                      {/* 标题 + 右侧状态标签（开发中/上线等，样式全站统一） */}
+                      <div className="flex items-center justify-between gap-3">
+                        <h4 className="min-w-0 truncate font-medium text-white">
+                          {item.title}
+                        </h4>
+                        {item.status && (
+                          <span className="flex-shrink-0 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
+                            {item.status}
+                          </span>
+                        )}
+                      </div>
                       {item.description && (
                         <p className="mt-1 text-sm leading-relaxed text-muted">
                           {item.description}
