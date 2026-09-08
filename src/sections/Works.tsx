@@ -24,7 +24,7 @@ export default function Works() {
             </div>
 
             {/* 该分类的作品网格 */}
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {category.items.map((item) => {
                 const card = (
                   <div className="card-hover group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur">

@@ -2,7 +2,7 @@
 // 全站图片唯一入口 ★ 所有图片路径都在这登记，别手写字符串 ★
 //
 // 用法三步：
-//   1. 把图放进 public/images/ 下对应分类文件夹（skills / games / anime / life）
+//   1. 把图放进 public/images/ 下对应分类文件夹（skills / games / anime / life / drawings）
 //   2. 在这里加一行：名字: '/images/分类/文件名'
 //   3. 内容文件里：import { img } from './images'，然后 img.games.eldenRing
 //
@@ -23,6 +23,8 @@ export const img = {
     vibeCoding: '/images/skills/vibe-coding.png',
     linux:      '/images/skills/linux.jpg',
     aigc:       '/images/skills/aigc.png',
+    drawing:    '/images/skills/drawing.jpg',
+    fitness:    '/images/skills/fitness.jpg',
   },
 
   // ---- 作品封面（截图原图在 resources/unity/ 和 resources/网页工具/）----
@@ -40,6 +42,28 @@ export const img = {
     aiTutor:        '/images/works/ai-tutor.png',
     sketchPlayer:     '/images/works/sketch-player.png',
     ownYourPlaylist:  '/images/works/own-your-playlist.png',
+  },
+
+  // ---- 绘画作品（原图在 resources/临摹/ 和 resources/原创/，已改英文名归置到此）----
+  drawings: {
+    // 临摹
+    furina: '/images/drawings/copies/furina.jpg',
+    lineDog: '/images/drawings/copies/line-dog.jpg',
+    missBarbara: '/images/drawings/copies/miss-barbara.jpg',
+    untitled: '/images/drawings/copies/untitled.jpg',
+    // 原创
+    airplane: '/images/drawings/originals/airplane.jpg',
+    cityInSnow: '/images/drawings/originals/city-in-snow.jpg',
+    flyingHamster: '/images/drawings/originals/flying-hamster.jpg',
+    goat: '/images/drawings/originals/goat.jpg',
+    hamsterTribe: '/images/drawings/originals/hamster-tribe.jpg',
+    hamstersInTheSky: '/images/drawings/originals/hamsters-in-the-sky.jpg',
+    kingOfStrength: '/images/drawings/originals/king-of-strength.jpg',
+    moonlitNight: '/images/drawings/originals/moonlit-night.jpg',
+    painting: '/images/drawings/originals/painting.jpg',
+    redDeadRedemption: '/images/drawings/originals/red-dead-redemption.jpg',
+    summerField: '/images/drawings/originals/summer-field.jpg',
+    winterField: '/images/drawings/originals/winter-field.jpg',
   },
 
   // ---- 精选游戏海报 ----

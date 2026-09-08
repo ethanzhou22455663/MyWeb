@@ -14,7 +14,7 @@ export const site = {
 
   // ---- 顶部导航 ----
   nav: [
-    { label: '基本资料', href: '#demographics' },
+    { label: '简介', href: '#demographics' },
     { label: '历程', href: '#timeline' },
     { label: '技能', href: '#skills' },
     { label: '作品', href: '#works' },

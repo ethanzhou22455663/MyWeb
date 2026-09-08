@@ -2,7 +2,7 @@ import SectionTitle from '../components/ui/SectionTitle';
 import { demographics } from '../content/demographics';
 
 /**
- * 基本资料（Demographics）：一张居中的「资料卡」
+ * 简介（Demographics）：一张居中的「资料卡」
  * - 版式全站唯一：证件照方头像 + 双语标签字段表 + 简介
  * - 行内文字全部锁 leading-5：纯英文行（如 MBTI）字体回退不会改变行高
  * - 四角粉色取景框标记 + 「已归档」印章，悬浮整卡粉色微光
@@ -11,7 +11,7 @@ import { demographics } from '../content/demographics';
 export default function Demographics() {
   return (
     <section id="demographics" className="section-shell py-24">
-      <SectionTitle eyebrow="DEMOGRAPHICS" title="基本资料" />
+      <SectionTitle eyebrow="DEMOGRAPHICS" title="简介" />
 
       <div className="mx-auto max-w-3xl">
         <div className="card-hover relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-12">

@@ -14,18 +14,12 @@ function SkillCell({ skill, index }: { skill: Skill; index: number }) {
     <div className="group flex items-center gap-6 py-8 transition-colors duration-300 hover:bg-white/[0.02] md:gap-10">
       {/* 图片：3:2 锁死，object-cover 不变形 */}
       <div className="w-40 flex-shrink-0 overflow-hidden rounded-xl transition-shadow duration-500 group-hover:shadow-[0_0_40px_rgb(var(--c-accent)/0.15)] sm:w-56 md:w-80">
-        {skill.image ? (
-          <img
-            src={skill.image}
-            alt={skill.name}
-            loading="lazy"
-            className="aspect-[3/2] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="flex aspect-[3/2] w-full items-center justify-center border border-white/10 bg-white/[0.03] font-display text-3xl font-bold text-accent/40">
-            {skill.monogram}
-          </div>
-        )}
+        <img
+          src={skill.image}
+          alt={skill.name}
+          loading="lazy"
+          className="aspect-[3/2] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
 
       {/* 文字区 */}

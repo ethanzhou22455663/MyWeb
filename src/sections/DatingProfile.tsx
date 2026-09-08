@@ -28,24 +28,11 @@ export default function DatingProfile() {
             </div>
           )}
 
-          {/* 已认证徽章 */}
-          {profile.verified && (
-            <span className="absolute left-4 top-4 rounded-full bg-black/50 px-2.5 py-1 text-xs text-white/85 backdrop-blur-sm">
-              已认证 ✓
-            </span>
-          )}
-
           {/* 底部渐变压字 */}
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent p-5 pt-16">
             <div className="flex items-baseline gap-2">
               <h4 className="text-2xl font-bold text-white">{profile.name}</h4>
               <span className="text-xl font-medium text-white/80">{profile.age}</span>
-              {profile.online && (
-                <span className="ml-auto flex items-center gap-1.5 text-xs text-white/70">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  在线
-                </span>
-              )}
             </div>
             <p className="mt-1 text-sm text-white/75">
               {profile.location} · 距离 {profile.distance}
@@ -53,15 +40,15 @@ export default function DatingProfile() {
           </div>
         </div>
 
-        {/* 右：快速资料速览格（label 在上、value 在下；gap-px + 底色制造细线格） */}
+        {/* 右：快速资料速览格（label 在上、value 在下，整格居中；gap-px + 底色制造细线格） */}
         <div className="grid flex-1 grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-4">
           {profile.facts.map((fact) => (
             <div
               key={fact.label}
-              className="group bg-surface p-5 transition-colors duration-300 hover:bg-accent/[0.06]"
+              className="group flex flex-col items-center justify-center bg-surface p-5 text-center transition-colors duration-300 hover:bg-accent/[0.06]"
             >
-              <p className="text-xs uppercase tracking-wider text-muted">
-                {fact.label} <span className="text-accent/50">{fact.en}</span>
+              <p className="text-xs uppercase tracking-wider text-accent/60">
+                {fact.label} <span className="text-accent/40">{fact.en}</span>
               </p>
               <p className="mt-2 font-bold text-white transition-colors duration-300 group-hover:text-accent">
                 {fact.value}

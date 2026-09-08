@@ -194,8 +194,6 @@ export const profile = {
   age: '26',
   location: '上海（占位）',
   distance: '3 km', // 交友软件的距离梗，可删
-  online: true,     // 照片卡右下角「在线」圆点
-  verified: true,   // 照片卡左上角「已认证」徽章
   facts: [
     { label: '身高', en: 'HEIGHT', value: '175 cm（占位）' },
     { label: '星座', en: 'ZODIAC', value: '天蝎座（占位）' },
