@@ -1,7 +1,7 @@
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './sections/Hero';
-import Profile from './sections/Profile';
+import Demographics from './sections/Demographics';
 import Timeline from './sections/Timeline';
 import Album from './sections/Album';
 import Skills from './sections/Skills';
@@ -28,7 +28,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Profile />
+        <Demographics />
         <Timeline />
         <Album />
         <Skills />

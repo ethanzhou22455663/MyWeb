@@ -1,17 +1,17 @@
 import SectionTitle from '../components/ui/SectionTitle';
-import { profile } from '../content/profile';
+import { demographics } from '../content/demographics';
 
 /**
- * 个人档案：一张居中的「档案卡」
+ * 基本资料（Demographics）：一张居中的「资料卡」
  * - 版式全站唯一：证件照方头像 + 双语标签字段表 + 简介
  * - 行内文字全部锁 leading-5：纯英文行（如 MBTI）字体回退不会改变行高
  * - 四角粉色取景框标记 + 「已归档」印章，悬浮整卡粉色微光
- * 数据全在 src/content/profile.ts 改
+ * 数据全在 src/content/demographics.ts 改
  */
-export default function Profile() {
+export default function Demographics() {
   return (
-    <section id="profile" className="section-shell py-24">
-      <SectionTitle eyebrow="PROFILE" title="个人档案" />
+    <section id="demographics" className="section-shell py-24">
+      <SectionTitle eyebrow="DEMOGRAPHICS" title="基本资料" />
 
       <div className="mx-auto max-w-3xl">
         <div className="card-hover relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-12">
@@ -29,29 +29,29 @@ export default function Profile() {
             已归档
           </span>
 
-          {/* 抬头：证件照方头像 + 名字 / 定位，右侧档案编号 */}
+          {/* 抬头：证件照方头像 + 名字 / 定位，右侧编号 */}
           <div className="flex flex-wrap items-start justify-between gap-6 border-b border-white/10 pb-7">
             <div className="flex items-center gap-5">
               <img
-                src={profile.avatar}
-                alt="档案照片"
+                src={demographics.avatar}
+                alt="资料照片"
                 loading="lazy"
                 className="h-20 w-20 rounded-lg border border-white/20 object-cover md:h-24 md:w-24"
               />
               <div>
-                <h3 className="text-2xl font-bold text-white md:text-3xl">{profile.name}</h3>
-                <p className="mt-1.5 text-sm text-muted">{profile.tagline}</p>
+                <h3 className="text-2xl font-bold text-white md:text-3xl">{demographics.name}</h3>
+                <p className="mt-1.5 text-sm text-muted">{demographics.tagline}</p>
               </div>
             </div>
             <div className="text-left md:text-right">
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">File No.</p>
-              <p className="mt-1 font-mono text-sm text-white/80">{profile.fileNo}</p>
+              <p className="mt-1 font-mono text-sm text-white/80">{demographics.fileNo}</p>
             </div>
           </div>
 
           {/* 社会信息字段表：双语标签 + 细线分隔，悬浮值变粉 */}
           <dl className="divide-y divide-white/10">
-            {profile.fields.map((field) => (
+            {demographics.fields.map((field) => (
               <div
                 key={field.en}
                 className="group flex items-center justify-between gap-4 py-3.5 transition-colors"
@@ -75,7 +75,7 @@ export default function Profile() {
           <div className="border-t border-white/10 pt-7">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">Bio / 简介</p>
             <p className="max-w-2xl text-sm leading-relaxed text-muted md:text-base">
-              {profile.bio}
+              {demographics.bio}
             </p>
           </div>
         </div>

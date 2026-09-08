@@ -1,6 +1,6 @@
 // ============================================
 // 生活板块数据 ★ 全是占位，改这里就行 ★
-// 五个子块：爱好 / 宠物 / 追番 / 游戏 / 约会档案
+// 五个子块：爱好 / 宠物 / 追番 / 游戏 / Profile
 // 图片字段都可选：路径从 images.ts 取（import { img } 后填 img.xxx.yyy）
 //
 // 此板块默认锁定（全局密码一次解锁所有私密板块，密码在 access.ts 改）；
@@ -179,16 +179,16 @@ export const gameList: Game[] = [
   { title: '千恋万花', tag: '萌系·纯爱' },
 ];
 
-// ---- 约会档案（交友软件风）----
+// ---- Profile（交友软件风）----
 // 左：大卡（竖版照片 + 名字/年龄/位置叠加在照片底部）；右：快速资料速览格
 // photo 留空显示粉色首字占位；facts 加一项就多一格
-export interface DatingFact {
+export interface ProfileFact {
   label: string;  // 中文标签
   en: string;     // 英文小字（装饰）
   value: string;  // 内容
 }
 
-export const datingProfile = {
+export const profile = {
   photo: '', // 大卡照片：填 images.ts 里的路径；留空显示粉色首字占位
   name: '你的名字（占位）',
   age: '26',
@@ -205,5 +205,5 @@ export const datingProfile = {
     { label: '运动', en: 'WORKOUT', value: '每周 3 次（占位）' },
     { label: '宠物', en: 'PETS', value: '猫 + 狗（占位）' },
     { label: '爱语', en: 'LOVE LANGUAGE', value: 'Quality Time（占位）' },
-  ] as DatingFact[],
+  ] as ProfileFact[],
 };
