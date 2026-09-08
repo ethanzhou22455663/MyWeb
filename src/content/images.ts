@@ -89,7 +89,7 @@ export const img = {
     machikadoMazoku:      '/images/anime/machikado-mazoku.jpg',
   },
 
-  // ---- 生活照片（仓鼠 / 毕业 / 校园 / 旅行，暂未使用）----
+  // ---- 生活照片（Timeline 相册在用；也留给 Life 宠物占位）----
   life: {
     hamster1:    '/images/life/hamster-1.jpg',
     hamster2:    '/images/life/hamster-2.jpg',

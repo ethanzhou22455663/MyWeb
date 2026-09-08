@@ -3,6 +3,7 @@ import Footer from './components/layout/Footer';
 import Hero from './sections/Hero';
 import Profile from './sections/Profile';
 import Timeline from './sections/Timeline';
+import Resume from './sections/Resume';
 import Skills from './sections/Skills';
 import Works from './sections/Works';
 import Life from './sections/Life';
@@ -29,6 +30,7 @@ export default function App() {
         <Hero />
         <Profile />
         <Timeline />
+        <Resume />
         <Skills />
         <Works />
         {unlocked ? <Life /> : <PrivateGate id="life" {...privateGate.life} />}

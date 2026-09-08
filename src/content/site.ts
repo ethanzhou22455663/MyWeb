@@ -16,6 +16,7 @@ export const site = {
   nav: [
     { label: '档案', href: '#profile' },
     { label: '历程', href: '#timeline' },
+    { label: '履历', href: '#resume' },
     { label: '技能', href: '#skills' },
     { label: '作品', href: '#works' },
     { label: '生活', href: '#life' },
