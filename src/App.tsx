@@ -27,11 +27,11 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <About />
         <Timeline />
         <Skills />
         <Works />
         {unlocked ? <Life /> : <PrivateGate id="life" {...privateGate.life} />}
-        <About />
         <Contact />
       </main>
       <Footer />
