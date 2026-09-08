@@ -17,9 +17,9 @@ import path from 'node:path';
 // ---- 番剧表：B 站搜索关键词 → 文件名 ----
 const TITLES = [
   { kw: '孤独摇滚', slug: 'bocchi-the-rock' },
-  { kw: 'Love Live School Idol Project', slug: 'love-live' },
+  { kw: 'BanG Dream', slug: 'bang-dream' },
   { kw: '樱花任务', slug: 'sakura-quest' },
-  { kw: '轻音少女', slug: 'k-on' },
+  { kw: '干物妹小埋', slug: 'himouto-umaruchan' },
   { kw: '前进吧！登山少女', slug: 'yama-no-susume' },
   { kw: '摇曳露营', slug: 'yuru-camp' },
   { kw: '吹响吧！上低音号', slug: 'hibike-euphonium' },
@@ -28,12 +28,12 @@ const TITLES = [
   { kw: '南家三姐妹', slug: 'minami-ke' },
   { kw: '悠哉日常大王', slug: 'non-non-biyori' },
   { kw: '普通女高中生要做当地偶像', slug: 'locodol' },
-  { kw: '学园孤岛', slug: 'school-live' },
+  { kw: '迷途之子', slug: 'mygo' },
   { kw: 'Urara迷路帖', slug: 'urara-meirochou' },
   { kw: 'NEW GAME', slug: 'new-game' },
+  { kw: '恋爱研究所', slug: 'love-lab' },
+  { kw: '一拳超人', slug: 'one-punch-man' },
   { kw: '邻家索菲', slug: 'tonari-no-kyuuketsuki-san' },
-  { kw: '属性咖啡厅', slug: 'blend-s' },
-  { kw: '白沙的水族馆', slug: 'shiroi-suna-no-aquatope' },
   { kw: '这个勇者明明超强却过分慎重', slug: 'cautious-hero' },
   { kw: '街角魔族', slug: 'machikado-mazoku' },
 ];
