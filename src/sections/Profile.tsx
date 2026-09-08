@@ -1,0 +1,90 @@
+import SectionTitle from '../components/ui/SectionTitle';
+import { profile } from '../content/profile';
+
+/**
+ * 个人档案：一张居中的「档案卡」
+ * - 版式全站唯一：证件照方头像 + 双语标签字段表 + 简介 + 条码页脚
+ * - 四角粉色取景框标记 + 「已归档」印章，悬浮整卡粉色微光
+ * 数据全在 src/content/profile.ts 改
+ */
+export default function Profile() {
+  return (
+    <section id="profile" className="section-shell py-24">
+      <SectionTitle eyebrow="PROFILE" title="个人档案" />
+
+      <div className="mx-auto max-w-3xl">
+        <div className="card-hover relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-12">
+          {/* 四角取景框标记（纯装饰） */}
+          <span aria-hidden className="absolute left-4 top-4 h-4 w-4 border-l-2 border-t-2 border-accent/50" />
+          <span aria-hidden className="absolute right-4 top-4 h-4 w-4 border-r-2 border-t-2 border-accent/50" />
+          <span aria-hidden className="absolute bottom-4 left-4 h-4 w-4 border-b-2 border-l-2 border-accent/50" />
+          <span aria-hidden className="absolute bottom-4 right-4 h-4 w-4 border-b-2 border-r-2 border-accent/50" />
+
+          {/* 「已归档」印章（纯装饰） */}
+          <span
+            aria-hidden
+            className="absolute right-8 top-24 rotate-12 rounded border-2 border-accent/60 px-2.5 py-1 font-serif text-sm font-bold tracking-[0.3em] text-accent/70 md:right-12"
+          >
+            已归档
+          </span>
+
+          {/* 抬头：证件照方头像 + 名字 / 定位，右侧档案编号 */}
+          <div className="flex flex-wrap items-start justify-between gap-6 border-b border-white/10 pb-7">
+            <div className="flex items-center gap-5">
+              <img
+                src={profile.avatar}
+                alt="档案照片"
+                loading="lazy"
+                className="h-20 w-20 rounded-lg border border-white/20 object-cover md:h-24 md:w-24"
+              />
+              <div>
+                <h3 className="text-2xl font-bold text-white md:text-3xl">{profile.name}</h3>
+                <p className="mt-1.5 text-sm text-muted">{profile.tagline}</p>
+              </div>
+            </div>
+            <div className="text-left md:text-right">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">File No.</p>
+              <p className="mt-1 font-mono text-sm text-white/80">{profile.fileNo}</p>
+            </div>
+          </div>
+
+          {/* 社会信息字段表：双语标签 + 细线分隔，悬浮值变粉 */}
+          <dl className="divide-y divide-white/10">
+            {profile.fields.map((field) => (
+              <div
+                key={field.en}
+                className="group flex items-baseline justify-between gap-4 py-3.5 transition-colors"
+              >
+                <dt className="flex min-w-0 items-baseline gap-3">
+                  <span className="shrink-0 text-sm font-medium text-white/70">
+                    {field.label}
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
+                    {field.en}
+                  </span>
+                </dt>
+                <dd className="shrink-0 text-sm text-white transition-colors duration-300 group-hover:text-accent">
+                  {field.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* 简介 */}
+          <div className="mt-7 border-t border-white/10 pt-7">
+            <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">Bio / 简介</p>
+            <p className="max-w-2xl text-sm leading-relaxed text-muted md:text-base">
+              {profile.bio}
+            </p>
+          </div>
+
+          {/* 页脚：装饰条码 + 建档时间 */}
+          <div className="mt-10 flex items-end justify-between">
+            <div aria-hidden className="barcode h-8 w-40 md:h-9 md:w-48" />
+            <p className="font-mono text-xs text-muted">{profile.established}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

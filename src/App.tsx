@@ -1,11 +1,11 @@
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './sections/Hero';
+import Profile from './sections/Profile';
 import Timeline from './sections/Timeline';
 import Skills from './sections/Skills';
 import Works from './sections/Works';
 import Life from './sections/Life';
-import About from './sections/About';
 import Contact from './sections/Contact';
 import PrivateGate from './components/ui/PrivateGate';
 import { useUnlock } from './context/UnlockContext';
@@ -27,7 +27,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
+        <Profile />
         <Timeline />
         <Skills />
         <Works />

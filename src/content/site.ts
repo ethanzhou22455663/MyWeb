@@ -14,11 +14,11 @@ export const site = {
 
   // ---- 顶部导航 ----
   nav: [
+    { label: '档案', href: '#profile' },
     { label: '历程', href: '#timeline' },
     { label: '技能', href: '#skills' },
     { label: '作品', href: '#works' },
     { label: '生活', href: '#life' },
-    { label: '关于', href: '#about' },
     { label: '联系', href: '#contact' },
   ] as NavLink[],
 
