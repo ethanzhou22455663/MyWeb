@@ -29,6 +29,7 @@ export const timeline: TimelineItem[] = [
       { src: img.life.graduation, caption: '毕业照（占位）' },
       { src: img.life.hkbuCampus, caption: '校园（占位）' },
       { src: img.life.graduation, caption: '毕业照（占位）' },
+      { src: img.life.hkbuCampus, caption: '校园（占位）' },
     ],
   },
   {
@@ -39,6 +40,7 @@ export const timeline: TimelineItem[] = [
       { src: img.life.travel1, caption: '旅行（占位）' },
       { src: img.life.travel2, caption: '旅行（占位）' },
       { src: img.life.travel1, caption: '旅行（占位）' },
+      { src: img.life.travel2, caption: '旅行（占位）' },
     ],
   },
   {
@@ -49,6 +51,7 @@ export const timeline: TimelineItem[] = [
       { src: img.life.hamster1, caption: '麻酱（占位）' },
       { src: img.life.hamster2, caption: '皮蛋（占位）' },
       { src: img.life.hamster1, caption: '麻酱（占位）' },
+      { src: img.life.hamster2, caption: '皮蛋（占位）' },
     ],
   },
   {
@@ -58,6 +61,7 @@ export const timeline: TimelineItem[] = [
       { src: img.life.hamsterGame1, caption: '仓鼠小屋（占位）' },
       { src: img.life.hamsterGame2, caption: '游戏截图（占位）' },
       { src: img.life.hamsterGame1, caption: '仓鼠小屋（占位）' },
+      { src: img.life.hamsterGame2, caption: '游戏截图（占位）' },
     ],
   },
 ];
