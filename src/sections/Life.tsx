@@ -125,8 +125,8 @@ export default function Life() {
                   {String(i + 1).padStart(2, '0')}
                 </span>
 
-                {/* 爱好名：衬线（宋体系），字号收敛，悬停变粉 */}
-                <h4 className="font-serif text-2xl font-bold tracking-normal text-white transition-colors duration-300 group-hover:text-accent md:text-4xl">
+                {/* 爱好名：和其他标题同字体，字号收敛，悬停变粉 */}
+                <h4 className="text-2xl font-bold tracking-normal text-white transition-colors duration-300 group-hover:text-accent md:text-4xl">
                   {hobby.name}
                   <span className="ml-6 font-sans text-sm font-medium uppercase tracking-[0.2em] text-accent/70">
                     {hobby.en}

@@ -3,7 +3,8 @@ import { profile } from '../content/profile';
 
 /**
  * 个人档案：一张居中的「档案卡」
- * - 版式全站唯一：证件照方头像 + 双语标签字段表 + 简介 + 条码页脚
+ * - 版式全站唯一：证件照方头像 + 双语标签字段表 + 简介
+ * - 行内文字全部锁 leading-5：纯英文行（如 MBTI）字体回退不会改变行高
  * - 四角粉色取景框标记 + 「已归档」印章，悬浮整卡粉色微光
  * 数据全在 src/content/profile.ts 改
  */
@@ -53,35 +54,29 @@ export default function Profile() {
             {profile.fields.map((field) => (
               <div
                 key={field.en}
-                className="group flex items-baseline justify-between gap-4 py-3.5 transition-colors"
+                className="group flex items-center justify-between gap-4 py-3.5 transition-colors"
               >
-                <dt className="flex min-w-0 items-baseline gap-3">
-                  <span className="shrink-0 text-sm font-medium text-white/70">
+                <dt className="flex min-w-0 items-center gap-3">
+                  <span className="shrink-0 text-sm font-medium leading-5 text-white/70">
                     {field.label}
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
+                  <span className="font-mono text-[10px] uppercase leading-5 tracking-[0.25em] text-muted">
                     {field.en}
                   </span>
                 </dt>
-                <dd className="shrink-0 text-sm text-white transition-colors duration-300 group-hover:text-accent">
+                <dd className="shrink-0 text-sm leading-5 text-white transition-colors duration-300 group-hover:text-accent">
                   {field.value}
                 </dd>
               </div>
             ))}
           </dl>
 
-          {/* 简介 */}
-          <div className="mt-7 border-t border-white/10 pt-7">
+          {/* 简介：贴住字段表的下一条细线，间距与字段行一致（细线都是 14px 间距） */}
+          <div className="border-t border-white/10 pt-7">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">Bio / 简介</p>
             <p className="max-w-2xl text-sm leading-relaxed text-muted md:text-base">
               {profile.bio}
             </p>
-          </div>
-
-          {/* 页脚：装饰条码 + 建档时间 */}
-          <div className="mt-10 flex items-end justify-between">
-            <div aria-hidden className="barcode h-8 w-40 md:h-9 md:w-48" />
-            <p className="font-mono text-xs text-muted">{profile.established}</p>
           </div>
         </div>
       </div>

@@ -35,15 +35,4 @@
   .card-hover {
     @apply transition-all duration-300 hover:border-accent/60 hover:bg-accent/[0.12] hover:shadow-[0_0_50px_rgb(var(--c-accent)/0.18)];
   }
-
-  /* 档案卡页脚的装饰条码（纯装饰，无信息含义） */
-  .barcode {
-    background: repeating-linear-gradient(
-      90deg,
-      rgb(var(--c-muted)) 0 2px, transparent 2px 5px,
-      rgb(var(--c-muted)) 5px 6px, transparent 6px 10px,
-      rgb(var(--c-muted)) 10px 13px, transparent 13px 16px
-    );
-    opacity: 0.55;
-  }
 }
