@@ -1,10 +1,10 @@
 // ============================================
-// 生活板块数据 ★ 全是占位，改这里就行 ★
-// 五个子块：爱好 / 宠物 / 追番 / 游戏 / Profile
+// 生活组数据 ★ 全是占位，改这里就行 ★
+// 对应五个平级板块：Hobbies 爱好 / Pets 宠物 / Anime 追番 / Games 游戏 / DatingProfile Profile
 // 图片字段都可选：路径从 images.ts 取（import { img } 后填 img.xxx.yyy）
 //
-// 此板块默认锁定（全局密码一次解锁所有私密板块，密码在 access.ts 改）；
-// 想改回公开：把 App.tsx 里的 Life 直接渲染、去掉 PrivateGate 即可
+// 这五个板块默认锁定（全局密码一次解锁，密码在 access.ts 改）；
+// 想改回公开：把 App.tsx 里对应的 PrivateGate 换成直接渲染即可
 // ============================================
 
 import { img } from './images';

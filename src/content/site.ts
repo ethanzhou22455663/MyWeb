@@ -19,7 +19,7 @@ export const site = {
     { label: '相册', href: '#album' },
     { label: '技能', href: '#skills' },
     { label: '作品', href: '#works' },
-    { label: '生活', href: '#life' },
+    { label: '生活', href: '#hobbies' },
     { label: '联系', href: '#contact' },
   ] as NavLink[],
 
