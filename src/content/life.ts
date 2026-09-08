@@ -1,6 +1,6 @@
 // ============================================
 // 生活板块数据 ★ 全是占位，改这里就行 ★
-// 四个子块：爱好 / 宠物 / 追番 / 游戏
+// 五个子块：爱好 / 宠物 / 追番 / 游戏 / 约会档案
 // 图片字段都可选：路径从 images.ts 取（import { img } 后填 img.xxx.yyy）
 //
 // 此板块默认锁定（全局密码一次解锁所有私密板块，密码在 access.ts 改）；
@@ -178,3 +178,32 @@ export const gameList: Game[] = [
   { title: 'Summer Pockets', tag: '泣系·全龄' },
   { title: '千恋万花', tag: '萌系·纯爱' },
 ];
+
+// ---- 约会档案（交友软件风）----
+// 左：大卡（竖版照片 + 名字/年龄/位置叠加在照片底部）；右：快速资料速览格
+// photo 留空显示粉色首字占位；facts 加一项就多一格
+export interface DatingFact {
+  label: string;  // 中文标签
+  en: string;     // 英文小字（装饰）
+  value: string;  // 内容
+}
+
+export const datingProfile = {
+  photo: '', // 大卡照片：填 images.ts 里的路径；留空显示粉色首字占位
+  name: '你的名字（占位）',
+  age: '26',
+  location: '上海（占位）',
+  distance: '3 km', // 交友软件的距离梗，可删
+  online: true,     // 照片卡右下角「在线」圆点
+  verified: true,   // 照片卡左上角「已认证」徽章
+  facts: [
+    { label: '身高', en: 'HEIGHT', value: '175 cm（占位）' },
+    { label: '星座', en: 'ZODIAC', value: '天蝎座（占位）' },
+    { label: '作息', en: 'SCHEDULE', value: '夜猫子（占位）' },
+    { label: '吸烟', en: 'SMOKING', value: '不吸（占位）' },
+    { label: '饮酒', en: 'DRINKING', value: '偶尔小酌（占位）' },
+    { label: '运动', en: 'WORKOUT', value: '每周 3 次（占位）' },
+    { label: '宠物', en: 'PETS', value: '猫 + 狗（占位）' },
+    { label: '爱语', en: 'LOVE LANGUAGE', value: 'Quality Time（占位）' },
+  ] as DatingFact[],
+};
