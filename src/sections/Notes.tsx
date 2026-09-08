@@ -26,8 +26,9 @@ export default function Notes() {
     <section id="notes" className="section-shell py-24">
       <SectionTitle eyebrow="NOTES" title="随心记" />
 
-      {/* 编辑器窗口：标题栏 + 带行号的文件内容（收窄居中） */}
-      <div className="mx-auto max-w-3xl overflow-hidden rounded-xl border border-white/10 bg-surface">
+      {/* 编辑器窗口：固定高度（≈ 当前 8 条便签的高度），标题栏钉顶，文字区内滚动；
+          滚轮在窗口内滚文字，在窗口外滚网页 */}
+      <div className="mx-auto flex h-[75rem] max-h-[100vh] w-full max-w-3xl flex-col overflow-hidden rounded-xl border border-white/10 bg-surface">
         {/* 标题栏：三个圆点 + 窗口名 */}
         <div className="flex items-center gap-2 border-b border-white/10 px-5 py-3">
           <span className="h-2.5 w-2.5 rounded-full bg-accent" />
@@ -37,8 +38,8 @@ export default function Notes() {
           <span className="w-10" />
         </div>
 
-        {/* 文件内容：等宽字体，bat --style=numbers 的样子 */}
-        <div className="px-5 py-8 font-mono text-sm md:px-8 md:text-base">
+        {/* 文件内容：等宽字体，bat --style=numbers 的样子；超出窗口高度内部滚动 */}
+        <div className="flex-1 overflow-y-auto px-5 py-8 font-mono text-sm [scrollbar-color:rgb(255_255_255/0.15)_transparent] [scrollbar-width:thin] md:px-8 md:text-base">
           {/* 查看命令 */}
           <p>
             <span className="text-accent">$</span>{' '}
@@ -65,7 +66,7 @@ export default function Notes() {
                   <p className="min-h-6 leading-6">&nbsp;</p>
                 ) : (
                   <p
-                    className={`min-w-0 whitespace-pre-wrap leading-6 ${
+                    className={`min-w-0 whitespace-pre-wrap break-words leading-6 ${
                       line.type === 'h'
                         ? 'font-semibold text-accent'
                         : 'text-white/85'
