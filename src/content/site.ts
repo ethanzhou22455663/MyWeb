@@ -16,10 +16,9 @@ export const site = {
   nav: [
     { label: '基本资料', href: '#demographics' },
     { label: '历程', href: '#timeline' },
-    { label: '相册', href: '#album' },
     { label: '技能', href: '#skills' },
     { label: '作品', href: '#works' },
-    { label: '生活', href: '#hobbies' },
+    { label: '生活', href: '#profile' },
     { label: '联系', href: '#contact' },
   ] as NavLink[],
 

@@ -16,8 +16,8 @@ export default function Hobbies() {
             key={hobby.name}
             className="group flex items-baseline gap-5 py-5 transition-all duration-300 hover:bg-white/[0.03] hover:pl-5 md:gap-8"
           >
-            {/* 行号：等宽字体 */}
-            <span className="font-mono text-sm font-bold text-accent/60">
+            {/* 行号：display 字体（和技能/作品行的编号一致） */}
+            <span className="font-display text-sm font-bold text-accent/60">
               {String(i + 1).padStart(2, '0')}
             </span>
 

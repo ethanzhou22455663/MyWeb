@@ -41,14 +41,12 @@ export default function Timeline() {
                   >
                     <p>
                       <span className="text-white/30">[{String(i + 1).padStart(2, '0')}]</span>{' '}
-                      <span className="font-bold text-white transition-colors duration-300 group-hover:text-accent">
-                        {entry.period}
-                      </span>{' '}
-                      <span className="text-white">{entry.title}</span>
+                      <span className="font-bold text-accent">{entry.period}</span>{' '}
+                      <span className="text-accent">{entry.title}</span>
                     </p>
                     {entry.description && (
-                      <p className="mt-1 text-muted">
-                        <span className="text-accent/60">└──</span> {entry.description}
+                      <p className="mt-1 text-white">
+                        <span className="text-white/30">└──</span> {entry.description}
                       </p>
                     )}
                   </div>

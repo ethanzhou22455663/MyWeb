@@ -8,7 +8,7 @@ import { profile } from '../content/life';
 export default function DatingProfile() {
   return (
     <section id="profile" className="section-shell py-24">
-      <SectionTitle eyebrow="PROFILE" title="Profile" />
+      <SectionTitle eyebrow="PROFILE" title="个人资料" />
 
       <div className="flex flex-col gap-5 md:flex-row">
         {/* 左：档案大卡（竖版照片 + 底部渐变压 名字/年龄/位置，仿交友软件首卡） */}
