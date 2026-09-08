@@ -25,6 +25,23 @@ export const img = {
     aigc:       '/images/skills/aigc.png',
   },
 
+  // ---- 作品封面（截图原图在 resources/unity/ 和 resources/网页工具/）----
+  works: {
+    hamsterRoom:    '/images/works/hamster-room.png',
+    awkwardDialogue: '/images/works/awkward-dialogue.png',
+    pixelKnight:    '/images/works/pixel-knight.png',
+    hollowKnightFangame: '/images/works/hollow-knight-fangame.png',
+    dailyWord:      '/images/works/daily-word.png',
+    autodate:       '/images/works/autodate.jpg',
+    personaMetrics: '/images/works/persona-metrics.jpg',
+    vowelChart:     '/images/works/vowel-chart.jpg',
+    docReview:      '/images/works/doc-review.png',
+    aiDate:         '/images/works/ai-date.png',
+    aiTutor:        '/images/works/ai-tutor.png',
+    sketchPlayer:     '/images/works/sketch-player.png',
+    ownYourPlaylist:  '/images/works/own-your-playlist.png',
+  },
+
   // ---- 精选游戏海报 ----
   games: {
     redDeadRedemption2: '/images/games/red-dead-redemption-2.jpg',
@@ -51,7 +68,7 @@ export const img = {
   // ---- 精选动漫海报（B 站番剧封面，scripts/anime-poster.mjs 下载）----
   anime: {
     bocchiTheRock:        '/images/anime/bocchi-the-rock.jpg',
-    loveLive:             '/images/anime/love-live.png',
+    loveLive:             '/images/anime/love-live.jpg',
     sakuraQuest:          '/images/anime/sakura-quest.jpg',
     kOn:                  '/images/anime/k-on.jpg',
     yamaNoSusume:         '/images/anime/yama-no-susume.jpg',

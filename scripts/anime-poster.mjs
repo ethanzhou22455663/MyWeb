@@ -17,7 +17,7 @@ import path from 'node:path';
 // ---- 番剧表：B 站搜索关键词 → 文件名 ----
 const TITLES = [
   { kw: '孤独摇滚', slug: 'bocchi-the-rock' },
-  { kw: 'Love Live', slug: 'love-live' },
+  { kw: 'Love Live School Idol Project', slug: 'love-live' },
   { kw: '樱花任务', slug: 'sakura-quest' },
   { kw: '轻音少女', slug: 'k-on' },
   { kw: '前进吧！登山少女', slug: 'yama-no-susume' },

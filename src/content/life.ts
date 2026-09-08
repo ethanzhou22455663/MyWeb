@@ -69,7 +69,7 @@ export interface Anime {
 
 export const animeBestPicks: Anime[] = [
   { title: '孤独摇滚！', cover: img.anime.bocchiTheRock },
-  { title: 'Love Live! 虹咲学园', cover: img.anime.loveLive },
+  { title: 'Love Live! School Idol Project', cover: img.anime.loveLive },
   { title: '樱花任务', cover: img.anime.sakuraQuest },
   { title: '轻音少女', cover: img.anime.kOn },
   { title: '前进吧！登山少女', cover: img.anime.yamaNoSusume },
