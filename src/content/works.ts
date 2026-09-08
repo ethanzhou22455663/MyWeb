@@ -91,8 +91,8 @@ export const workCategories: WorkCategory[] = [
     id: 'ai-image',
     name: 'AI 图片',
     items: [
-      { title: 'AI 图 A（占位）', description: '用的什么工作流（占位）' },
-      { title: 'AI 图 B（占位）' },
+      { title: '游乐园手风琴', image: img.works.aiAmusementPark },
+      { title: '窗边午后', image: img.works.aiWindowLight },
     ],
   },
   {

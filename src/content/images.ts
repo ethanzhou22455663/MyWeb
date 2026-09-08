@@ -27,7 +27,7 @@ export const img = {
     fitness:    '/images/skills/fitness.jpg',
   },
 
-  // ---- 作品封面（截图原图在 resources/unity/ 和 resources/网页工具/）----
+  // ---- 作品封面（截图原图在 resources/unity/、resources/网页工具/、resources/ai绘画/）----
   works: {
     hamsterRoom:    '/images/works/hamster-room.png',
     awkwardDialogue: '/images/works/awkward-dialogue.png',
@@ -42,6 +42,8 @@ export const img = {
     aiTutor:        '/images/works/ai-tutor.png',
     sketchPlayer:     '/images/works/sketch-player.png',
     ownYourPlaylist:  '/images/works/own-your-playlist.png',
+    aiAmusementPark:  '/images/works/ai-amusement-park.jpg',
+    aiWindowLight:    '/images/works/ai-window-light.jpg',
   },
 
   // ---- 绘画作品（原图在 resources/临摹/ 和 resources/原创/，已改英文名归置到此）----
