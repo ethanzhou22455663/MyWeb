@@ -190,7 +190,7 @@ export interface ProfileFact {
 
 export const profile = {
   photo: '', // 大卡照片：填 images.ts 里的路径；留空显示粉色首字占位
-  name: '你的名字（占位）',
+  name: '为师就是这么低调',
   age: '26',
   location: '上海（占位）',
   distance: '3 km', // 交友软件的距离梗，可删

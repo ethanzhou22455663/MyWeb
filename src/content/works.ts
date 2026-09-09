@@ -98,11 +98,109 @@ export const workCategories: WorkCategory[] = [
   {
     id: 'ai-video',
     name: 'AI 动画',
-    items: [{ title: 'AI 动画 A（占位）', description: '工具链 + 主题（占位）' }],
+    items: [
+      {
+        title: '后藤独波奇当上美国总统后发表胜选演说',
+        description: 'Sora 2 生成 · 孤独摇滚二创',
+        image: img.works.bocchiSpeech,
+        link: 'https://www.bilibili.com/video/BV114y6BAENH',
+      },
+      {
+        title: 'Sora2 山田凉勇闯国会，抗议后藤独当美国总统',
+        description: 'Sora 2 生成 · 孤独摇滚二创',
+        image: img.works.ryoProtest,
+        link: 'https://www.bilibili.com/video/BV1BxyCB8Ezj',
+      },
+      {
+        title: '遭遇山田凉抗议后，波奇总统被弹劾下台',
+        description: 'Sora 2 生成 · 孤独摇滚二创',
+        image: img.works.bocchiImpeached,
+        link: 'https://www.bilibili.com/video/BV1idyWBME47',
+      },
+      {
+        title: '波奇总统下台后，山田凉当选美国总统',
+        description: 'Sora 2 生成 · 孤独摇滚二创',
+        image: img.works.ryoPresident,
+        link: 'https://www.bilibili.com/video/BV1yGyaB6Ehz',
+      },
+      {
+        title: '美国总统波奇和第一夫人虹夏公开秀恩爱',
+        description: 'Sora 2 生成 · 孤独摇滚二创',
+        image: img.works.bocchiNijika,
+        link: 'https://www.bilibili.com/video/BV1CSS4BqEcs',
+      },
+      {
+        title: '白宫实习生喜多想和波奇总统好好相处',
+        description: 'Sora 2 生成 · 孤独摇滚二创',
+        image: img.works.kitaIntern1,
+        link: 'https://www.bilibili.com/video/BV1acmnBFER7',
+      },
+      {
+        title: '冒失的白宫实习生喜多让波奇总统脸红了',
+        description: 'Sora 2 生成 · 孤独摇滚二创',
+        image: img.works.kitaIntern2,
+        link: 'https://www.bilibili.com/video/BV1b9meBcExw',
+      },
+      {
+        title: '《波申克的救赎》 前总统波奇靠小锤子越狱',
+        description: 'Sora 2 生成 · 肖申克的救赎 parody',
+        image: img.works.bocchiShawshank,
+        link: 'https://www.bilibili.com/video/BV1rC1TBKELP',
+      },
+      {
+        title: '波奇主演泰坦尼克号：你跳的话，我也跳',
+        description: 'Sora 2 生成 · 泰坦尼克号 parody',
+        image: img.works.bocchiTitanic1,
+        link: 'https://www.bilibili.com/video/BV1NqyZBJE94',
+      },
+      {
+        title: '波奇主演泰坦尼克号第二集 扭曲的喜多',
+        description: 'Sora 2 生成 · 泰坦尼克号 parody',
+        image: img.works.bocchiTitanic2,
+        link: 'https://www.bilibili.com/video/BV1YD1vBNEPx',
+      },
+      {
+        title: '波奇主演泰坦尼克号第三集 波喜心永恒',
+        description: 'Sora 2 生成 · 泰坦尼克号 parody',
+        image: img.works.bocchiTitanic3,
+        link: 'https://www.bilibili.com/video/BV1Tm14BNE3z',
+      },
+    ],
   },
   {
     id: 'game-video',
     name: '游戏视频',
-    items: [{ title: '视频 A（占位）', description: '剪辑 / 实况 / 攻略（占位）' }],
+    items: [
+      {
+        title: '为什么说只狼就是真正的galgame？',
+        description: '好感度条都放在最明显的位置了（B 站视频）',
+        image: img.works.sekiroGalgame,
+        link: 'https://www.bilibili.com/video/BV1c29SBCEZi',
+      },
+      {
+        title: '为什么说只狼不算真正的galgame？',
+        description: '姊妹篇：这次论证「不算」（B 站视频）',
+        image: img.works.sekiroNotGalgame,
+        link: 'https://www.bilibili.com/video/BV1VjoCBDEpx',
+      },
+      {
+        title: '甘雨一回合七发霜霜霜霜霜霜霜华矢',
+        description: '原神甘雨：一轮爆发七连霜华矢（B 站视频）',
+        image: img.works.ganyuSevenArrows,
+        link: 'https://www.bilibili.com/video/BV1ro4y1J7U2',
+      },
+      {
+        title: '漫游者到底是先喝酒还是先上刀，真的太难了',
+        description: '世纪难题：先喝酒还是先上刀（B 站视频）',
+        image: img.works.wandererChoice,
+        link: 'https://www.bilibili.com/video/BV1VdJQzvEua',
+      },
+      {
+        title: 'Unity制作PPT“Skybound”一只热爱飞行的仓鼠的故事',
+        description: '用 Unity 做飞行仓鼠的「PPT」演示（B 站视频）',
+        image: img.works.skyboundHamster,
+        link: 'https://www.bilibili.com/video/BV19qWszqE1f',
+      },
+    ],
   },
 ];

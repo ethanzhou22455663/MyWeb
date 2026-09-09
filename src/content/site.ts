@@ -12,7 +12,7 @@ export interface NavLink {
 
 export const site = {
   // ---- 基本信息 ----
-  name: '你的名字',
+  name: '为师就是这么低调',
 
   // ---- 顶部导航 ----
   nav: [
@@ -60,6 +60,6 @@ export const site = {
 
   // ---- 页脚 ----
   footer: {
-    note: '© 2026 你的名字. All rights reserved.',
+    note: '© 2026 为师就是这么低调. All rights reserved.',
   },
 };

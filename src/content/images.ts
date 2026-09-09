@@ -47,6 +47,22 @@ export const img = {
     ownYourPlaylist:  '/images/works/own-your-playlist.png',
     aiAmusementPark:  '/images/works/ai-amusement-park.jpg',
     aiWindowLight:    '/images/works/ai-window-light.jpg',
+    sekiroGalgame:    '/images/works/sekiro-galgame.jpg', // B站视频封面（BV1c29SBCEZi，API 直取）
+    sekiroNotGalgame: '/images/works/bili-BV1VjoCBDEpx.jpg', // 为什么说只狼不算真正的galgame？
+    ganyuSevenArrows: '/images/works/bili-BV1ro4y1J7U2.jpg', // 甘雨一回合七发霜华矢
+    wandererChoice:   '/images/works/bili-BV1VdJQzvEua.jpg', // 漫游者先喝酒还是先上刀
+    skyboundHamster:  '/images/works/bili-BV19qWszqE1f.jpg', // Unity PPT「Skybound」飞行仓鼠
+    bocchiSpeech:     '/images/works/bili-BV114y6BAENH.jpg', // 波奇总统胜选演说
+    ryoProtest:       '/images/works/bili-BV1BxyCB8Ezj.jpg', // 山田凉闯国会抗议
+    bocchiImpeached:  '/images/works/bili-BV1idyWBME47.jpg', // 波奇总统被弹劾下台
+    ryoPresident:     '/images/works/bili-BV1yGyaB6Ehz.jpg', // 山田凉当选总统
+    bocchiNijika:     '/images/works/bili-BV1CSS4BqEcs.jpg', // 总统夫妇秀恩爱
+    kitaIntern1:      '/images/works/bili-BV1acmnBFER7.jpg', // 白宫实习生喜多
+    kitaIntern2:      '/images/works/bili-BV1b9meBcExw.jpg', // 冒失实习生喜多
+    bocchiShawshank:  '/images/works/bili-BV1rC1TBKELP.jpg', // 波申克的救赎
+    bocchiTitanic1:   '/images/works/bili-BV1NqyZBJE94.jpg', // 波奇主演泰坦尼克号
+    bocchiTitanic2:   '/images/works/bili-BV1YD1vBNEPx.jpg', // 泰坦尼克号第二集
+    bocchiTitanic3:   '/images/works/bili-BV1Tm14BNE3z.jpg', // 泰坦尼克号第三集
   },
 
   // ---- 绘画作品（原图在 resources/临摹/ 和 resources/原创/，已改英文名归置到此）----
