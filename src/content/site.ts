@@ -31,11 +31,12 @@ export const site = {
   },
 
   // ---- 联系方式（全站只此一份）----
-  contact: {
-    email: 'you@example.com',
-    wechat: 'your-wechat-id',
-    phone: '000-0000-0000',
-  },
+  // href 即点击跳转目标：邮箱走 mailto，外链走完整 https
+  contact: [
+    { label: '邮箱', value: 'ethanzhou22455663@outlook.com', href: 'mailto:ethanzhou22455663@outlook.com' },
+    { label: 'B站', value: 'b23.tv/4xUF4TO', href: 'https://b23.tv/4xUF4TO' },
+    { label: '小红书', value: 'xhslink.cn/o/AgqsSYS862j', href: 'https://xhslink.cn/o/AgqsSYS862j' },
+  ],
 
   // ---- 页脚 ----
   footer: {

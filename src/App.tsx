@@ -10,7 +10,7 @@ import Hobbies from './sections/Hobbies';
 import Pets from './sections/Pets';
 import Anime from './sections/Anime';
 import Games from './sections/Games';
-import DatingProfile from './sections/DatingProfile';
+import Profile from './sections/Profile';
 import Notes from './sections/Notes';
 import Contact from './sections/Contact';
 import PrivateGate from './components/ui/PrivateGate';
@@ -40,7 +40,7 @@ export default function App() {
         <Works />
         {unlocked ? (
           <>
-            <DatingProfile />
+            <Profile />
             <Hobbies />
             <Pets />
             <Anime />

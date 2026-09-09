@@ -1,9 +1,9 @@
 // ============================================
 // 生活组数据 ★ 全是占位，改这里就行 ★
-// 对应五个平级板块：Hobbies 爱好 / Pets 宠物 / Anime 追番 / Games 游戏 / DatingProfile Profile
+// 对应七个平级板块：Profile 个人资料 / Hobbies 爱好 / Pets 宠物 / Anime 追番 / Games 游戏 / Album 相册 / Notes 随心记
 // 图片字段都可选：路径从 images.ts 取（import { img } 后填 img.xxx.yyy）
 //
-// 这五个板块默认锁定（全局密码一次解锁，密码在 access.ts 改）；
+// 这七个板块默认锁定（全局密码一次解锁，密码在 access.ts 改）；
 // 想改回公开：把 App.tsx 里对应的 PrivateGate 换成直接渲染即可
 // ============================================
 

@@ -5,7 +5,7 @@ import { profile } from '../content/life';
  * Profile：交友软件风，左大卡（竖版照片 + 底部渐变压名字/年龄/位置）+ 右快速资料速览格
  * 数据全在 src/content/life.ts 改
  */
-export default function DatingProfile() {
+export default function Profile() {
   return (
     <section id="profile" className="section-shell py-24">
       <SectionTitle eyebrow="PROFILE" title="个人资料" />
