@@ -71,6 +71,14 @@ export const img = {
     winterField: '/images/drawings/originals/winter-field.jpg',
   },
 
+  // ---- 关注卡片（Subscribe 用；头像 resources/bzhan.jpg、resources/xiaohongshu.jpg，平台标志 resources/b.jpg、red.jpg）----
+  subscribe: {
+    avatarBilibili: '/images/subscribe/avatar-bilibili.jpg',       // B站频道头像（灰发魔女，288=96px 整数倍）
+    avatarXiaohongshu: '/images/subscribe/avatar-xiaohongshu.jpg', // 小红书频道头像（粉毛 chibi，同 resources/private.jpg）
+    bilibili: '/images/subscribe/bilibili.jpg',       // B站标志（官方粉，正好贴站点粉）
+    xiaohongshu: '/images/subscribe/xiaohongshu.jpg', // 小红书标志（官方红）
+  },
+
   // ---- 精选游戏海报 ----
   games: {
     redDeadRedemption2: '/images/games/red-dead-redemption-2.jpg',

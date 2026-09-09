@@ -12,7 +12,7 @@ import Anime from './sections/Anime';
 import Games from './sections/Games';
 import Profile from './sections/Profile';
 import Notes from './sections/Notes';
-import Contact from './sections/Contact';
+import Subscribe from './sections/Subscribe';
 import PrivateGate from './components/ui/PrivateGate';
 import { useUnlock } from './context/UnlockContext';
 import { privateGate } from './content/private';
@@ -51,7 +51,7 @@ export default function App() {
         ) : (
           <PrivateGate id="profile" {...privateGate.life} />
         )}
-        <Contact />
+        <Subscribe />
       </main>
       <Footer />
     </div>
