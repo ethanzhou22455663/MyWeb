@@ -142,19 +142,37 @@ export const img = {
     machikadoMazoku:      '/images/anime/machikado-mazoku.jpg',
   },
 
-  // ---- 生活照片（Album 相册在用；Companions 伙伴头像也在这取）----
+  // ---- 相册（原图 resources/album/，每城一组 4 张；Album 板块专用）----
+  album: {
+    riben1:    '/images/album/riben-1.jpg',
+    riben2:    '/images/album/riben-2.jpg',
+    riben3:    '/images/album/riben-3.jpg',
+    riben4:    '/images/album/riben-4.jpg',
+    moluoge1:  '/images/album/moluoge-1.jpg',
+    moluoge2:  '/images/album/moluoge-2.jpg',
+    moluoge3:  '/images/album/moluoge-3.jpg',
+    moluoge4:  '/images/album/moluoge-4.jpg',
+    jinhua1:   '/images/album/jinhua-1.jpg',
+    jinhua2:   '/images/album/jinhua-2.jpg',
+    jinhua3:   '/images/album/jinhua-3.jpg',
+    jinhua4:   '/images/album/jinhua-4.jpg',
+    xianggang1: '/images/album/xianggang-1.jpg',
+    xianggang2: '/images/album/xianggang-2.jpg',
+    xianggang3: '/images/album/xianggang-3.jpg',
+    xianggang4: '/images/album/xianggang-4.jpg',
+    ningbo1:   '/images/album/ningbo-1.jpg',
+    ningbo2:   '/images/album/ningbo-2.jpg',
+    ningbo3:   '/images/album/ningbo-3.jpg',
+    ningbo4:   '/images/album/ningbo-4.jpg',
+    hangzhou1: '/images/album/hangzhou-1.jpg',
+    hangzhou2: '/images/album/hangzhou-2.jpg',
+    hangzhou3: '/images/album/hangzhou-3.jpg',
+    hangzhou4: '/images/album/hangzhou-4.jpg',
+  },
+
+  // ---- 生活照片（Companions 伙伴头像在这取）----
   life: {
     companionXiaowangzi: '/images/life/companion-xiaowangzi.jpg', // 小王子头像（288=144px 整数倍）
     companionFudimo:     '/images/life/companion-fudimo.jpg',     // 伏地魔头像（288=144px 整数倍）
-    hamster1:    '/images/life/hamster-1.jpg',
-    hamster2:    '/images/life/hamster-2.jpg',
-    hamster3:    '/images/life/hamster-3.jpg',
-    hamster4:    '/images/life/hamster-4.jpg',
-    hamsterGame1: '/images/life/hamster-game-1.jpg',
-    hamsterGame2: '/images/life/hamster-game-2.jpg',
-    graduation:  '/images/life/graduation.png',
-    hkbuCampus:  '/images/life/hkbu-campus.png',
-    travel1:     '/images/life/travel-1.png',
-    travel2:     '/images/life/travel-2.png',
   },
 } as const;

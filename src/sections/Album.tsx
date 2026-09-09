@@ -10,7 +10,7 @@ import { album } from '../content/album';
 export default function Album() {
   return (
     <section id="album" className="section-shell py-24">
-      <SectionTitle eyebrow="ALBUM" title="相册（占位，随时改）" />
+      <SectionTitle eyebrow="ALBUM" title="相册" />
 
       <div className="border-b border-white/10">
         {album.map((item, i) => (

@@ -67,6 +67,7 @@ export const companions: Companion[] = [
       { src: '/media/companions/fudimo-1.jpg' },
       { src: '/media/companions/fudimo-2.jpg' },
       { src: '/media/companions/fudimo-3.jpg' },
+      { src: '/media/companions/fudimo-4.mp4', type: 'video' },
     ],
   },
 ];
