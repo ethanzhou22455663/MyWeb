@@ -1,6 +1,6 @@
 // ============================================
 // 生活组数据 ★ 全是占位，改这里就行 ★
-// 对应七个平级板块：Profile 个人资料 / Hobbies 爱好 / Pets 宠物 / Anime 追番 / Games 游戏 / Album 相册 / Notes 随心记
+// 对应七个平级板块：Profile 个人资料 / Hobbies 爱好 / Companions 伙伴 / Anime 追番 / Games 游戏 / Album 相册 / Notes 随心记
 // 图片字段都可选：路径从 images.ts 取（import { img } 后填 img.xxx.yyy）
 //
 // 这七个板块默认锁定（全局密码一次解锁，密码在 access.ts 改）；
@@ -26,36 +26,48 @@ export const hobbies: Hobby[] = [
   { name: '编程', en: 'Coding', description: '白天写代码，晚上也写代码（占位）' },
 ];
 
-// ---- 宠物 ----
+// ---- 伙伴 ----
 // media: 每张卡的竖版图片/视频，填了就显示，不填只显示头像
-//   - type: 'image' 图片（默认）/ 'video' 视频，video 会显示 ▶ 播放控件
+//   - type: 'image' 图片（默认）/ 'video' 视频；video 切到会自动静音播一遍就停，controls 可开声音
 //   - src: 路径（图片/视频都放 public/media/ 后填 '/media/xxx.mp4' 之类）
-export interface PetMedia {
+//   - 素材原图在 resources/companions/<拼音>/，视频建议 ffmpeg CRF26 转码 +faststart 再入库
+export interface CompanionMedia {
   src?: string; // 不填则该项显示粉色序号占位
   type?: 'image' | 'video';
   caption?: string; // 图下小字，可删
 }
 
-export interface Pet {
+export interface Companion {
   name: string;
   breed: string;
   description?: string;
   image?: string; // 头部圆形头像
-  media?: PetMedia[]; // 下方竖版画廊（左右切换）
+  media?: CompanionMedia[]; // 下方竖版画廊（左右切换）
 }
 
-export const pets: Pet[] = [
+export const companions: Companion[] = [
   {
-    name: '麻酱',
-    breed: '布偶猫',
-    description: '家里的话痨，永远饿（占位）',
-    media: [{}, {}, {}], // 占位：3 张竖版图，之后换成真实 src
+    name: '小王子',
+    breed: '仓鼠',
+    description: '2024.12.29 - 2025.11.16',
+    image: img.life.companionXiaowangzi,
+    media: [
+      { src: '/media/companions/xiaowangzi-1.mp4', type: 'video' },
+      { src: '/media/companions/xiaowangzi-2.mp4', type: 'video' },
+      { src: '/media/companions/xiaowangzi-3.mp4', type: 'video' },
+      { src: '/media/companions/xiaowangzi-4.mp4', type: 'video' }, // 49 秒纪念视频
+    ],
   },
   {
-    name: '皮蛋',
-    breed: '柴犬',
-    description: '精力过剩，见猫就怂（占位）',
-    media: [{}, {}, {}],
+    name: '伏地魔',
+    breed: '仓鼠',
+    description: '2025.10.6 - ',
+    image: img.life.companionFudimo,
+    media: [
+      { src: '/media/companions/fudimo-1.jpg' },
+      { src: '/media/companions/fudimo-2.jpg' },
+      { src: '/media/companions/fudimo-3.jpg' },
+    ],
   },
 ];
 
@@ -201,7 +213,7 @@ export const profile = {
     { label: '吸烟', en: 'SMOKING', value: '不吸（占位）' },
     { label: '饮酒', en: 'DRINKING', value: '偶尔小酌（占位）' },
     { label: '运动', en: 'WORKOUT', value: '每周 3 次（占位）' },
-    { label: '宠物', en: 'PETS', value: '猫 + 狗（占位）' },
+    { label: '伙伴', en: 'COMPANIONS', value: '两只仓鼠（占位）' },
     { label: '爱语', en: 'LOVE LANGUAGE', value: 'Quality Time（占位）' },
   ] as ProfileFact[],
 };

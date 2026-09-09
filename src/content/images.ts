@@ -142,8 +142,10 @@ export const img = {
     machikadoMazoku:      '/images/anime/machikado-mazoku.jpg',
   },
 
-  // ---- 生活照片（Album 相册在用；也留给 Pets 宠物占位）----
+  // ---- 生活照片（Album 相册在用；Companions 伙伴头像也在这取）----
   life: {
+    companionXiaowangzi: '/images/life/companion-xiaowangzi.jpg', // 小王子头像（288=144px 整数倍）
+    companionFudimo:     '/images/life/companion-fudimo.jpg',     // 伏地魔头像（288=144px 整数倍）
     hamster1:    '/images/life/hamster-1.jpg',
     hamster2:    '/images/life/hamster-2.jpg',
     hamster3:    '/images/life/hamster-3.jpg',

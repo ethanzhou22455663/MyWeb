@@ -7,7 +7,7 @@ import Album from './sections/Album';
 import Skills from './sections/Skills';
 import Works from './sections/Works';
 import Hobbies from './sections/Hobbies';
-import Pets from './sections/Pets';
+import Companions from './sections/Companions';
 import Anime from './sections/Anime';
 import Games from './sections/Games';
 import Profile from './sections/Profile';
@@ -21,7 +21,7 @@ import { privateGate } from './content/private';
  * 页面组合：首页有哪些板块、什么顺序，都在这里调
  * 加 / 删 / 换板块只改这个文件，不动板块内部
  *
- * 「生活」这一组（Profile/爱好/宠物/追番/游戏/相册/随心记）是私密板块：
+ * 「生活」这一组（Profile/爱好/伙伴/追番/游戏/相册/随心记）是私密板块：
  *   未解锁 → 渲染一个 PrivateGate 占位块（锁 + 提示 + 解锁按钮）
  *   已解锁 → 按顺序渲染全部七个真实 section（全局密码一次解锁，密码在 access.ts 改）
  *   （life 只是分组概念，不是真正的 section）
@@ -42,7 +42,7 @@ export default function App() {
           <>
             <Profile />
             <Hobbies />
-            <Pets />
+            <Companions />
             <Anime />
             <Games />
             <Album />

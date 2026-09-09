@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import type { PetMedia } from '../../content/life';
+import type { CompanionMedia } from '../../content/life';
 
 /**
  * 竖版图片/视频画廊：左右箭头切换 + 底部圆点，循环翻阅
+ * - 画布 9:16，和手机竖拍素材同比例，基本无裁剪
  * - 没填 src 的项显示粉色文字占位
- * - type: 'video' 时渲染 <video controls>，否则 <img>
- * 每个宠物一份，各自独立翻页
+ * - type: 'video' 时切到它自动静音播一遍就停（浏览器自动播放限制，需声音点 controls 开）
+ *   切走后回来会重新自动播
+ * 每个伙伴一份，各自独立翻页
  */
-export default function PetGallery({ media }: { media: PetMedia[] }) {
+export default function CompanionGallery({ media }: { media: CompanionMedia[] }) {
   const [index, setIndex] = useState(0);
   const total = media.length;
   const current = media[index];
@@ -17,15 +19,18 @@ export default function PetGallery({ media }: { media: PetMedia[] }) {
 
   return (
     <div>
-      {/* 竖版画布 4:5（比 3:4 矮一点，别占太高） */}
-      <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-accent/5">
+      {/* 竖版画布 9:16（和手机竖拍素材同比例） */}
+      <div className="group relative aspect-[9/16] w-full overflow-hidden rounded-2xl bg-accent/5">
         {current.src ? (
           current.type === 'video' ? (
             <video
               key={current.src}
               src={current.src}
               controls
+              muted
+              autoPlay
               playsInline
+              onEnded={(e) => e.currentTarget.pause()}
               className="h-full w-full object-cover"
             />
           ) : (
