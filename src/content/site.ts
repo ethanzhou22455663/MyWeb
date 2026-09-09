@@ -8,6 +8,8 @@ import { img } from './images';
 export interface NavLink {
   label: string;
   href: string;
+  // 有 children 的项渲染成下拉菜单（如「生活」），本身不再直接跳转
+  children?: NavLink[];
 }
 
 export const site = {
@@ -20,7 +22,15 @@ export const site = {
     { label: '历程', href: '#timeline' },
     { label: '技能', href: '#skills' },
     { label: '作品', href: '#works' },
-    { label: '生活', href: '#profile' },
+    { label: '生活', href: '#profile', children: [
+      { label: '个人资料', href: '#profile' },
+      { label: '爱好', href: '#hobbies' },
+      { label: '伙伴', href: '#companions' },
+      { label: '追番', href: '#anime' },
+      { label: '游戏', href: '#games' },
+      { label: '相册', href: '#album' },
+      { label: '随心记', href: '#notes' },
+    ] },
     { label: '关注', href: '#subscribe' },
   ] as NavLink[],
 
