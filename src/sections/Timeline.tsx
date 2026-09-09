@@ -1,4 +1,5 @@
 import SectionTitle from '../components/ui/SectionTitle';
+import Reveal from '../components/ui/Reveal';
 import { timeline } from '../content/timeline';
 
 /**
@@ -35,8 +36,10 @@ export default function Timeline() {
               {/* 条目：每条一行日志 */}
               <div className="mt-5 space-y-5">
                 {group.entries.map((entry, i) => (
-                  <div
+                  <Reveal
                     key={entry.title}
+                    variant="up"
+                    delay={Math.min(i, 3) * 50}
                     className="group -mx-2 rounded px-2 py-1 transition-colors duration-300 hover:bg-white/[0.03]"
                   >
                     <p>
@@ -49,7 +52,7 @@ export default function Timeline() {
                         <span className="text-white/30">└──</span> {entry.description}
                       </p>
                     )}
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             </div>

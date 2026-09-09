@@ -1,5 +1,6 @@
 import SectionTitle from '../components/ui/SectionTitle';
 import CompanionGallery from '../components/ui/CompanionGallery';
+import Reveal from '../components/ui/Reveal';
 import { companions } from '../content/life';
 
 /**
@@ -13,7 +14,7 @@ export default function Companions() {
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {companions.map((companion) => (
-          <div key={companion.name} className="p-7">
+          <Reveal key={companion.name} variant="up" className="p-7">
             {/* 头部：圆形头像 + 名字品种（居中） */}
             <div className="flex flex-col items-center gap-4 text-center">
               <div className="flex h-36 w-36 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent/5">
@@ -51,7 +52,7 @@ export default function Companions() {
                 <CompanionGallery media={companion.media} />
               </div>
             )}
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

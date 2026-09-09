@@ -1,4 +1,5 @@
 import SectionTitle from '../components/ui/SectionTitle';
+import Reveal from '../components/ui/Reveal';
 import { profile } from '../content/life';
 
 /**
@@ -12,7 +13,7 @@ export default function Profile() {
 
       <div className="flex flex-col gap-5 md:flex-row">
         {/* 左：档案大卡（竖版照片 + 底部渐变压 名字/年龄/位置，仿交友软件首卡） */}
-        <div className="card-hover relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] md:w-80 md:flex-shrink-0">
+        <Reveal variant="up" className="card-hover relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] md:w-80 md:flex-shrink-0">
           {profile.photo ? (
             <img
               src={profile.photo}
@@ -38,13 +39,15 @@ export default function Profile() {
               {profile.location} · 距离 {profile.distance}
             </p>
           </div>
-        </div>
+        </Reveal>
 
         {/* 右：快速资料速览格（label 在上、value 在下，整格居中；gap-px + 底色制造细线格） */}
         <div className="grid flex-1 grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-4">
-          {profile.facts.map((fact) => (
-            <div
+          {profile.facts.map((fact, i) => (
+            <Reveal
               key={fact.label}
+              variant="fade"
+              delay={Math.floor(i / 4) * 40}
               className="group flex flex-col items-center justify-center bg-surface p-5 text-center transition-colors duration-300 hover:bg-accent/[0.06]"
             >
               <p className="text-xs uppercase tracking-wider text-accent/60">
@@ -53,7 +56,7 @@ export default function Profile() {
               <p className="mt-2 font-bold text-white transition-colors duration-300 group-hover:text-accent">
                 {fact.value}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

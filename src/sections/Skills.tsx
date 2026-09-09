@@ -1,4 +1,5 @@
 import SectionTitle from '../components/ui/SectionTitle';
+import Reveal from '../components/ui/Reveal';
 import { skills, type Skill } from '../content/skills';
 
 /**
@@ -11,7 +12,11 @@ import { skills, type Skill } from '../content/skills';
 // 单格：3:2 图片（不变形）+ 行号 / 大字名称 / 介绍
 function SkillCell({ skill, index }: { skill: Skill; index: number }) {
   return (
-    <div className="group flex items-center gap-6 py-8 transition-colors duration-300 hover:bg-white/[0.02] md:gap-10">
+    <Reveal
+      variant="up"
+      delay={Math.min(Math.floor((index - 1) / 2), 3) * 60}
+      className="group flex items-center gap-6 py-8 transition-colors duration-300 hover:bg-white/[0.02] md:gap-10"
+    >
       {/* 图片：3:2 锁死，object-cover 不变形 */}
       <div className="w-40 flex-shrink-0 overflow-hidden rounded-xl transition-shadow duration-500 group-hover:shadow-[0_0_40px_rgb(var(--c-accent)/0.15)] sm:w-56 md:w-80">
         <img
@@ -37,7 +42,7 @@ function SkillCell({ skill, index }: { skill: Skill; index: number }) {
           {skill.description}
         </p>
       </div>
-    </div>
+    </Reveal>
   );
 }
 

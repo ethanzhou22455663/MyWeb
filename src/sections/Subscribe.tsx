@@ -1,5 +1,6 @@
 import { site } from '../content/site';
 import SectionTitle from '../components/ui/SectionTitle';
+import Reveal from '../components/ui/Reveal';
 
 /**
  * 关注：两张频道卡（B站 / 小红书），card-hover 悬浮效果，点击整卡跳转
@@ -14,11 +15,13 @@ export default function Subscribe() {
 
       <div className="grid gap-4 md:grid-cols-2">
         {site.subscribe.map((item) => (
-          <a
+          <Reveal
             key={item.label}
+            as="a"
             href={item.href}
             target="_blank"
             rel="noreferrer"
+            variant="up"
             className="card-hover group flex flex-col gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:flex-row sm:gap-6"
           >
             {/* 左：频道头像 + 平台标志角标（右下，底色描边和卡片融为一体） */}
@@ -55,7 +58,7 @@ export default function Subscribe() {
                 {item.value}
               </p>
             </div>
-          </a>
+          </Reveal>
         ))}
       </div>
     </section>

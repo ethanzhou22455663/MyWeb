@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SectionTitle from './SectionTitle';
 import UnlockDialog from './UnlockDialog';
+import Reveal from './Reveal';
 import { img } from '../../content/images';
 
 /**
@@ -33,7 +34,7 @@ export default function PrivateGate({
       <SectionTitle eyebrow={eyebrow} title={title} />
 
       {/* 锁定占位卡 */}
-      <div className="card-hover flex flex-col items-center gap-5 rounded-3xl border border-white/10 bg-white/[0.03] px-8 py-16 text-center backdrop-blur">
+      <Reveal variant="up" className="card-hover flex flex-col items-center gap-5 rounded-3xl border border-white/10 bg-white/[0.03] px-8 py-16 text-center backdrop-blur">
         <img
           src={img.private}
           alt="私密"
@@ -47,7 +48,7 @@ export default function PrivateGate({
         >
           {buttonLabel}
         </button>
-      </div>
+      </Reveal>
 
       {open && <UnlockDialog onClose={() => setOpen(false)} />}
     </section>

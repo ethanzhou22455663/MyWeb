@@ -11,6 +11,9 @@
   --c-surface: 18 18 20;    /* 卡片/区块底 #121214 */
   --c-muted: 161 161 170;   /* 次要文字 #A1A1AA */
   --c-accent: 233 165 194;  /* 品牌粉 #E9A5C2 */
+
+  /* 动效缓动 token：全站统一的"出场/悬浮"曲线，想改手感只改这一行 */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @layer base {
@@ -22,6 +25,12 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
   }
+
+  /* 锚点平滑滚动（导航跳转）； reduced-motion 时下面关掉 */
+  html { scroll-behavior: smooth; }
+
+  /* 锚点跳转时给固定导航留高度（导航 h-16，多一点呼吸） */
+  section[id] { scroll-margin-top: 4.5rem; }
 }
 
 @layer components {
@@ -43,5 +52,46 @@
   @keyframes cursor-blink {
     0%, 49% { opacity: 1; }
     50%, 100% { opacity: 0; }
+  }
+
+  /* ============================================
+     入场动画系统 ★ 全站唯一入口，配合 <Reveal> 组件用 ★
+     - .reveal    上浮 + 淡入（默认）
+     - .reveal-fade 只淡入（用在不能有位移的地方：发丝线网格等）
+     用法：<Reveal delay={i*70} className="原类名"> 替换重复元素标签
+     注意：必须用长属性写 animation，简写会把 delay 重置掉（交错失效）
+     ============================================ */
+  .reveal, .reveal-fade { opacity: 0; animation-delay: var(--reveal-delay, 0ms); }
+  .reveal { transform: translateY(24px); }
+  .reveal.is-visible {
+    animation-name: reveal-up;
+    animation-duration: .6s;
+    animation-timing-function: var(--ease-out-expo);
+    animation-fill-mode: both;
+  }
+  .reveal-fade.is-visible {
+    animation-name: reveal-fade;
+    animation-duration: .6s;
+    animation-timing-function: var(--ease-out-expo);
+    animation-fill-mode: both;
+  }
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes reveal-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
+
+/* 无障碍：系统开"减少动态效果"时，内容立即可见、关掉平滑滚动。
+   放 layer 外，确保覆盖上面的所有规则。 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }

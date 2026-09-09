@@ -1,4 +1,5 @@
 import SectionTitle from '../components/ui/SectionTitle';
+import Reveal from '../components/ui/Reveal';
 import { notes } from '../content/notes';
 
 // 行类型：h = # 日期标题（md 语法高亮成粉色），p = 正文，blank = 空行
@@ -27,8 +28,8 @@ export default function Notes() {
       <SectionTitle eyebrow="NOTES" title="随心记" />
 
       {/* 编辑器窗口：固定高度（≈ 当前 8 条便签的高度），标题栏钉顶，文字区内滚动；
-          滚轮在窗口内滚文字，在窗口外滚网页 */}
-      <div className="mx-auto flex h-[75rem] max-h-[100vh] w-full max-w-3xl flex-col overflow-hidden rounded-xl border border-white/10 bg-surface">
+          滚轮在窗口内滚文字，在窗口外滚网页；整体作为一个单元入场（不做逐行） */}
+      <Reveal variant="up" className="mx-auto flex h-[75rem] max-h-[100vh] w-full max-w-3xl flex-col overflow-hidden rounded-xl border border-white/10 bg-surface">
         {/* 标题栏：三个圆点 + 窗口名 */}
         <div className="flex items-center gap-2 border-b border-white/10 px-5 py-3">
           <span className="h-2.5 w-2.5 rounded-full bg-accent" />
@@ -96,7 +97,7 @@ export default function Notes() {
             <span className="animate-cursor-blink inline-block h-[1.1em] w-[0.6ch] translate-y-[0.2em] bg-accent" />
           </p>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

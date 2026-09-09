@@ -1,4 +1,5 @@
 import SectionTitle from '../components/ui/SectionTitle';
+import Reveal from '../components/ui/Reveal';
 import { album } from '../content/album';
 
 /**
@@ -12,9 +13,11 @@ export default function Album() {
       <SectionTitle eyebrow="ALBUM" title="相册（占位，随时改）" />
 
       <div className="border-b border-white/10">
-        {album.map((item) => (
-          <div
+        {album.map((item, i) => (
+          <Reveal
             key={item.topic}
+            variant="up"
+            delay={Math.min(i, 3) * 80}
             className="flex flex-col gap-6 border-t border-white/10 py-8 md:flex-row md:items-center md:gap-10 md:py-10"
           >
             {/* 文字块：定宽，照片铺满余下整行 */}
@@ -48,7 +51,7 @@ export default function Album() {
                 ))}
               </div>
             )}
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

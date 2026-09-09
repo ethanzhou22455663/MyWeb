@@ -1,4 +1,5 @@
 import SectionTitle from '../components/ui/SectionTitle';
+import Reveal from '../components/ui/Reveal';
 import { demographics } from '../content/demographics';
 
 /**
@@ -14,7 +15,7 @@ export default function Demographics() {
       <SectionTitle eyebrow="DEMOGRAPHICS" title="简介" />
 
       <div className="mx-auto max-w-3xl">
-        <div className="card-hover relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-12">
+        <Reveal variant="up" className="card-hover relative block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-12">
           {/* 四角取景框标记（纯装饰） */}
           <span aria-hidden className="absolute left-4 top-4 h-4 w-4 border-l-2 border-t-2 border-accent/50" />
           <span aria-hidden className="absolute right-4 top-4 h-4 w-4 border-r-2 border-t-2 border-accent/50" />
@@ -78,7 +79,7 @@ export default function Demographics() {
               {demographics.bio}
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

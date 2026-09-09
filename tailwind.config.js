@@ -13,6 +13,10 @@ export default {
       fontFamily: {
         display: ['"Space Grotesk"', '"PingFang SC"', '"Noto Sans SC"', 'sans-serif'],
       },
+      // 全站 transition-* 的统一缓动（token 在 index.css :root），改一处全站生效
+      transitionTimingFunction: {
+        DEFAULT: 'var(--ease-out-expo)',
+      },
     },
   },
   plugins: [],

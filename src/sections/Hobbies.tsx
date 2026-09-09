@@ -1,4 +1,5 @@
 import SectionTitle from '../components/ui/SectionTitle';
+import Reveal from '../components/ui/Reveal';
 import { hobbies } from '../content/life';
 
 /**
@@ -12,8 +13,10 @@ export default function Hobbies() {
 
       <div className="divide-y divide-white/10 border-y border-white/10">
         {hobbies.map((hobby, i) => (
-          <div
+          <Reveal
             key={hobby.name}
+            variant="up"
+            delay={Math.min(i, 4) * 70}
             className="group flex items-baseline gap-5 py-5 transition-all duration-300 hover:bg-white/[0.03] hover:pl-5 md:gap-8"
           >
             {/* 行号：display 字体（和技能/作品行的编号一致） */}
@@ -33,7 +36,7 @@ export default function Hobbies() {
             <span className="ml-auto hidden pl-6 text-right text-sm leading-relaxed text-muted sm:block">
               {hobby.description}
             </span>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
