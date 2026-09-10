@@ -17,13 +17,13 @@ export interface Hobby {
 }
 
 export const hobbies: Hobby[] = [
-  { name: '游戏', en: 'Gaming', description: 'Galgame、独立游戏、3A 都玩，成分复杂（占位）' },
-  { name: '动漫', en: 'Anime', description: '追新番也补老番，季度必看（占位）' },
-  { name: '语言', en: 'Languages', description: '英语、法语、日语，为了看懂原版（占位）' },
-  { name: '健身', en: 'Fitness', description: '力量训练，努力坚持每周三次（占位）' },
-  { name: '游泳', en: 'Swimming', description: '最放松的有氧，泡在水里思路最清晰（占位）' },
-  { name: '画画', en: 'Drawing', description: '从临摹开始练，目标是画出原创（占位）' },
-  { name: '编程', en: 'Coding', description: '白天写代码，晚上也写代码（占位）' },
+  { name: '游戏', en: 'Gaming', description: 'Galgame、独立游戏、叙事、魂类、3A' },
+  { name: '动漫', en: 'Anime', description: '从大学开始看过上百部，轻百合、日常、萌系' },
+  { name: '语言', en: 'Languages', description: '英语、法语、日语' },
+  { name: '健身', en: 'Fitness', description: '坚持十多年自重健身' },
+  { name: '游泳', en: 'Swimming', description: '放空大脑，缓解焦虑' },
+  { name: '画画', en: 'Drawing', description: '想画出游戏素材' },
+  { name: '编程', en: 'Coding', description: '用unity编程还是比较简单的' },
 ];
 
 // ---- 伙伴 ----
@@ -204,17 +204,17 @@ export interface ProfileFact {
 export const profile = {
   photo: '', // 大卡照片：填 images.ts 里的路径；留空显示粉色首字占位
   name: '为师就是这么低调',
-  age: '26',
-  location: '上海（占位）',
-  distance: '3 km', // 交友软件的距离梗，可删
+  age: '27',
+  location: '宁波',
+  status: '离线', // 在线状态：在线 / 离线 / 勿扰 等
   facts: [
-    { label: '身高', en: 'HEIGHT', value: '175 cm（占位）' },
-    { label: '星座', en: 'ZODIAC', value: '天蝎座（占位）' },
-    { label: '作息', en: 'SCHEDULE', value: '夜猫子（占位）' },
-    { label: '吸烟', en: 'SMOKING', value: '不吸（占位）' },
-    { label: '饮酒', en: 'DRINKING', value: '偶尔小酌（占位）' },
-    { label: '运动', en: 'WORKOUT', value: '每周 3 次（占位）' },
-    { label: '伙伴', en: 'COMPANIONS', value: '两只仓鼠（占位）' },
-    { label: '爱语', en: 'LOVE LANGUAGE', value: 'Quality Time（占位）' },
+    { label: '身高', en: 'HEIGHT', value: '177 cm' },
+    { label: '体重', en: 'WEIGHT', value: '61-65 kg' },
+    { label: '颜色', en: 'COLOUR', value: '白色/粉色' },
+    { label: '吸烟', en: 'SMOKING', value: '不吸' },
+    { label: '饮酒', en: 'DRINKING', value: '米酒还行' },
+    { label: '运动', en: 'WORKOUT', value: '每周 1 次' },
+    { label: '风格', en: 'COURTSHIP', value: '草食系' },
+    { label: '性向', en: 'ORIENTATION', value: '女' },
   ] as ProfileFact[],
 };

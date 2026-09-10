@@ -36,7 +36,7 @@ export default function Profile() {
               <span className="text-xl font-medium text-white/80">{profile.age}</span>
             </div>
             <p className="mt-1 text-sm text-white/75">
-              {profile.location} · 距离 {profile.distance}
+              {profile.location} · {profile.status}
             </p>
           </div>
         </Reveal>
