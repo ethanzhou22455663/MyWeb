@@ -27,11 +27,13 @@ export const demographics = {
     { label: '性别',     en: 'SEX',        value: '男' },
     { label: '出生年份', en: 'BIRTH',       value: '1999 年' },
     { label: '婚育状况', en: 'MARITAL',    value: '未婚 · 无子女' },
+    { label: '人称代词', en: 'PRONOUN',    value: '他' },
+    { label: '学历', en: 'EDUCATION',    value: '硕士' },
     { label: '现居',     en: 'BASE',       value: '宁波' },
     { label: '职业',     en: 'OCCUPATION', value: '网站运营' },
     { label: '信仰',     en: 'RELIGION',       value: '无神论' },
   ] as DemographicsField[],
 
   // 简介：一段话
-  bio: '白天写代码，晚上也写代码。喜欢做小而完整的工具，相信把一件事做到 80 分好过把十件事做到 60 分。正在学法语和画画，目标是不靠字幕看懂法国电影。（占位简介，改这里）',
+  bio: '爱好特长丰富，社交生活极少，习惯单独出没。钱少，物质欲望低。希望过上幸福快乐的生活。偏好极简主义。',
 };

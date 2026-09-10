@@ -20,22 +20,26 @@ export const timeline: TimelineGroup[] = [
   {
     file: 'education.log',
     entries: [
-      { period: '2021 — 2025', title: '香港浸会大学（占位）', description: '计算机科学 本科（占位）' },
-      { period: '2018 — 2021', title: '某某中学（占位）', description: '理科（占位）' },
+      { period: '2022 — 2023', title: '', description: '语言学 硕士' },
+      { period: '2017 — 2021', title: '', description: '法语 本科' },
     ],
   },
   {
     file: 'work.log',
     entries: [
-      { period: '2025 — 至今', title: '某某公司（占位）', description: '全栈开发（占位）' },
-      { period: '2024 暑期', title: '某某公司实习（占位）', description: '前端实习（占位）' },
+      { period: '2026', title: '', description: '网站运营' },
+      { period: '2025', title: '', description: '法语翻译' },
+      { period: '2024', title: '', description: '英语教师' },
     ],
   },
   {
     file: 'certs.log',
     entries: [
-      { period: '2024', title: 'CET-6（占位）', description: '英语六级（占位）' },
-      { period: '2023', title: '软件设计师（占位）', description: '软考中级（占位）' },
+      { period: '2026', title: '', description: '英语笔译二级' },
+      { period: '2026', title: '', description: '法语口译三级' },
+      { period: '2026', title: '', description: '雅思8.5' },
+      { period: '2024', title: '', description: '高中英语教师资格证' },
+      { period: '2021', title: '', description: '法语C1 专八优秀' },
     ],
   },
 ];
