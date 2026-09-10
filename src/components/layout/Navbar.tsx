@@ -4,11 +4,22 @@ import { useUnlock } from '../../context/UnlockContext';
 export default function Navbar() {
   const { unlocked } = useUnlock();
 
+  // 已存活天数：按本地日期从 birthday 算到今天（整天数，不受当天时刻影响）
+  const [by, bm, bd] = site.birthday.split('-').map(Number);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const daysLived = Math.round(
+    (today.getTime() - new Date(by, bm - 1, bd).getTime()) / 86_400_000,
+  );
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-bg/80 backdrop-blur">
       <div className="section-shell flex h-16 items-center justify-between">
         <a href="#top" className="text-lg font-bold tracking-tight">
           {site.name}
+          <span className="ml-2.5 align-middle text-xs font-normal tracking-normal text-muted">
+            已存活 <span className="font-medium text-accent">{daysLived}</span> 天
+          </span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">

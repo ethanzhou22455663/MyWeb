@@ -15,6 +15,7 @@ export interface NavLink {
 export const site = {
   // ---- 基本信息 ----
   name: '为师就是这么低调',
+  birthday: '1999-08-19', // 出生日期：导航栏站名旁显示「已存活 N 天」
 
   // ---- 顶部导航 ----
   nav: [
