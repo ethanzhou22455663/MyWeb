@@ -34,7 +34,7 @@ export default function Hero() {
         <Reveal variant="up">
           {/* 三行 slogan：衬线斜体引导（宽字距小号）→ 粗体白字 → 粗体粉色收尾 */}
           <h1 className="leading-none">
-            <span className="block font-serif text-[clamp(20px,2.6vw,30px)] italic font-normal tracking-[0.25em] text-white/75">
+            <span className="block font-serif text-[clamp(20px,2.6vw,27px)] italic font-normal tracking-[0.25em] text-white/75">
               {site.hero.sloganEyebrow}
             </span>
             <span className="mt-6 block text-[clamp(44px,7vw,104px)] font-bold leading-[0.95] text-white">
