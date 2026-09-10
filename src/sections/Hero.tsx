@@ -4,7 +4,8 @@ import Reveal from '../components/ui/Reveal';
 
 /**
  * 首屏：头像在左、文字在右，两者作为一组整体水平居中
- * slogan 沿用最初 HELLO WORLD 的字号字重，两行，上白下粉
+ * slogan 三行：小号引导（宽字距）→ 白色衬线斜体主题 → 粉色衬线斜体收尾
+ * 衬线用系统 Georgia 系（Tailwind font-serif），零外链字体
  * 文案全在 site.ts 的 hero 段改
  * （头像/文字错峰入场：两个 Reveal 的 delay 相差 150ms）
  */
@@ -31,11 +32,17 @@ export default function Hero() {
 
         {/* 右：文字（移动端随头像居中，桌面端左对齐） */}
         <Reveal variant="up">
-          {/* 两行大字：上白下粉 */}
-          <h1 className="text-[clamp(44px,7vw,104px)] font-bold leading-[0.95]">
-            <span className="text-white">{site.hero.sloganLead}</span>
-            <br />
-            <span className="text-accent">{site.hero.sloganAccent}</span>
+          {/* 三行 slogan：引导语（宽字距小号）→ 衬线斜体白字 → 衬线斜体粉色收尾 */}
+          <h1 className="leading-none">
+            <span className="block text-[clamp(20px,2.6vw,30px)] font-normal tracking-[0.25em] text-white/75">
+              {site.hero.sloganEyebrow}
+            </span>
+            <span className="mt-4 block font-serif text-[clamp(48px,7vw,102px)] italic leading-[1.08] tracking-[-0.01em] text-white">
+              {site.hero.sloganMain}
+            </span>
+            <span className="block font-serif text-[clamp(48px,7vw,102px)] font-bold italic leading-[1.08] tracking-[-0.01em] text-accent">
+              {site.hero.sloganAccent}
+            </span>
           </h1>
 
           <p className="mx-auto mt-8 max-w-xl text-[20px] leading-relaxed text-accent md:mx-0">

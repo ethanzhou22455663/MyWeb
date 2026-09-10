@@ -36,9 +36,10 @@ export const site = {
 
   // ---- 首屏 ----
   hero: {
-    // slogan：两行大字，sloganAccent 段粉色高亮
-    sloganLead: 'La vie n\'est',
-    sloganAccent: 'pas ailleurs',
+    // slogan：三行衬线斜体排版——小号引导（宽字距）/ 白色主题 / 粉色收尾
+    sloganEyebrow: 'Il faut',
+    sloganMain: 's’imaginer',
+    sloganAccent: 'heureux.',
     subtitle: '真的要偷看我的网站吗？那...那就看吧',
   },
 
