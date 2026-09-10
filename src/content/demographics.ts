@@ -17,7 +17,7 @@ export const demographics = {
   // 小头像：证件照式方框，默认复用首屏头像
   avatar: img.avatar,
   name: site.name,
-  tagline: '写代码，也写别的（占位）',
+  tagline: '体验孤独、贫瘠和荒谬的人生',
 
   // 编号：右上角的装饰性编号
   fileNo: 'NO. 2026-0917',
@@ -25,11 +25,11 @@ export const demographics = {
   // 社会信息：一行一条，细线分隔
   fields: [
     { label: '性别',     en: 'SEX',        value: '男' },
-    { label: '出生年份', en: 'BORN',       value: '2000 年' },
+    { label: '出生年份', en: 'BIRTH',       value: '1999 年' },
     { label: '婚育状况', en: 'MARITAL',    value: '未婚 · 无子女' },
-    { label: '现居',     en: 'BASE',       value: '上海' },
-    { label: '职业',     en: 'OCCUPATION', value: '独立开发者' },
-    { label: 'MBTI',     en: 'MBTI',       value: 'INFP' },
+    { label: '现居',     en: 'BASE',       value: '宁波' },
+    { label: '职业',     en: 'OCCUPATION', value: '网站运营' },
+    { label: '信仰',     en: 'RELIGION',       value: '无神论' },
   ] as DemographicsField[],
 
   // 简介：一段话
