@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "note": "node scripts/note.mjs",
     "poster": "node scripts/game-poster.mjs",
-    "deploy": "tcb hosting deploy dist"
+    "deploy": "tcb hosting deploy dist",
+    "deploy:gh": "node scripts/deploy-gh.mjs",
+    "deploy:all": "npm run deploy:gh && npm run deploy"
   },
   "dependencies": {
     "react": "^19.2.0",
