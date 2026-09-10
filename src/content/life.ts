@@ -29,7 +29,7 @@ export const hobbies: Hobby[] = [
 // ---- 伙伴 ----
 // media: 每张卡的竖版图片/视频，填了就显示，不填只显示头像
 //   - type: 'image' 图片（默认）/ 'video' 视频；video 切到会自动静音播一遍就停，controls 可开声音
-//   - src: 路径（图片/视频都放 public/media/ 后填 '/media/xxx.mp4' 之类）
+//   - src: 路径（图片/视频都放 public/media/ 后填 'media/xxx.mp4' 之类）
 //   - 素材原图在 resources/companions/<拼音>/，视频建议 ffmpeg CRF26 转码 +faststart 再入库
 export interface CompanionMedia {
   src?: string; // 不填则该项显示粉色序号占位
@@ -52,10 +52,10 @@ export const companions: Companion[] = [
     description: '2024.12.29 - 2025.11.16',
     image: img.life.companionXiaowangzi,
     media: [
-      { src: '/media/companions/xiaowangzi-1.mp4', type: 'video' },
-      { src: '/media/companions/xiaowangzi-2.mp4', type: 'video' },
-      { src: '/media/companions/xiaowangzi-3.mp4', type: 'video' },
-      { src: '/media/companions/xiaowangzi-4.mp4', type: 'video' }, // 49 秒纪念视频
+      { src: 'media/companions/xiaowangzi-1.mp4', type: 'video' },
+      { src: 'media/companions/xiaowangzi-2.mp4', type: 'video' },
+      { src: 'media/companions/xiaowangzi-3.mp4', type: 'video' },
+      { src: 'media/companions/xiaowangzi-4.mp4', type: 'video' }, // 49 秒纪念视频
     ],
   },
   {
@@ -64,10 +64,10 @@ export const companions: Companion[] = [
     description: '2025.10.6 - ',
     image: img.life.companionFudimo,
     media: [
-      { src: '/media/companions/fudimo-1.jpg' },
-      { src: '/media/companions/fudimo-2.jpg' },
-      { src: '/media/companions/fudimo-3.jpg' },
-      { src: '/media/companions/fudimo-4.mp4', type: 'video' },
+      { src: 'media/companions/fudimo-1.jpg' },
+      { src: 'media/companions/fudimo-2.jpg' },
+      { src: 'media/companions/fudimo-3.jpg' },
+      { src: 'media/companions/fudimo-4.mp4', type: 'video' },
     ],
   },
 ];

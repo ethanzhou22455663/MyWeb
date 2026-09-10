@@ -175,7 +175,7 @@ for (const { kw, slug } of targets) {
   const rel = path.relative(process.cwd(), result.file);
   console.log(`✓ ${kw} → ${rel}（${result.kb} KB，${src}）`);
   console.log(`    到 src/content/images.ts 的 anime 里登记这一行：`);
-  console.log(`    ${slug}: '/images/anime/${path.basename(result.file)}',`);
+  console.log(`    ${slug}: 'images/anime/${path.basename(result.file)}',`);
 
   // 每部之间歇一下，别连着打触发风控
   await new Promise((r) => setTimeout(r, 800));

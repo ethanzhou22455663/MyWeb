@@ -3,7 +3,7 @@
 //
 // 用法三步：
 //   1. 把图放进 public/images/ 下对应分类文件夹（skills / games / anime / life / drawings）
-//   2. 在这里加一行：名字: '/images/分类/文件名'
+//   2. 在这里加一行：名字: 'images/分类/文件名'
 //   3. 内容文件里：import { img } from './images'，然后 img.games.eldenRing
 //
 // 好处：路径只写一次；改文件名只改这一处；编辑器自动补全；拼错会报错
@@ -11,168 +11,168 @@
 
 export const img = {
   // ---- 站点头像（首屏 Hero 用）----
-  avatar: '/images/avatar.jpg',
+  avatar: 'images/avatar.jpg',
 
   // ---- 私密锁头像（PrivateGate 用，原图 resources/private.jpg）----
-  private: '/images/private.jpg',
+  private: 'images/private.jpg',
 
   // ---- 技能卡 ----
   skills: {
-    english:    '/images/skills/english.jpg',
-    french:     '/images/skills/french.png',
-    japanese:   '/images/skills/japanese.png',
-    unity:      '/images/skills/unity.jpg',
-    typescript: '/images/skills/typescript.png',
-    vibeCoding: '/images/skills/vibe-coding.png',
-    linux:      '/images/skills/linux.jpg',
-    aigc:       '/images/skills/aigc.png',
-    drawing:    '/images/skills/drawing.jpg',
-    fitness:    '/images/skills/fitness.jpg',
+    english:    'images/skills/english.jpg',
+    french:     'images/skills/french.png',
+    japanese:   'images/skills/japanese.png',
+    unity:      'images/skills/unity.jpg',
+    typescript: 'images/skills/typescript.png',
+    vibeCoding: 'images/skills/vibe-coding.png',
+    linux:      'images/skills/linux.jpg',
+    aigc:       'images/skills/aigc.png',
+    drawing:    'images/skills/drawing.jpg',
+    fitness:    'images/skills/fitness.jpg',
   },
 
   // ---- 作品封面（截图原图在 resources/unity/、resources/网页工具/、resources/ai绘画/）----
   works: {
-    hamsterRoom:    '/images/works/hamster-room.png',
-    awkwardDialogue: '/images/works/awkward-dialogue.png',
-    pixelKnight:    '/images/works/pixel-knight.png',
-    hollowKnightFangame: '/images/works/hollow-knight-fangame.png',
-    dailyWord:      '/images/works/daily-word.png',
-    autodate:       '/images/works/autodate.jpg',
-    personaMetrics: '/images/works/persona-metrics.jpg',
-    vowelChart:     '/images/works/vowel-chart.jpg',
-    docReview:      '/images/works/doc-review.png',
-    aiDate:         '/images/works/ai-date.png',
-    aiTutor:        '/images/works/ai-tutor.png',
-    sketchPlayer:     '/images/works/sketch-player.png',
-    ownYourPlaylist:  '/images/works/own-your-playlist.png',
-    aiAmusementPark:  '/images/works/ai-amusement-park.jpg',
-    aiWindowLight:    '/images/works/ai-window-light.jpg',
-    sekiroGalgame:    '/images/works/sekiro-galgame.jpg', // B站视频封面（BV1c29SBCEZi，API 直取）
-    sekiroNotGalgame: '/images/works/bili-BV1VjoCBDEpx.jpg', // 为什么说只狼不算真正的galgame？
-    ganyuSevenArrows: '/images/works/bili-BV1ro4y1J7U2.jpg', // 甘雨一回合七发霜华矢
-    wandererChoice:   '/images/works/bili-BV1VdJQzvEua.jpg', // 漫游者先喝酒还是先上刀
-    skyboundHamster:  '/images/works/bili-BV19qWszqE1f.jpg', // Unity PPT「Skybound」飞行仓鼠
-    bocchiSpeech:     '/images/works/bili-BV114y6BAENH.jpg', // 波奇总统胜选演说
-    ryoProtest:       '/images/works/bili-BV1BxyCB8Ezj.jpg', // 山田凉闯国会抗议
-    bocchiImpeached:  '/images/works/bili-BV1idyWBME47.jpg', // 波奇总统被弹劾下台
-    ryoPresident:     '/images/works/bili-BV1yGyaB6Ehz.jpg', // 山田凉当选总统
-    bocchiNijika:     '/images/works/bili-BV1CSS4BqEcs.jpg', // 总统夫妇秀恩爱
-    kitaIntern1:      '/images/works/bili-BV1acmnBFER7.jpg', // 白宫实习生喜多
-    kitaIntern2:      '/images/works/bili-BV1b9meBcExw.jpg', // 冒失实习生喜多
-    bocchiShawshank:  '/images/works/bili-BV1rC1TBKELP.jpg', // 波申克的救赎
-    bocchiTitanic1:   '/images/works/bili-BV1NqyZBJE94.jpg', // 波奇主演泰坦尼克号
-    bocchiTitanic2:   '/images/works/bili-BV1YD1vBNEPx.jpg', // 泰坦尼克号第二集
-    bocchiTitanic3:   '/images/works/bili-BV1Tm14BNE3z.jpg', // 泰坦尼克号第三集
+    hamsterRoom:    'images/works/hamster-room.png',
+    awkwardDialogue: 'images/works/awkward-dialogue.png',
+    pixelKnight:    'images/works/pixel-knight.png',
+    hollowKnightFangame: 'images/works/hollow-knight-fangame.png',
+    dailyWord:      'images/works/daily-word.png',
+    autodate:       'images/works/autodate.jpg',
+    personaMetrics: 'images/works/persona-metrics.jpg',
+    vowelChart:     'images/works/vowel-chart.jpg',
+    docReview:      'images/works/doc-review.png',
+    aiDate:         'images/works/ai-date.png',
+    aiTutor:        'images/works/ai-tutor.png',
+    sketchPlayer:     'images/works/sketch-player.png',
+    ownYourPlaylist:  'images/works/own-your-playlist.png',
+    aiAmusementPark:  'images/works/ai-amusement-park.jpg',
+    aiWindowLight:    'images/works/ai-window-light.jpg',
+    sekiroGalgame:    'images/works/sekiro-galgame.jpg', // B站视频封面（BV1c29SBCEZi，API 直取）
+    sekiroNotGalgame: 'images/works/bili-BV1VjoCBDEpx.jpg', // 为什么说只狼不算真正的galgame？
+    ganyuSevenArrows: 'images/works/bili-BV1ro4y1J7U2.jpg', // 甘雨一回合七发霜华矢
+    wandererChoice:   'images/works/bili-BV1VdJQzvEua.jpg', // 漫游者先喝酒还是先上刀
+    skyboundHamster:  'images/works/bili-BV19qWszqE1f.jpg', // Unity PPT「Skybound」飞行仓鼠
+    bocchiSpeech:     'images/works/bili-BV114y6BAENH.jpg', // 波奇总统胜选演说
+    ryoProtest:       'images/works/bili-BV1BxyCB8Ezj.jpg', // 山田凉闯国会抗议
+    bocchiImpeached:  'images/works/bili-BV1idyWBME47.jpg', // 波奇总统被弹劾下台
+    ryoPresident:     'images/works/bili-BV1yGyaB6Ehz.jpg', // 山田凉当选总统
+    bocchiNijika:     'images/works/bili-BV1CSS4BqEcs.jpg', // 总统夫妇秀恩爱
+    kitaIntern1:      'images/works/bili-BV1acmnBFER7.jpg', // 白宫实习生喜多
+    kitaIntern2:      'images/works/bili-BV1b9meBcExw.jpg', // 冒失实习生喜多
+    bocchiShawshank:  'images/works/bili-BV1rC1TBKELP.jpg', // 波申克的救赎
+    bocchiTitanic1:   'images/works/bili-BV1NqyZBJE94.jpg', // 波奇主演泰坦尼克号
+    bocchiTitanic2:   'images/works/bili-BV1YD1vBNEPx.jpg', // 泰坦尼克号第二集
+    bocchiTitanic3:   'images/works/bili-BV1Tm14BNE3z.jpg', // 泰坦尼克号第三集
   },
 
   // ---- 绘画作品（原图在 resources/临摹/ 和 resources/原创/，已改英文名归置到此）----
   drawings: {
     // 临摹
-    furina: '/images/drawings/copies/furina.jpg',
-    lineDog: '/images/drawings/copies/line-dog.jpg',
-    missBarbara: '/images/drawings/copies/miss-barbara.jpg',
-    untitled: '/images/drawings/copies/untitled.jpg',
+    furina: 'images/drawings/copies/furina.jpg',
+    lineDog: 'images/drawings/copies/line-dog.jpg',
+    missBarbara: 'images/drawings/copies/miss-barbara.jpg',
+    untitled: 'images/drawings/copies/untitled.jpg',
     // 原创
-    airplane: '/images/drawings/originals/airplane.jpg',
-    cityInSnow: '/images/drawings/originals/city-in-snow.jpg',
-    flyingHamster: '/images/drawings/originals/flying-hamster.jpg',
-    goat: '/images/drawings/originals/goat.jpg',
-    hamsterTribe: '/images/drawings/originals/hamster-tribe.jpg',
-    hamstersInTheSky: '/images/drawings/originals/hamsters-in-the-sky.jpg',
-    kingOfStrength: '/images/drawings/originals/king-of-strength.jpg',
-    moonlitNight: '/images/drawings/originals/moonlit-night.jpg',
-    painting: '/images/drawings/originals/painting.jpg',
-    redDeadRedemption: '/images/drawings/originals/red-dead-redemption.jpg',
-    summerField: '/images/drawings/originals/summer-field.jpg',
-    winterField: '/images/drawings/originals/winter-field.jpg',
+    airplane: 'images/drawings/originals/airplane.jpg',
+    cityInSnow: 'images/drawings/originals/city-in-snow.jpg',
+    flyingHamster: 'images/drawings/originals/flying-hamster.jpg',
+    goat: 'images/drawings/originals/goat.jpg',
+    hamsterTribe: 'images/drawings/originals/hamster-tribe.jpg',
+    hamstersInTheSky: 'images/drawings/originals/hamsters-in-the-sky.jpg',
+    kingOfStrength: 'images/drawings/originals/king-of-strength.jpg',
+    moonlitNight: 'images/drawings/originals/moonlit-night.jpg',
+    painting: 'images/drawings/originals/painting.jpg',
+    redDeadRedemption: 'images/drawings/originals/red-dead-redemption.jpg',
+    summerField: 'images/drawings/originals/summer-field.jpg',
+    winterField: 'images/drawings/originals/winter-field.jpg',
   },
 
   // ---- 关注卡片（Subscribe 用；头像 resources/bzhan.jpg、resources/xiaohongshu.jpg，平台标志 resources/b.jpg、red.jpg）----
   subscribe: {
-    avatarBilibili: '/images/subscribe/avatar-bilibili.jpg',       // B站频道头像（灰发魔女，288=96px 整数倍）
-    avatarXiaohongshu: '/images/subscribe/avatar-xiaohongshu.jpg', // 小红书频道头像（粉毛 chibi，同 resources/private.jpg）
-    bilibili: '/images/subscribe/bilibili.jpg',       // B站标志（官方粉，正好贴站点粉）
-    xiaohongshu: '/images/subscribe/xiaohongshu.jpg', // 小红书标志（官方红）
+    avatarBilibili: 'images/subscribe/avatar-bilibili.jpg',       // B站频道头像（灰发魔女，288=96px 整数倍）
+    avatarXiaohongshu: 'images/subscribe/avatar-xiaohongshu.jpg', // 小红书频道头像（粉毛 chibi，同 resources/private.jpg）
+    bilibili: 'images/subscribe/bilibili.jpg',       // B站标志（官方粉，正好贴站点粉）
+    xiaohongshu: 'images/subscribe/xiaohongshu.jpg', // 小红书标志（官方红）
   },
 
   // ---- 精选游戏海报 ----
   games: {
-    redDeadRedemption2: '/images/games/red-dead-redemption-2.jpg',
-    hollowKnight:       '/images/games/hollow-knight.jpg',
-    silksong:           '/images/games/hollow-knight-silksong.jpg',
-    eldenRing:          '/images/games/elden-ring.jpg',
-    sekiro:             '/images/games/sekiro.jpg',
+    redDeadRedemption2: 'images/games/red-dead-redemption-2.jpg',
+    hollowKnight:       'images/games/hollow-knight.jpg',
+    silksong:           'images/games/hollow-knight-silksong.jpg',
+    eldenRing:          'images/games/elden-ring.jpg',
+    sekiro:             'images/games/sekiro.jpg',
   },
 
   // ---- Galgame 精选海报 ----
   galgames: {
-    atri:         '/images/games/atri.jpg',
-    sanobaWitch:  '/images/games/sanoba-witch.jpg',
-    tsukiOtome:   '/images/games/tsuki-ni-yorisou-otome-no-sahou.jpg',
-    amakano3:     '/images/games/amakano-3.jpg',
-    amakano2:     '/images/games/amakano-2.jpg',
-    yosugaNoSora: '/images/games/yosuga-no-sora.jpg',
-    makingLovers: '/images/games/making-lovers.jpg',
-    sugarStyle:   '/images/games/sugar-style.jpg',
-    limeLight:    '/images/games/limelight-lemonade-jam.jpg',
-    cafeStella:   '/images/games/cafe-stella-and-the-deaths-butterfly.jpg',
+    atri:         'images/games/atri.jpg',
+    sanobaWitch:  'images/games/sanoba-witch.jpg',
+    tsukiOtome:   'images/games/tsuki-ni-yorisou-otome-no-sahou.jpg',
+    amakano3:     'images/games/amakano-3.jpg',
+    amakano2:     'images/games/amakano-2.jpg',
+    yosugaNoSora: 'images/games/yosuga-no-sora.jpg',
+    makingLovers: 'images/games/making-lovers.jpg',
+    sugarStyle:   'images/games/sugar-style.jpg',
+    limeLight:    'images/games/limelight-lemonade-jam.jpg',
+    cafeStella:   'images/games/cafe-stella-and-the-deaths-butterfly.jpg',
   },
 
   // ---- 精选动漫海报（B 站番剧封面，scripts/anime-poster.mjs 下载）----
   anime: {
-    bocchiTheRock:        '/images/anime/bocchi-the-rock.jpg',
-    bangDream:            '/images/anime/bang-dream.jpg',
-    sakuraQuest:          '/images/anime/sakura-quest.jpg',
-    himoutoUmaruChan:     '/images/anime/himouto-umaruchan.jpg',
-    yamaNoSusume:         '/images/anime/yama-no-susume.jpg',
-    yuruCamp:             '/images/anime/yuru-camp.png',
-    hibikeEuphonium:      '/images/anime/hibike-euphonium.png',
-    lycorisRecoil:        '/images/anime/lycoris-recoil.png',
-    wanderingWitchElaina: '/images/anime/wandering-witch-elaina.png',
-    minamiKe:             '/images/anime/minami-ke.png',
-    nonNonBiyori:         '/images/anime/non-non-biyori.png',
-    locodol:              '/images/anime/locodol.jpg',
-    mygo:                 '/images/anime/mygo.png',
-    uraraMeirochou:       '/images/anime/urara-meirochou.jpg',
-    newGame:              '/images/anime/new-game.jpg',
-    loveLab:              '/images/anime/love-lab.jpg',
-    onePunchMan:          '/images/anime/one-punch-man.jpg',
-    tonariNoKyuuketsuki:  '/images/anime/tonari-no-kyuuketsuki-san.png',
-    cautiousHero:         '/images/anime/cautious-hero.jpg',
-    machikadoMazoku:      '/images/anime/machikado-mazoku.jpg',
+    bocchiTheRock:        'images/anime/bocchi-the-rock.jpg',
+    bangDream:            'images/anime/bang-dream.jpg',
+    sakuraQuest:          'images/anime/sakura-quest.jpg',
+    himoutoUmaruChan:     'images/anime/himouto-umaruchan.jpg',
+    yamaNoSusume:         'images/anime/yama-no-susume.jpg',
+    yuruCamp:             'images/anime/yuru-camp.png',
+    hibikeEuphonium:      'images/anime/hibike-euphonium.png',
+    lycorisRecoil:        'images/anime/lycoris-recoil.png',
+    wanderingWitchElaina: 'images/anime/wandering-witch-elaina.png',
+    minamiKe:             'images/anime/minami-ke.png',
+    nonNonBiyori:         'images/anime/non-non-biyori.png',
+    locodol:              'images/anime/locodol.jpg',
+    mygo:                 'images/anime/mygo.png',
+    uraraMeirochou:       'images/anime/urara-meirochou.jpg',
+    newGame:              'images/anime/new-game.jpg',
+    loveLab:              'images/anime/love-lab.jpg',
+    onePunchMan:          'images/anime/one-punch-man.jpg',
+    tonariNoKyuuketsuki:  'images/anime/tonari-no-kyuuketsuki-san.png',
+    cautiousHero:         'images/anime/cautious-hero.jpg',
+    machikadoMazoku:      'images/anime/machikado-mazoku.jpg',
   },
 
   // ---- 相册（原图 resources/album/，每城一组 4 张；Album 板块专用）----
   album: {
-    riben1:    '/images/album/riben-1.jpg',
-    riben2:    '/images/album/riben-2.jpg',
-    riben3:    '/images/album/riben-3.jpg',
-    riben4:    '/images/album/riben-4.jpg',
-    moluoge1:  '/images/album/moluoge-1.jpg',
-    moluoge2:  '/images/album/moluoge-2.jpg',
-    moluoge3:  '/images/album/moluoge-3.jpg',
-    moluoge4:  '/images/album/moluoge-4.jpg',
-    jinhua1:   '/images/album/jinhua-1.jpg',
-    jinhua2:   '/images/album/jinhua-2.jpg',
-    jinhua3:   '/images/album/jinhua-3.jpg',
-    jinhua4:   '/images/album/jinhua-4.jpg',
-    xianggang1: '/images/album/xianggang-1.jpg',
-    xianggang2: '/images/album/xianggang-2.jpg',
-    xianggang3: '/images/album/xianggang-3.jpg',
-    xianggang4: '/images/album/xianggang-4.jpg',
-    ningbo1:   '/images/album/ningbo-1.jpg',
-    ningbo2:   '/images/album/ningbo-2.jpg',
-    ningbo3:   '/images/album/ningbo-3.jpg',
-    ningbo4:   '/images/album/ningbo-4.jpg',
-    hangzhou1: '/images/album/hangzhou-1.jpg',
-    hangzhou2: '/images/album/hangzhou-2.jpg',
-    hangzhou3: '/images/album/hangzhou-3.jpg',
-    hangzhou4: '/images/album/hangzhou-4.jpg',
+    riben1:    'images/album/riben-1.jpg',
+    riben2:    'images/album/riben-2.jpg',
+    riben3:    'images/album/riben-3.jpg',
+    riben4:    'images/album/riben-4.jpg',
+    moluoge1:  'images/album/moluoge-1.jpg',
+    moluoge2:  'images/album/moluoge-2.jpg',
+    moluoge3:  'images/album/moluoge-3.jpg',
+    moluoge4:  'images/album/moluoge-4.jpg',
+    jinhua1:   'images/album/jinhua-1.jpg',
+    jinhua2:   'images/album/jinhua-2.jpg',
+    jinhua3:   'images/album/jinhua-3.jpg',
+    jinhua4:   'images/album/jinhua-4.jpg',
+    xianggang1: 'images/album/xianggang-1.jpg',
+    xianggang2: 'images/album/xianggang-2.jpg',
+    xianggang3: 'images/album/xianggang-3.jpg',
+    xianggang4: 'images/album/xianggang-4.jpg',
+    ningbo1:   'images/album/ningbo-1.jpg',
+    ningbo2:   'images/album/ningbo-2.jpg',
+    ningbo3:   'images/album/ningbo-3.jpg',
+    ningbo4:   'images/album/ningbo-4.jpg',
+    hangzhou1: 'images/album/hangzhou-1.jpg',
+    hangzhou2: 'images/album/hangzhou-2.jpg',
+    hangzhou3: 'images/album/hangzhou-3.jpg',
+    hangzhou4: 'images/album/hangzhou-4.jpg',
   },
 
   // ---- 生活照片（Companions 伙伴头像在这取）----
   life: {
-    companionXiaowangzi: '/images/life/companion-xiaowangzi.jpg', // 小王子头像（288=144px 整数倍）
-    companionFudimo:     '/images/life/companion-fudimo.jpg',     // 伏地魔头像（288=144px 整数倍）
+    companionXiaowangzi: 'images/life/companion-xiaowangzi.jpg', // 小王子头像（288=144px 整数倍）
+    companionFudimo:     'images/life/companion-fudimo.jpg',     // 伏地魔头像（288=144px 整数倍）
   },
 } as const;

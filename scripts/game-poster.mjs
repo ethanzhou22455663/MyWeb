@@ -149,7 +149,7 @@ const dest = path.join(OUT_DIR, `${slug}.jpg`);
 if ((await exists(dest)) && !force) {
   console.error(`✗ 已存在 ${path.relative(process.cwd(), dest)}（要覆盖加 --force）`);
   console.error(`  别忘了在 src/content/images.ts 的 games 里登记：`);
-  console.error(`    ${slug}: '/images/games/${slug}.jpg',`);
+  console.error(`    ${slug}: 'images/games/${slug}.jpg',`);
   process.exit(1);
 }
 
@@ -164,4 +164,4 @@ if (!result.ok) {
 
 console.log(`✓ 已保存 ${path.relative(process.cwd(), dest)}（${result.kb} KB）`);
 console.log(`  到 src/content/images.ts 的 games 里登记这一行：`);
-console.log(`    ${slug}: '/images/games/${slug}.jpg',`);
+console.log(`    ${slug}: 'images/games/${slug}.jpg',`);
