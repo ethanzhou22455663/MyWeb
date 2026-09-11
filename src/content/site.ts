@@ -73,5 +73,7 @@ export const site = {
   // ---- 页脚 ----
   footer: {
     note: '© 2026 为师就是这么低调. All rights reserved.',
+    // 不蒜子访客数（UV，按天去重）：index.html 里的脚本负责把数字写进 #busuanzi_value_site_uv
+    traffic: { label: '访客数：' },
   },
 };
