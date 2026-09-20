@@ -49,6 +49,7 @@ export const workCategories: WorkCategory[] = [
       { title: '文书评审', status: '开发中', description: 'Supabase Auth 账号系统，登录后进入文书评审界面', image: img.works.docReview },
       { title: 'AI 恋人', status: '上线', description: 'AI 生成约会场景：摩天轮座舱里的双人夜景', image: img.works.aiDate },
       { title: 'AI 课堂', status: '上线', description: '聊天式 AI 教学：课前思考、学习/答题，这节课讲内存存储形式', image: img.works.aiTutor },
+      { title: '考公决策计算器', status: '上线', description: '纯金融视角把「考不考」当风险投资：胜率 × 收入曲线 × 青春成本，五档判定', image: img.works.kaogong, link: 'works/kaogong/' },
     ],
   },
   {

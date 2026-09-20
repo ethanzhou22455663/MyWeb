@@ -43,6 +43,7 @@ export const img = {
     docReview:      'images/works/doc-review.webp',
     aiDate:         'images/works/ai-date.webp',
     aiTutor:        'images/works/ai-tutor.webp',
+    kaogong:        'images/works/kaogong.webp', // 考公决策计算器（子页面 works/kaogong/，原图 resources/网页工具/粘贴的图像.png）
     sketchPlayer:     'images/works/sketch-player.webp',
     ownYourPlaylist:  'images/works/own-your-playlist.webp',
     aiAmusementPark:  'images/works/ai-amusement-park.webp',

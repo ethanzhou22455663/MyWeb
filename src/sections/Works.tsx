@@ -31,7 +31,12 @@ export default function Works() {
                 <Reveal
                   key={item.title}
                   as={item.link ? 'a' : 'div'}
-                  {...(item.link ? { href: item.link, target: '_blank', rel: 'noreferrer' } : {})}
+                  {...(item.link
+                    ? // 站外链接新标签页打开；站内子页面（相对路径）当前页跳转
+                      item.link.startsWith('http')
+                      ? { href: item.link, target: '_blank', rel: 'noreferrer' }
+                      : { href: item.link }
+                    : {})}
                   variant="up"
                   delay={Math.floor(i / 4) * 70}
                   className="card-hover group block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur"
