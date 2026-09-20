@@ -42,13 +42,13 @@ const DEFAULTS: Params = {
   attempts: 3,
   directCost: 1500,
   experienceCost: 3000,
-  youthWeight: 1.5,
+  youthWeight: 2,
   competition: 50,
   percentile: 30,
   govIncome: 150000,
   growthGov: 2,
   premium: 0,
-  residual: 25,
+  residual: 10,
   discount: 3,
   years: 30,
 };
@@ -352,7 +352,7 @@ export default function KaogongCalc() {
             label="计划考几次"
             value={p.attempts}
             min={1}
-            max={5}
+            max={30}
             step={1}
             display={`${p.attempts} 次`}
             onChange={set('attempts')}
@@ -405,10 +405,10 @@ export default function KaogongCalc() {
             label="残值率（失败后技能/认知可回收比例）"
             value={p.residual}
             min={0}
-            max={100}
+            max={50}
             step={5}
             display={`${p.residual}%`}
-            hint="备考内容和工作完全无关 0~15%；文字 / 教育 / 咨询类 40~60%"
+            hint="备考内容和工作完全无关 0~5%；文字 / 教育 / 咨询类 15~25%"
             onChange={set('residual')}
           />
           <Slider
@@ -610,7 +610,7 @@ export default function KaogongCalc() {
               ['私企涨幅', '看过去三年你的实际涨薪。互联网 8~15%，传统行业 2~5%。这条直接决定「不考公」的机会成本涨多快。'],
               ['体制内涨幅', '普遍很低，职级并行后约 2~3%，按目标地区实际情况填。'],
               ['稳定性溢价', '主观题：一份「干到退休不裁员」的工作，每年少拿多少钱你也愿意去？求安稳填正（1~3 万），讨厌束缚填负。'],
-              ['残值率', '考不上时，备考学的东西以后还值多少。跨专业、和现在工作完全无关 → 0~15%；文字、教育、咨询、分析类工作 → 40~60%；默认 25%。'],
+              ['残值率', '考不上时，备考学的东西以后还值多少。跨专业、和现在工作完全无关 → 0~5%；文字、教育、咨询、分析类工作 → 15~25%；默认 10%。'],
               ['折现率', '「未来的钱打几折算今天」。跟着通胀走 ≈3%；会理财、更看重眼前 → 5~8%；极度耐心、钱放着不动 → 0~2%。'],
               ['备考体验成本', '一个月不出门、不应酬、不旅游、不碰爱好，补给你多少钱觉得够本？无感填 0，很在意填 5000+。'],
               ['年轻权重', '所有年轻时失去的价值（放弃的工资、报名费、体验）都乘这个倍数。1 = 年轻与老年等价；2 = 年轻失去 1 元值老年 2 元；3 = 青春无价。钱的「生息能力」已由折现率体现，这个倍数只管效用。'],
