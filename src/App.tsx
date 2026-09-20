@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './sections/Hero';
@@ -28,6 +29,18 @@ import { privateGate } from './content/private';
  */
 export default function App() {
   const { unlocked } = useUnlock();
+
+  // 从子页面跳回主页带锚点（如 index.html#works）时：
+  // 浏览器自带的锚点滚动发生在 React 渲染完板块之前，会落空（只见回到页首）
+  // 所以等首帧渲染后再手动滚一次
+  useEffect(() => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    const timer = window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView();
+    }, 80);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen bg-bg text-white">

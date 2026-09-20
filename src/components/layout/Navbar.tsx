@@ -1,8 +1,11 @@
 import { site } from '../../content/site';
 import { useUnlock } from '../../context/UnlockContext';
 
-export default function Navbar() {
+export default function Navbar({ root = '' }: { root?: string }) {
   const { unlocked } = useUnlock();
+
+  // 子页面传 root（如 '../../'）：把 #锚点 换成 主页地址+锚点，导航才能跳回主页对应板块
+  const home = (anchor: string) => (root ? `${root}index.html${anchor}` : anchor);
 
   // 已存活天数：按本地日期从 birthday 算到今天（整天数，不受当天时刻影响）
   const [by, bm, bd] = site.birthday.split('-').map(Number);
@@ -15,7 +18,7 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-bg/80 backdrop-blur">
       <div className="section-shell flex h-16 items-center justify-between">
-        <a href="#top" className="text-lg font-bold tracking-tight">
+        <a href={home('#top')} className="text-lg font-bold tracking-tight">
           {site.name}
           <span className="ml-2.5 align-middle text-xs font-normal tracking-normal text-muted">
             已存活 <span className="font-medium text-accent">{daysLived}</span> 天
@@ -49,7 +52,7 @@ export default function Navbar() {
                     {link.children.map((child) => (
                       <a
                         key={child.href}
-                        href={unlocked ? child.href : '#profile'}
+                        href={home(unlocked ? child.href : '#profile')}
                         className="block whitespace-nowrap px-4 py-2 text-sm text-muted transition-colors hover:bg-accent/10 hover:text-accent"
                       >
                         {child.label}
@@ -61,7 +64,7 @@ export default function Navbar() {
             ) : (
               <a
                 key={link.href}
-                href={link.href}
+                href={home(link.href)}
                 className="text-sm text-muted transition-colors hover:text-accent"
               >
                 {link.label}
