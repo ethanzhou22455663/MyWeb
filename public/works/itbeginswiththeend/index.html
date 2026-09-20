@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>从分手开始的恋爱</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 舞台：两层图叠放，换幕时新图滑入盖住旧图 -->
+  <div id="stage">
+    <img id="bg-a" alt="" />
+    <img id="bg-b" alt="" />
+  </div>
+
+  <!-- 对话框：上面是说话人，下面是台词 -->
+  <div id="dialog">
+    <div id="speaker">???</div>
+    <div id="text">……</div>
+  </div>
+
+  <!-- 结尾页：任一方向播完时盖住全屏，点 ↺ 倒带继续 -->
+  <div id="title">
+    <h1>从分手开始的恋爱</h1>
+    <p class="sub">如果从结束的那一刻开始，倒着看一段恋爱故事，会是什么样呢？</p>
+    <button id="start" type="button" title="开始">↺</button>
+    <div class="credits">
+      作者：为师就是这么低调<br />
+      技术栈：Typescript + HTML + CSS<br />
+      程序：Kimi 2.7 code<br />
+      美术：RTX4060 laptop　　模型：Hoseki - LustrousMix [Anima v1.0]
+    </div>
+  </div>
+
+  <!-- 背景音乐：loop = 播完自动循环；浏览器禁自动出声，由引擎在第一次点击时启动 -->
+  <audio id="bgm" src="sora.mp3" loop preload="auto"></audio>
+
+  <!-- 剧本数据：必须比引擎先加载 -->
+  <script src="story/story.js"></script>
+
+  <!-- 打字机效果：必须在 engine.js 前面（引擎一加载就要用） -->
+  <script src="js/typewriter.js"></script>
+
+  <!-- 只加载编译产物；浏览器永远不认识 .ts 文件 -->
+  <script src="js/engine.js"></script>
+</body>
+</html>

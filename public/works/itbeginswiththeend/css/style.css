@@ -1,0 +1,86 @@
+/* 全局：去默认留白、黑底、禁滚动条 */
+* { margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 舞台铺满窗口 */
+#stage { position: fixed; inset: 0; } /* inset:0 = 上下左右全贴边 */
+
+/* 两层底图：叠满舞台；transform 的过渡 = 换幕滑入动画 */
+#stage img {
+  position: absolute;   /* 脱离文档流，两层叠在同一位置 */
+  inset: 0;             /* 上右下左全贴舞台 */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* 图片完整显示、等比缩放、黑边填充（不变形） */
+  transition: transform 1.0s ease;  /* 位移动画时长：改这个数就变速 */
+}
+
+/* 对话框：贴底部、半透明圆角 */
+#dialog {
+  position: fixed;
+  left: 5%; right: 5%; bottom: 4%;
+  padding: 18px 24px;
+  background: rgba(0, 0, 0, 0.65); /* 最后0.65是透明度 */
+  border-radius: 12px;
+  color: #fff;
+}
+
+#speaker { color: #ff9db8; font-weight: bold; margin-bottom: 8px; }
+#text { font-size: 20px; line-height: 1.7; min-height: 34px; }
+
+/* ===== 结尾页：播完时盖住全屏，点 ↺ 倒带 ===== */
+#title {
+  display: none;               /* 默认隐藏，播完由引擎显示 */
+  position: fixed;
+  inset: 0;                    /* 铺满整个窗口 */
+  z-index: 10;                 /* 盖在舞台和对话框之上 */
+  background: radial-gradient(ellipse at 50% 35%, #1a1626 0%, #000 72%);
+  color: #fff;
+  flex-direction: column;      /* 纵向排列：标题→小标题→按钮→署名 */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#title h1 {
+  font-family: "Kaiti SC", KaiTi, "STKaiti", "Microsoft YaHei", serif;  /* 楷体更有故事感 */
+  font-size: 56px;
+  letter-spacing: 12px;
+  margin-bottom: 24px;
+  text-shadow: 0 0 24px rgba(255, 157, 184, 0.35);   /* 粉色微光 */
+}
+#title .sub {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 64px;
+}
+#start {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  font-size: 44px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+#start:hover {
+  background: rgba(255, 157, 184, 0.18);
+  border-color: #ff9db8;
+  box-shadow: 0 0 32px rgba(255, 157, 184, 0.45);
+  transform: scale(1.06);      /* 悬停轻微放大 */
+}
+#title .credits {
+  margin-top: 72px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 13px;
+  line-height: 2.1;
+  letter-spacing: 1px;
+}
