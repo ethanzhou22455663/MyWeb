@@ -57,6 +57,7 @@ export const workCategories: WorkCategory[] = [
     items: [
       { title: '速写播放器', status: '上线', description: '手绘风本地播放器：正在播放、进度条与音量控制', image: img.works.sketchPlayer },
       { title: 'Own Your Playlist', status: '上线', description: '本地音乐资料库：歌曲 / 专辑 / 歌手管理，搜索与批量编辑', image: img.works.ownYourPlaylist },
+      { title: '夸克网盘 Linux 版', status: '上线', description: '非官方夸克网盘 Windows 客户端 Linux 封装：AppImage 单文件，免装 Wine 开箱即用', image: img.works.quarkDriveLinux, link: 'https://github.com/ethanzhou22455663/quark-drive-linux' },
     ],
   },
   {

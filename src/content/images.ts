@@ -45,6 +45,7 @@ export const img = {
     kaogong:        'images/works/kaogong.webp', // 考公决策计算器（子页面 works/kaogong/，原图 resources/网页工具/粘贴的图像.png）
     sketchPlayer:     'images/works/sketch-player.webp',
     ownYourPlaylist:  'images/works/own-your-playlist.webp',
+    quarkDriveLinux:  'images/works/quark-drive-linux.webp', // 夸克网盘 Linux 版（AppImage，外链 GitHub，原图 resources/桌面应用/夸克网盘Linux版.png）
     aiAmusementPark:  'images/works/ai-amusement-park.webp',
     aiWindowLight:    'images/works/ai-window-light.webp',
     sekiroGalgame:    'images/works/sekiro-galgame.webp', // B站视频封面（BV1c29SBCEZi，API 直取）
