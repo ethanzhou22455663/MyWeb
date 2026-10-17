@@ -70,6 +70,12 @@ initBlow(cfg, {
   onStop: (fn) => { stopBlow = fn; },
 });
 
+// ---- 跳过按钮：不想吹/吹不动 → 直接进入庆祝+信+抽签 ----
+$('#skipBlow').addEventListener('click', () => {
+  cake.extinguishAllSilently();
+  unlock();
+});
+
 // ---- ?celebrate=1 预览逃逸口：跳过吹蜡烛直看庆祝+信+抽签 ----
 const forceParam = cfg?.debug?.forceCelebrateParam || 'celebrate';
 if (new URLSearchParams(location.search).has(forceParam)) {

@@ -276,6 +276,22 @@ main, footer { position: relative; z-index: 1; }
   line-height: 1.7;
 }
 
+/* 跳过吹蜡烛的小字按钮 */
+.skip-link {
+  border: none;
+  background: none;
+  padding: 4px 8px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.skip-link:hover { opacity: 1; color: var(--rose); }
+
 /* 音量条（吹气检测反馈） */
 .meter {
   width: min(220px, 60vw);
