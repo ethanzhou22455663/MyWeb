@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0e2a">
+  <title>生日快乐 🎂</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./config.js"></script>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <main>
+    <!-- 第一屏：舞台 -->
+    <section id="stage">
+      <div class="date-badge" data-cfg="birthdayText"></div>
+      <h1 class="title" data-cfg="titleLine"></h1>
+      <div class="sub" data-cfg="subtitle"></div>
+
+      <div class="cake-wrap">
+        <div id="cake">
+          <div id="candles"></div>
+          <div class="layer l2"></div>
+          <div class="layer l1"></div>
+          <div class="plate"></div>
+        </div>
+      </div>
+
+      <p class="wish" data-cfg="wish"></p>
+
+      <div id="blowZone">
+        <button id="blowBtn" class="btn-primary" data-cfg="candles.blowBtn"></button>
+        <div id="meter" class="meter" hidden><i id="meterFill"></i></div>
+        <p id="micHint" class="hint" data-cfg="candles.hintTap"></p>
+      </div>
+    </section>
+
+    <!-- 第二屏：庆祝 + 祝福信（吹灭蜡烛后解锁） -->
+    <section id="celebrate" hidden>
+      <div class="banner">
+        <img src="./assets/icon-party-popper.webp" alt="">
+        <span data-cfg="celebrateBanner"></span>
+        <img src="./assets/icon-party-popper.webp" alt="">
+      </div>
+
+      <div class="letter-card">
+        <div class="letter-head">
+          <img src="./assets/icon-love-letter.webp" alt="">
+          <span>一封祝福信</span>
+        </div>
+        <pre id="letterText"></pre>
+        <button id="letterSkip" data-cfg="letterSkip" hidden></button>
+      </div>
+    </section>
+
+    <!-- 第三屏：抽签运势（信结束后解锁，怎么抽都是全满） -->
+    <section id="fortune" hidden>
+      <div class="fortune-intro">
+        <h2 data-cfg="fortune.sectionTitle"></h2>
+        <p data-cfg="fortune.sectionSub"></p>
+      </div>
+
+      <button id="fortuneBtn" class="fortune-btn">
+        <img id="fortuneGift" src="./assets/icon-gift.webp" alt="">
+        <span id="fortuneBtnLabel" data-cfg="fortune.buttonLabel"></span>
+        <span id="shakeText" hidden>摇签筒中…</span>
+      </button>
+
+      <div id="fortuneResult" hidden>
+        <div class="fr-head">
+          <h3 data-cfg="fortune.resultTitle"></h3>
+          <p id="flavorLine" class="flavor"></p>
+        </div>
+        <div id="dimRows"></div>
+        <p class="fr-note" data-cfg="fortune.resultNote"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>—— <span class="from" data-cfg="from"></span></p>
+    <p class="credit">图标来自 <a href="https://icons8.com" target="_blank" rel="noreferrer">Icons8</a></p>
+  </footer>
+
+  <button id="musicBtn" title="放一首生日歌" aria-label="音乐开关">
+    <img src="./assets/icon-musical-notes.webp" alt="">
+  </button>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
