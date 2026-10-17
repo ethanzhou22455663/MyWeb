@@ -58,7 +58,7 @@ const cake = initCake(cfg, {
   onOneOut: (n) => {
     // 每吹灭一支，在蛋糕上方来一朵小烟花
     const rect = $('#cake').getBoundingClientRect();
-    bg.burst(rect.left + rect.width / 2, rect.top + 20, '#E9A5C2', 30);
+    bg.burst(rect.left + rect.width / 2, rect.top + 20, 30);
   },
   onAllOut: () => unlock(),
 });

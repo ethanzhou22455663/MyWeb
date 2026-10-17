@@ -1,18 +1,20 @@
 /* ══════════════════════════════════════════
-   生日页 · 风格 A 梦幻夜空烟花
+   生日页 · 风格 B 明亮奶油派对
    主题色集中在 :root，想换色改这里就行
    ══════════════════════════════════════════ */
 :root {
-  --sky-1: #05060f;
-  --sky-2: #0a0e2a;
-  --sky-3: #131035;
-  --pink: #e9a5c2;
-  --gold: #ffd9a0;
-  --text: #ffffff;
-  --muted: rgba(255, 255, 255, 0.55);
-  --card: rgba(255, 255, 255, 0.06);
-  --card-border: rgba(255, 255, 255, 0.14);
-  --paper: #fff8ee;
+  --cream-1: #fff7f0;
+  --cream-2: #ffe9f0;
+  --cream-3: #fff6e8;
+  --rose: #e0567f;
+  --rose-soft: #d16a8a;
+  --peach: #ffb86b;
+  --mint: #9ad5c8;
+  --text: #6b4453;
+  --muted: rgba(160, 100, 120, 0.65);
+  --card: rgba(255, 255, 255, 0.65);
+  --card-border: rgba(224, 86, 127, 0.18);
+  --paper: #fffdf6;
   --paper-text: #5a4652;
 }
 
@@ -21,9 +23,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background:
-    radial-gradient(ellipse 90% 55% at 50% 115%, #1a1040 0%, transparent 70%),
-    linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 55%, var(--sky-3) 100%);
+  background: linear-gradient(165deg, var(--cream-1) 0%, var(--cream-2) 45%, var(--cream-3) 100%);
   background-attachment: fixed;
   color: var(--text);
   font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
@@ -35,37 +35,52 @@ body {
 
 main, footer { position: relative; z-index: 1; }
 
+/* ---- 漂浮的气球/贴纸 ---- */
+.floaty {
+  position: fixed;
+  z-index: 0;
+  font-size: clamp(40px, 7vw, 62px);
+  filter: drop-shadow(0 10px 14px rgba(240, 120, 160, 0.28));
+  animation: floaty 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%      { transform: translateY(-26px) rotate(5deg); }
+}
+
 /* ---- 标题 ---- */
 .date-badge {
   display: inline-block;
   font-size: 14px;
   letter-spacing: 0.5em;
-  color: var(--gold);
-  opacity: 0.85;
+  color: var(--rose-soft);
+  opacity: 0.9;
   margin-bottom: 18px;
 }
 
 .title {
-  font-size: clamp(34px, 9vw, 72px);
+  font-size: clamp(36px, 10vw, 76px);
   font-weight: 800;
   line-height: 1.25;
-  background: linear-gradient(100deg, #fff 10%, var(--pink) 45%, var(--gold) 80%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: glow-breathe 3.5s ease-in-out infinite;
-}
-
-@keyframes glow-breathe {
-  0%, 100% { filter: drop-shadow(0 0 18px rgba(233, 165, 194, 0.5)) drop-shadow(0 0 42px rgba(255, 217, 160, 0.22)); }
-  50%      { filter: drop-shadow(0 0 30px rgba(233, 165, 194, 0.8)) drop-shadow(0 0 64px rgba(255, 217, 160, 0.4)); }
+  color: var(--rose);
+  text-shadow: 0 3px 0 #fff, 0 6px 18px rgba(224, 86, 127, 0.3);
+  transform: rotate(-1.2deg);
 }
 
 .sub {
   margin-top: 14px;
-  color: var(--muted);
-  font-size: 15px;
-  letter-spacing: 0.3em;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  padding: 8px 24px;
+  color: #7a4d86;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  box-shadow: 0 6px 16px rgba(224, 86, 127, 0.12);
 }
 
 /* ---- 舞台（第一屏）---- */
@@ -89,13 +104,13 @@ main, footer { position: relative; z-index: 1; }
 }
 
 #cake::before {
-  /* 蛋糕底光 */
+  /* 蛋糕底影 */
   content: '';
   position: absolute;
-  bottom: -18px; left: 50%;
-  width: 130%; height: 60px;
+  bottom: -14px; left: 50%;
+  width: 120%; height: 46px;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse, rgba(233, 165, 194, 0.28), transparent 70%);
+  background: radial-gradient(ellipse, rgba(224, 86, 127, 0.16), transparent 70%);
 }
 
 .plate {
@@ -104,8 +119,8 @@ main, footer { position: relative; z-index: 1; }
   width: 96%; height: 18px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: linear-gradient(180deg, #3a3d68, #1c1e42);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(180deg, #fff, #f2d9e2);
+  box-shadow: 0 4px 14px rgba(224, 86, 127, 0.22);
 }
 
 .layer {
@@ -119,13 +134,14 @@ main, footer { position: relative; z-index: 1; }
   bottom: 9px;
   width: 86%; height: 74px;
   background: linear-gradient(180deg, #f2a8c9 0%, #e08bb5 100%);
-  box-shadow: inset 0 -10px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -10px 18px rgba(180, 80, 120, 0.14), 0 6px 18px rgba(224, 86, 127, 0.18);
 }
 
 .layer.l2 {
   bottom: 83px;
   width: 62%; height: 56px;
   background: linear-gradient(180deg, #f9cddd 0%, #f0aac9 100%);
+  box-shadow: 0 5px 14px rgba(224, 86, 127, 0.14);
 }
 
 /* 奶油滴落：两层各一条 */
@@ -136,12 +152,12 @@ main, footer { position: relative; z-index: 1; }
   height: 16px;
   border-radius: 12px 12px 0 0;
   background:
-    radial-gradient(circle 7px at 12% 4px, #fff8ee 98%, transparent),
-    radial-gradient(circle 8px at 32% 6px, #fff8ee 98%, transparent),
-    radial-gradient(circle 7px at 52% 3px, #fff8ee 98%, transparent),
-    radial-gradient(circle 8px at 72% 6px, #fff8ee 98%, transparent),
-    radial-gradient(circle 7px at 90% 4px, #fff8ee 98%, transparent),
-    linear-gradient(180deg, #fff8ee 55%, transparent 56%);
+    radial-gradient(circle 7px at 12% 4px, var(--paper) 98%, transparent),
+    radial-gradient(circle 8px at 32% 6px, var(--paper) 98%, transparent),
+    radial-gradient(circle 7px at 52% 3px, var(--paper) 98%, transparent),
+    radial-gradient(circle 8px at 72% 6px, var(--paper) 98%, transparent),
+    radial-gradient(circle 7px at 90% 4px, var(--paper) 98%, transparent),
+    linear-gradient(180deg, var(--paper) 55%, transparent 56%);
 }
 
 /* ---- 蜡烛 ---- */
@@ -165,8 +181,8 @@ main, footer { position: relative; z-index: 1; }
   position: absolute;
   inset: 0;
   border-radius: 4px;
-  background: repeating-linear-gradient(45deg, #fff 0 5px, var(--pink) 5px 10px);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  background: repeating-linear-gradient(45deg, #fff 0 5px, var(--rose-soft) 5px 10px);
+  box-shadow: 0 1px 4px rgba(120, 60, 80, 0.3);
 }
 
 .candle .wick {
@@ -183,8 +199,8 @@ main, footer { position: relative; z-index: 1; }
   width: 13px; height: 19px;
   transform: translateX(-50%);
   border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
-  background: radial-gradient(circle at 50% 72%, #fffbe6 0%, var(--gold) 42%, #ff9d5c 82%, transparent 100%);
-  box-shadow: 0 0 12px 4px rgba(255, 217, 160, 0.45), 0 0 30px 10px rgba(255, 157, 92, 0.18);
+  background: radial-gradient(circle at 50% 72%, #fffbe6 0%, #ffd9a0 42%, #ff9d5c 82%, transparent 100%);
+  box-shadow: 0 0 12px 4px rgba(255, 184, 107, 0.55), 0 0 26px 10px rgba(255, 157, 92, 0.22);
   transform-origin: 50% 90%;
   animation: flicker 0.32s ease-in-out infinite alternate;
   transition: transform 0.45s ease, opacity 0.45s ease;
@@ -201,7 +217,7 @@ main, footer { position: relative; z-index: 1; }
   width: 8px; height: 20px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(200, 200, 215, 0.5), transparent 70%);
+  background: radial-gradient(ellipse, rgba(150, 140, 150, 0.5), transparent 70%);
   opacity: 0;
   pointer-events: none;
 }
@@ -227,7 +243,7 @@ main, footer { position: relative; z-index: 1; }
 .wish {
   margin-top: 30px;
   max-width: 560px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(107, 68, 83, 0.85);
   font-size: 16px;
   line-height: 1.9;
   padding: 0 8px;
@@ -244,10 +260,10 @@ main, footer { position: relative; z-index: 1; }
   font-weight: 700;
   font-family: inherit;
   color: #6b2d4a;
-  background: linear-gradient(120deg, #ffd9e8, var(--pink) 55%, var(--gold) 130%);
-  box-shadow: 0 6px 24px rgba(233, 165, 194, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background: linear-gradient(120deg, #ffd9e8, #f7a1c0 55%, var(--peach) 130%);
+  box-shadow: 0 6px 24px rgba(224, 86, 127, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.7);
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease;
 }
 
 .btn-primary:active { transform: scale(0.96); }
@@ -265,8 +281,8 @@ main, footer { position: relative; z-index: 1; }
   width: min(220px, 60vw);
   height: 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(224, 86, 127, 0.1);
+  border: 1px solid rgba(224, 86, 127, 0.2);
   overflow: hidden;
 }
 
@@ -276,11 +292,11 @@ main, footer { position: relative; z-index: 1; }
   transform: scaleX(0);
   transform-origin: left;
   border-radius: 999px;
-  background: linear-gradient(90deg, #8de0c8, var(--gold) 55%, #ff9d5c);
+  background: linear-gradient(90deg, var(--mint), var(--peach) 55%, #ff9d5c);
   transition: transform 0.08s linear;
 }
 
-.meter i.hot { background: linear-gradient(90deg, var(--gold), var(--pink)); box-shadow: 0 0 10px rgba(233, 165, 194, 0.8); }
+.meter i.hot { background: linear-gradient(90deg, var(--peach), var(--rose)); box-shadow: 0 0 10px rgba(224, 86, 127, 0.6); }
 
 /* ---- 区块通用 ---- */
 section { padding: 72px 20px; }
@@ -293,7 +309,7 @@ section { padding: 72px 20px; }
   margin-bottom: 40px;
   font-size: clamp(22px, 5.4vw, 34px);
   font-weight: 800;
-  background: linear-gradient(100deg, #fff 20%, var(--pink) 60%, var(--gold));
+  background: linear-gradient(100deg, #f7a1c0 15%, var(--rose) 50%, var(--peach) 90%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -309,7 +325,7 @@ section { padding: 72px 20px; }
 @keyframes banner-pop { from { transform: scale(0.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @keyframes banner-bounce { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-8px) rotate(8deg); } }
 
-/* ---- 祝福信（奶油信纸）---- */
+/* ---- 祝福信（信纸卡片）---- */
 .letter-card {
   max-width: 620px;
   margin: 0 auto;
@@ -318,7 +334,7 @@ section { padding: 72px 20px; }
   border-radius: 18px;
   padding: 30px clamp(20px, 5vw, 40px) 26px;
   transform: rotate(-0.6deg);
-  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 44px rgba(224, 86, 127, 0.22), 0 0 0 1px rgba(224, 86, 127, 0.08);
   position: relative;
 }
 
@@ -329,9 +345,9 @@ section { padding: 72px 20px; }
   top: -12px; left: 50%;
   width: 96px; height: 24px;
   transform: translateX(-50%) rotate(2deg);
-  background: rgba(233, 165, 194, 0.55);
+  background: rgba(247, 161, 192, 0.6);
   border-radius: 3px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(180, 80, 120, 0.15);
 }
 
 .letter-head {
@@ -359,7 +375,7 @@ section { padding: 72px 20px; }
 #letterText::after {
   /* 打字光标 */
   content: '▍';
-  color: var(--pink);
+  color: var(--rose);
   animation: caret 0.9s steps(1) infinite;
 }
 
@@ -385,10 +401,11 @@ section { padding: 72px 20px; }
 .fortune-intro h2 {
   font-size: clamp(24px, 6vw, 34px);
   font-weight: 800;
-  background: linear-gradient(100deg, #fff 30%, var(--pink));
+  background: linear-gradient(100deg, var(--rose) 30%, var(--peach));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
 }
 
 .fortune-intro p { margin-top: 10px; color: var(--muted); font-size: 14px; }
@@ -399,7 +416,7 @@ section { padding: 72px 20px; }
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  border: 1px solid var(--card-border);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   border-radius: 26px;
   padding: 26px 38px;
   background: var(--card);
@@ -407,12 +424,13 @@ section { padding: 72px 20px; }
   color: var(--text);
   font-family: inherit;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 8px 24px rgba(224, 86, 127, 0.14);
+  transition: transform 0.15s ease;
 }
 
-.fortune-btn:hover { border-color: rgba(233, 165, 194, 0.5); }
+.fortune-btn:hover { border-color: rgba(224, 86, 127, 0.4); }
 .fortune-btn:active { transform: scale(0.97); }
 
 #fortuneGift { width: 58px; height: 58px; }
@@ -426,17 +444,18 @@ section { padding: 72px 20px; }
   75%      { transform: rotate(10deg) translateX(2px); }
 }
 
-#shakeText { color: var(--gold); font-size: 14px; }
+#shakeText { color: var(--rose); font-size: 14px; }
 
 /* 结果面板 */
 #fortuneResult {
   max-width: 680px;
   margin: 44px auto 0;
   background: var(--card);
-  border: 1px solid var(--card-border);
+  border: 2px solid rgba(255, 255, 255, 0.85);
   border-radius: 24px;
   padding: clamp(22px, 5vw, 38px);
   backdrop-filter: blur(10px);
+  box-shadow: 0 12px 36px rgba(224, 86, 127, 0.16);
   animation: panel-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   text-align: left;
 }
@@ -448,7 +467,7 @@ section { padding: 72px 20px; }
 .fr-head h3 {
   font-size: clamp(20px, 5.4vw, 28px);
   font-weight: 800;
-  background: linear-gradient(100deg, var(--gold) 20%, var(--pink) 70%, #fff);
+  background: linear-gradient(100deg, var(--rose) 20%, var(--peach) 70%, #e8a54a);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -465,7 +484,7 @@ section { padding: 72px 20px; }
   align-items: center;
   column-gap: 12px;
   padding: 11px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(224, 86, 127, 0.08);
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -475,14 +494,14 @@ section { padding: 72px 20px; }
 .dim-row.show { opacity: 1; transform: none; }
 
 .dim-icon { grid-area: icon; width: 30px; height: 30px; }
-.dim-name { grid-area: name; font-weight: 700; font-size: 15px; }
+.dim-name { grid-area: name; font-weight: 700; font-size: 15px; color: #6b4453; }
 .dim-desc { grid-area: desc; color: var(--muted); font-size: 13px; }
 
 .dim-bar {
   grid-area: bar;
   height: 9px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.09);
+  background: rgba(224, 86, 127, 0.1);
   overflow: hidden;
   margin-top: 5px;
 }
@@ -492,14 +511,14 @@ section { padding: 72px 20px; }
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--pink), var(--gold));
-  box-shadow: 0 0 8px rgba(255, 217, 160, 0.5);
+  background: linear-gradient(90deg, #f7a1c0, var(--peach));
+  box-shadow: 0 0 8px rgba(255, 184, 107, 0.5);
 }
 
 .dim-value {
   grid-area: value;
   justify-self: end;
-  color: var(--gold);
+  color: var(--rose);
   font-size: 13px;
   font-weight: 800;
   white-space: nowrap;
@@ -538,11 +557,11 @@ footer {
   line-height: 2;
 }
 
-footer .from { color: rgba(255, 255, 255, 0.8); font-weight: 600; }
+footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
 
 .credit { font-size: 12px; }
 .credit a { color: var(--muted); text-underline-offset: 3px; }
-.credit a:hover { color: var(--pink); }
+.credit a:hover { color: var(--rose); }
 
 /* ---- 音乐悬浮按钮 ---- */
 #musicBtn {
@@ -553,9 +572,10 @@ footer .from { color: rgba(255, 255, 255, 0.8); font-weight: 600; }
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid var(--card-border);
-  background: rgba(20, 20, 46, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px rgba(224, 86, 127, 0.2);
   cursor: pointer;
   display: grid;
   place-items: center;
@@ -570,15 +590,15 @@ footer .from { color: rgba(255, 255, 255, 0.8); font-weight: 600; }
   position: absolute;
   width: 28px; height: 2px;
   border-radius: 2px;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(160, 100, 120, 0.8);
   transform: rotate(-45deg);
 }
 
 #musicBtn.pulse { animation: music-pulse 1.7s ease-in-out 3; }
 
 @keyframes music-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(233, 165, 194, 0.55); }
-  50%      { box-shadow: 0 0 0 14px rgba(233, 165, 194, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 86, 127, 0.5); }
+  50%      { box-shadow: 0 0 0 14px rgba(224, 86, 127, 0); }
 }
 
 /* ---- 降级：系统开了「减弱动态效果」 ---- */
