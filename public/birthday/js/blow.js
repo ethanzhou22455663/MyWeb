@@ -1,4 +1,4 @@
-// 麦克风吹气检测：能量门限 + 低频占比双条件，简单可靠
+// 麦克风吹气检测：只看能量（比环境噪声大一点就算吹气），门槛低好触发
 // 点击按钮后才申请麦克风（满足 iOS 手势要求）；任何失败都降级为「点蜡烛」
 
 import { $ } from './util.js';
@@ -26,7 +26,7 @@ export function initBlow(cfg, { onBlow, onStop }) {
       return;
     }
 
-    let stream, ctx, analyser, timeBuf, freqBuf;
+    let stream, ctx, analyser, timeBuf;
     try {
       stream = await navigator.mediaDevices.getUserMedia({
         audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false },
@@ -39,7 +39,6 @@ export function initBlow(cfg, { onBlow, onStop }) {
       analyser.smoothingTimeConstant = 0.3;
       source.connect(analyser);
       timeBuf = new Uint8Array(analyser.fftSize);
-      freqBuf = new Uint8Array(analyser.frequencyBinCount);
     } catch {
       showTapHint();
       running = false;
@@ -60,17 +59,8 @@ export function initBlow(cfg, { onBlow, onStop }) {
       }
       return Math.sqrt(sum / timeBuf.length);
     };
-    const lowRatio = () => {
-      analyser.getByteFrequencyData(freqBuf);
-      const mean = (a, b) => {
-        let s = 0;
-        for (let i = a; i < b; i++) s += freqBuf[i];
-        return s / (b - a);
-      };
-      return mean(2, 12) / (mean(1, 80) + 1e-6);
-    };
 
-    // 校准：前 800ms 采环境噪声
+    // 校准：前 600ms 采环境噪声
     let ambient = 0, samples = 0;
     const calibTimer = setInterval(() => {
       ambient += rms(); samples++;
@@ -78,7 +68,8 @@ export function initBlow(cfg, { onBlow, onStop }) {
     setTimeout(() => {
       clearInterval(calibTimer);
       ambient = ambient / Math.max(samples, 1);
-      const gate = Math.max(ambient * 2.2, 0.055);
+      // 门槛尽量低：稍微大声一点就算吹气
+      const gate = Math.max(ambient * 1.6, 0.03);
 
       let streak = 0, cooling = false;
       const poll = setInterval(() => {
@@ -92,8 +83,8 @@ export function initBlow(cfg, { onBlow, onStop }) {
           if (level < gate) cooling = false;
           return;
         }
-        if (level > gate && lowRatio() > 0.5) {
-          if (++streak >= 3) {   // 持续 ~150ms 判定为一次吹气
+        if (level > gate) {
+          if (++streak >= 2) {   // 持续 ~100ms 判定为一次吹气
             streak = 0;
             cooling = true;
             onBlow();

@@ -52,18 +52,18 @@ window.BIRTHDAY_CONFIG = {
     // dimensions：运势维度，想加就往数组里加一行（icon 对应 assets/icon-名字.webp）
     // value 是右侧的文案，随便写；进度条永远拉满
     dimensions: [
-      { name: '财运',     icon: 'coin',            desc: '财神爷今年追着你跑',     value: 'S 级 · 满级' },
-      { name: '事业运',   icon: 'rocket',          desc: '升职加薪，顺风顺水',     value: 'S 级 · 满级' },
-      { name: '健康运',   icon: 'heartbeat',       desc: '吃嘛嘛香，身体倍儿棒',   value: '100 / 100' },
-      { name: '桃花运',   icon: 'in-love',         desc: '可爱的人可爱到发光',     value: 'S 级 · 满级' },
-      { name: '快乐指数', icon: 'smiley',          desc: '天天咧嘴笑到脸酸',       value: '100 / 100' },
-      { name: '颜值指数', icon: 'star',            desc: '继续美丽，无可挑剔',     value: 'MAX' },
-      { name: '食欲运',   icon: 'birthday-cake',   desc: '好吃的全都被你撞见',     value: 'S 级 · 满级' },
-      { name: '睡眠质量', icon: 'crescent-moon',   desc: '一觉到天亮，梦都是甜的', value: '100 / 100' },
-      { name: '旅行运',   icon: 'airplane',        desc: '说走就走，处处是风景',   value: 'S 级 · 满级' },
-      { name: '贵人运',   icon: 'handshake',       desc: '关键时刻总有人罩着你',   value: 'S 级 · 满级' },
-      { name: '幸存值',   icon: 'shield',          desc: '所有糟心事都绕道走',     value: '999 / 999' },
-      { name: '锦鲤指数', icon: 'four-leaf-clover',desc: '转发这条锦鲤都没你灵',   value: 'MAX' },
+      { name: '财运',     icon: 'coin',            desc: '财神爷今年追着你跑',     value: '10 / 10' },
+      { name: '事业运',   icon: 'rocket',          desc: '升职加薪，顺风顺水',     value: '10 / 10' },
+      { name: '健康运',   icon: 'heartbeat',       desc: '吃嘛嘛香，身体倍儿棒',   value: '10 / 10' },
+      { name: '桃花运',   icon: 'in-love',         desc: '可爱的人可爱到发光',     value: '10 / 10' },
+      { name: '快乐指数', icon: 'smiley',          desc: '天天咧嘴笑到脸酸',       value: '10 / 10' },
+      { name: '颜值指数', icon: 'star',            desc: '继续美丽，无可挑剔',     value: '10 / 10' },
+      { name: '食欲运',   icon: 'birthday-cake',   desc: '好吃的全都被你撞见',     value: '10 / 10' },
+      { name: '睡眠质量', icon: 'crescent-moon',   desc: '一觉到天亮，梦都是甜的', value: '10 / 10' },
+      { name: '旅行运',   icon: 'airplane',        desc: '说走就走，处处是风景',   value: '10 / 10' },
+      { name: '贵人运',   icon: 'handshake',       desc: '关键时刻总有人罩着你',   value: '10 / 10' },
+      { name: '幸存值',   icon: 'shield',          desc: '所有糟心事都绕道走',     value: '10 / 10' },
+      { name: '锦鲤指数', icon: 'four-leaf-clover',desc: '转发这条锦鲤都没你灵',   value: '10 / 10' },
     ],
     // 每次抽签随机挑一句开场白
     flavorLines: [

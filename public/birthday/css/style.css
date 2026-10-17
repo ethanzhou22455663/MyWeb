@@ -401,11 +401,8 @@ section { padding: 72px 20px; }
 .fortune-intro h2 {
   font-size: clamp(24px, 6vw, 34px);
   font-weight: 800;
-  background: linear-gradient(100deg, var(--rose) 30%, var(--peach));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
+  color: var(--rose);
+  text-shadow: 0 3px 0 #fff, 0 6px 16px rgba(224, 86, 127, 0.25);
 }
 
 .fortune-intro p { margin-top: 10px; color: var(--muted); font-size: 14px; }
@@ -467,43 +464,53 @@ section { padding: 72px 20px; }
 .fr-head h3 {
   font-size: clamp(20px, 5.4vw, 28px);
   font-weight: 800;
-  background: linear-gradient(100deg, var(--rose) 20%, var(--peach) 70%, #e8a54a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--rose);
 }
 
 .flavor { margin-top: 10px; color: var(--muted); font-size: 13px; }
 
 .dim-row {
-  display: grid;
-  grid-template-columns: 34px 4.6em 1fr;
-  grid-template-areas:
-    'icon name  desc'
-    'icon bar   value';
-  align-items: center;
-  column-gap: 12px;
-  padding: 11px 0;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(224, 86, 127, 0.08);
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(10px) scale(0.98);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 .dim-row:last-child { border-bottom: none; }
 .dim-row.show { opacity: 1; transform: none; }
 
-.dim-icon { grid-area: icon; width: 30px; height: 30px; }
-.dim-name { grid-area: name; font-weight: 700; font-size: 15px; color: #6b4453; }
-.dim-desc { grid-area: desc; color: var(--muted); font-size: 13px; }
+.dim-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.dim-icon { width: 30px; height: 30px; flex-shrink: 0; }
+.dim-name { font-weight: 700; font-size: 15px; color: #6b4453; }
+
+.dim-value {
+  margin-left: auto;
+  color: var(--rose);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1.6, 0.36, 1);
+}
+
+.dim-value.show { opacity: 1; transform: scale(1); }
+
+.dim-desc { color: var(--muted); font-size: 13px; margin: 4px 0 9px 40px; }
+
+/* 全宽长条：这一行的主角 */
 .dim-bar {
-  grid-area: bar;
-  height: 9px;
+  height: 13px;
   border-radius: 999px;
   background: rgba(224, 86, 127, 0.1);
+  box-shadow: inset 0 1px 3px rgba(224, 86, 127, 0.12);
   overflow: hidden;
-  margin-top: 5px;
 }
 
 .dim-bar i {
@@ -511,34 +518,13 @@ section { padding: 72px 20px; }
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, #f7a1c0, var(--peach));
-  box-shadow: 0 0 8px rgba(255, 184, 107, 0.5);
-}
-
-.dim-value {
-  grid-area: value;
-  justify-self: end;
-  color: var(--rose);
-  font-size: 13px;
-  font-weight: 800;
-  white-space: nowrap;
-  opacity: 0;
-  transform: scale(0.6);
-  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1.6, 0.36, 1);
-}
-
-.dim-value.show { opacity: 1; transform: scale(1); }
-
-@media (max-width: 480px) {
-  .dim-row {
-    grid-template-columns: 30px 4.2em 1fr;
-    grid-template-areas:
-      'icon name  value'
-      'icon bar   bar'
-      'icon desc  desc';
-    row-gap: 3px;
-  }
-  .dim-value { font-size: 12px; }
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 0%, transparent 30%),
+    linear-gradient(90deg, #f7a1c0, var(--rose) 55%, var(--peach));
+  background-size: 40px 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  box-shadow: 0 0 10px rgba(255, 184, 107, 0.45);
+  transition: width 0.7s cubic-bezier(0.25, 1, 0.4, 1);
 }
 
 .fr-note {
