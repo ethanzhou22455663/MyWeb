@@ -101,9 +101,9 @@ window.BIRTHDAY_CONFIG = {
 
     // 稀有度档位：weight 是权重，越大越容易抽到；想改概率改这里
     rarities: [
-      { key: 'N',  label: '普通', weight: 34 },
+      { key: 'N',  label: '普通', weight: 38 },
       { key: 'R',  label: '稀有', weight: 33 },
-      { key: 'SR', label: '史诗', weight: 33 },
+      { key: 'SR', label: '史诗', weight: 29 },
     ],
 
     // 奖品池：icon 对应 assets/icon-名字.webp；rarity 对应上面的 key
@@ -113,27 +113,17 @@ window.BIRTHDAY_CONFIG = {
       { name: '草莓蛋糕 ×1',    icon: 'birthday-cake', rarity: 'N',  desc: '刚出炉，草莓加倍' },
       { name: '奶茶一杯',       icon: 'bubble-tea',    rarity: 'N',  desc: '全糖去冰，快乐标配' },
       { name: '游戏吧唧',       icon: 'medal',         rarity: 'N',  desc: '限定款，别处买不到' },
-      { name: '可爱贴纸包',     icon: 'party-popper',  rarity: 'N',  desc: '贴满笔记本和手机壳' },
-      { name: '爆米花桶',       icon: 'popcorn',       rarity: 'N',  desc: '看电影标配' },
-      { name: '咖啡续命券',     icon: 'coffee',        rarity: 'N',  desc: '工作日回血必备' },
-      { name: '水饺一锅',       icon: 'dumplings',     rarity: 'N',  desc: '好吃不如饺子' },
       // 稀有
       { name: '可爱抱枕',       icon: 'pillow',        rarity: 'R',  desc: '抱着睡觉超安心' },
       { name: '美貌 +100',      icon: 'makeup',        rarity: 'R',  desc: '用了都说好看' },
       { name: '睡眠质量 +100',  icon: 'crescent-moon', rarity: 'R',  desc: '一夜无梦到天亮' },
-      { name: '巧克力大礼盒',   icon: 'chocolate',     rarity: 'R',  desc: '心情不好就吃一颗' },
-      { name: '电影票两张',     icon: 'cinema',        rarity: 'R',  desc: '想看什么都行' },
       { name: '鲜花一束',       icon: 'flowers',       rarity: 'R',  desc: '家里放一周都香' },
-      { name: '美甲体验券',     icon: 'nails',         rarity: 'R',  desc: '换个颜色换心情' },
-      { name: '耳机升级券',     icon: 'headphones',    rarity: 'R',  desc: '听歌像在现场' },
       // 史诗
       { name: '事业成长加速器', icon: 'growth',        rarity: 'SR', desc: '新的一岁，升级打怪' },
       { name: '快乐永动机',     icon: 'smiley',        rarity: 'SR', desc: '24 小时不停咧嘴' },
       { name: '幸运光环',       icon: 'four-leaf-clover', rarity: 'SR', desc: '走到哪儿都顺便' },
       { name: '5070Ti 显卡',    icon: 'gpu',           rarity: 'SR', desc: '3A 大作随便跑（电脑自理）' },
-      { name: '游戏手柄',       icon: 'joystick',      rarity: 'SR', desc: '搓玻璃快乐回来了' },
       { name: '猫猫一只',       icon: 'cat',           rarity: 'SR', desc: '撸猫自由，实现！' },
-      { name: '火锅自由券',     icon: 'hotpot',        rarity: 'SR', desc: '牛油麻辣，随便点' },
     ],
   },
 
