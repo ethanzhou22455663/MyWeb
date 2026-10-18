@@ -73,6 +73,9 @@ initBlow(cfg, {
   onStop: (fn) => { stopBlow = fn; },
 });
 
+// 点「开始吹蜡烛」就顺手把生日歌放起来（同一手势，满足自动播放策略）
+$('#blowBtn').addEventListener('click', () => music.start());
+
 // ---- 跳过按钮：不想吹/吹不动 → 直接进入庆祝+信+抽签 ----
 $('#skipBlow').addEventListener('click', () => {
   cake.extinguishAllSilently();

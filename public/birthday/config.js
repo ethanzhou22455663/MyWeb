@@ -117,13 +117,13 @@ window.BIRTHDAY_CONFIG = {
       { name: '可爱抱枕',       icon: 'pillow',        rarity: 'R',  desc: '抱着睡觉超安心' },
       { name: '美貌 +100',      icon: 'makeup',        rarity: 'R',  desc: '用了都说好看' },
       { name: '睡眠质量 +100',  icon: 'crescent-moon', rarity: 'R',  desc: '一夜无梦到天亮' },
-      { name: '鲜花一束',       icon: 'flowers',       rarity: 'R',  desc: '家里放一周都香' },
+      { name: '玫瑰花一束',     icon: 'flowers',       rarity: 'R',  desc: '家里放一周都香' },
       // 史诗
       { name: '事业成长加速器', icon: 'growth',        rarity: 'SR', desc: '新的一岁，升级打怪' },
       { name: '快乐永动机',     icon: 'smiley',        rarity: 'SR', desc: '24 小时不停咧嘴' },
-      { name: '幸运光环',       icon: 'four-leaf-clover', rarity: 'SR', desc: '走到哪儿都顺便' },
+      { name: 'iPhone 18 Pro 勃艮第红', icon: 'iphone', rarity: 'SR', desc: '新款该换就换' },
       { name: '5070Ti 显卡',    icon: 'gpu',           rarity: 'SR', desc: '3A 大作随便跑（电脑自理）' },
-      { name: '猫猫一只',       icon: 'cat',           rarity: 'SR', desc: '撸猫自由，实现！' },
+      { name: '缅因猫一只',     icon: 'cat',           rarity: 'SR', desc: '撸猫自由，实现！' },
     ],
   },
 
