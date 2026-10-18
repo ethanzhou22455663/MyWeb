@@ -27,7 +27,7 @@ export function initMusic(cfg) {
     const f = midiToFreq(midi);
     const env = ctx.createGain();
     env.gain.setValueAtTime(0, when);
-    env.gain.linearRampToValueAtTime(0.15, when + 0.006);       // 起音极快，像拨动铃片
+    env.gain.linearRampToValueAtTime(0.22, when + 0.006);       // 起音极快，像拨动铃片
     env.gain.exponentialRampToValueAtTime(0.0008, when + RING); // 纯衰减，不保持
     env.connect(master);
     // 基音 + 泛音：4 倍频给「金属铃」感，8 倍频给一点空气感
@@ -45,9 +45,14 @@ export function initMusic(cfg) {
 
   function playLine() {
     if (!playing || !ctx) return;
+    // 压限器兜底：余音叠音多时防削波破音，平时几乎不工作
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -8;
+    comp.ratio.value = 6;
+    comp.connect(ctx.destination);
     const master = ctx.createGain();
-    master.gain.value = 0.42;
-    master.connect(ctx.destination);
+    master.gain.value = 0.62;
+    master.connect(comp);
     let t = ctx.currentTime + 0.05;
     for (const [midi, beats] of MELODY) {
       playNote(midi, t, beats * BEAT, master);
