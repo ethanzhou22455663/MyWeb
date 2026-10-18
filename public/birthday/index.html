@@ -84,7 +84,57 @@
         <p class="fr-note" data-cfg="fortune.resultNote"></p>
       </div>
     </section>
+
+    <!-- 第四屏：抽奖小商店（代币抽奖，奖品全可见，抽完打包） -->
+    <section id="shop" hidden>
+      <div class="shop-head">
+        <h2 data-cfg="shop.sectionTitle"></h2>
+        <p class="shop-sub" data-cfg="shop.sectionSub"></p>
+        <div class="shop-topbar">
+          <div class="token-chip">
+            <img src="./assets/icon-coin.webp" alt="">
+            <span id="tokenCount"></span>
+          </div>
+          <button id="shopReset" class="shop-reset" data-cfg="shop.resetLabel"></button>
+        </div>
+      </div>
+
+      <div class="shop-pool">
+        <h3 data-cfg="shop.poolTitle"></h3>
+        <div id="shopShelf" class="shop-shelf"></div>
+      </div>
+
+      <div class="shop-actions">
+        <button id="draw1Btn" class="btn-primary draw-btn"></button>
+        <button id="draw5Btn" class="btn-primary draw-btn draw-btn-5"></button>
+      </div>
+      <p class="shop-tip" data-cfg="shop.resultTip"></p>
+
+      <div class="shop-bag">
+        <h3 data-cfg="shop.bagTitle"></h3>
+        <div id="bagList" class="bag-list"></div>
+        <p id="bagEmpty" class="hint" data-cfg="shop.bagEmpty"></p>
+      </div>
+
+      <button id="shopCheckout" class="checkout-btn"></button>
+    </section>
   </main>
+
+  <!-- 抽奖结果浮层（单抽/五连抽共用） -->
+  <div id="drawOverlay" class="overlay" hidden>
+    <div id="drawCards" class="draw-cards"></div>
+    <button id="drawClose" class="btn-primary" data-cfg="shop.resultClose"></button>
+  </div>
+
+  <!-- 结账礼物清单浮层 -->
+  <div id="checkoutOverlay" class="overlay" hidden>
+    <div class="receipt-card">
+      <h3 data-cfg="shop.checkoutTitle"></h3>
+      <div id="receiptList" class="receipt-list"></div>
+      <p class="receipt-note" data-cfg="shop.checkoutNote"></p>
+      <button id="checkoutClose" class="btn-primary" data-cfg="shop.checkoutClose"></button>
+    </div>
+  </div>
 
   <footer>
     <p>—— <span class="from" data-cfg="from"></span></p>

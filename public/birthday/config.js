@@ -81,6 +81,53 @@ window.BIRTHDAY_CONFIG = {
     offTitle: '安静一会儿',
   },
 
+  // ---- 抽奖小商店（货架全可见，抽到的打包成生日礼物）----
+  shop: {
+    sectionTitle: '🎈 徐老师专属小卖部',
+    sectionSub: '代币随便抽，抽到的全部打包带走～',
+    startTokens: 10,                       // 初始抽奖代币（重置也是回到这个数）
+    tokensLabel: '抽奖代币',
+    poolTitle: '奖品一览 · 全都看得见，童叟无欺',
+    draw1Label: '抽一次 ×1',
+    draw5Label: '五连抽 ×5',
+    resultClose: '收下啦！',
+    resultTip: '点到什么拿什么，可以重复，欧气全开～',
+    bagTitle: '🛍️ 购物袋',
+    bagEmpty: '还没抽到东西，先抽一发试试手气？',
+    resetLabel: '重置代币',
+    resetText: '确定要清空购物袋、代币重新数到 10 吗？',
+    checkoutLabel: '结账 · 打包成生日礼物',
+    checkoutEmpty: '购物袋还空着呢，先去抽点好东西～',
+    checkoutTitle: '🎁 本次生日礼物清单',
+    checkoutNote: '凭此清单找「为师就是这么低调」兑换，长期有效，绝不容赖账。',
+    checkoutClose: '继续抽',
+
+    // 稀有度档位：weight 是权重，越大越容易抽到；想改概率改这里
+    rarities: [
+      { key: 'N',   label: '常见',     weight: 50 },
+      { key: 'R',   label: '稀有',     weight: 30 },
+      { key: 'SR',  label: '史诗',     weight: 15 },
+      { key: 'SSR', label: '镇店之宝', weight: 5  },
+    ],
+
+    // 奖品池：icon 对应 assets/icon-名字.webp；rarity 对应上面的 key
+    // 想加奖品就加一行，想换图就往 assets/ 丢一张同名图，之后自己随便更新
+    items: [
+      { name: '草莓蛋糕 ×1',      icon: 'birthday-cake',  rarity: 'N',   desc: '刚出炉，草莓加倍' },
+      { name: '奶茶一杯',         icon: 'bubble-tea',     rarity: 'N',   desc: '全糖去冰，快乐标配' },
+      { name: '游戏吧唧',         icon: 'medal',          rarity: 'N',   desc: '限定款，别处买不到' },
+      { name: '可爱贴纸包',       icon: 'party-popper',   rarity: 'N',   desc: '贴满笔记本和手机壳' },
+      { name: '可爱抱枕',         icon: 'pillow',         rarity: 'R',   desc: '抱着睡觉超安心' },
+      { name: '美貌 +1',          icon: 'makeup',         rarity: 'R',   desc: '用了都说好看' },
+      { name: '睡眠质量 +10',     icon: 'crescent-moon',  rarity: 'R',   desc: '一夜无梦到天亮' },
+      { name: '事业成长加速器',   icon: 'growth',         rarity: 'SR',  desc: '新的一岁，升级打怪' },
+      { name: '快乐永动机',       icon: 'smiley',         rarity: 'SR',  desc: '24 小时不停咧嘴' },
+      { name: '幸运光环',         icon: 'four-leaf-clover', rarity: 'SR', desc: '走到哪儿都顺便' },
+      { name: '5070Ti 显卡',      icon: 'gpu',            rarity: 'SSR', desc: '3A 大作随便跑（电脑自理）' },
+      { name: '许愿魔法券',       icon: 'magicwand',      rarity: 'SSR', desc: '一个愿望，为师尽力实现' },
+    ],
+  },
+
   // ---- 调试 ----
   debug: {
     // URL 加 ?celebrate=1 可跳过吹蜡烛，直接看庆祝+信+抽签（自查用）

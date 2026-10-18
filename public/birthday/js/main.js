@@ -6,6 +6,7 @@ import { initCake } from './cake.js';
 import { initBlow } from './blow.js';
 import { typeLetter } from './letter.js';
 import { initFortune } from './fortune.js';
+import { initShop } from './shop.js';
 import { initMusic } from './music.js';
 
 const cfg = window.BIRTHDAY_CONFIG || {};
@@ -21,6 +22,7 @@ document.title = cfg.titleLine || '生日快乐 🎂';
 const bg = initBg();
 const music = initMusic(cfg);
 initFortune(cfg);
+initShop(cfg, bg);
 
 // 麦克风的停止句柄由 blow.js 注入（蜡烛全灭时叫停录音）
 let stopBlow = null;
@@ -32,6 +34,7 @@ function revealFortune() {
   if (revealed) return;
   revealed = true;
   $('#fortune').hidden = false;
+  $('#shop').hidden = false;   // 小卖部和抽签一起开门
 }
 
 function unlock() {
