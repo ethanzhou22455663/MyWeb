@@ -31,7 +31,6 @@ window.BIRTHDAY_CONFIG = {
 
   // ---- 祝福信（打字机逐字显示；\n 表示换行）----
   letter: [
-    '亲爱的徐老师：',
     '　　今天是 10 月 26 日，是属于你的日子。',
     '　　希望你天天开心幸福，身体健康，工作压力小，吃到更多好吃的！愿所有的好运都往你身上跑，所有的烦恼都绕着你走。',
     '　　新的一岁，继续做全世界最可爱的徐老师。',
@@ -49,7 +48,6 @@ window.BIRTHDAY_CONFIG = {
     redrawLabel: '再抽一次',
     shakeText: '摇签筒中…',
     resultTitle: '🏆 天选之签 ·《大吉大利签》',
-    resultNote: '本签由「专哄徐老师开心委员会」权威认证：灵验无比，心诚则灵。',
     // dimensions：运势维度，想加就往数组里加一行（icon 对应 assets/icon-名字.webp）
     // value 是右侧的文案，随便写；进度条永远拉满
     dimensions: [
@@ -83,7 +81,7 @@ window.BIRTHDAY_CONFIG = {
 
   // ---- 抽奖小商店（货架全可见，抽到的打包成生日礼物）----
   shop: {
-    sectionTitle: '🎈 徐老师专属小卖部',
+    sectionTitle: '🎈 生日小卖部',
     sectionSub: '代币随便抽，抽到的全部打包带走～',
     startTokens: 10,                       // 初始抽奖代币（重置也是回到这个数）
     tokensLabel: '抽奖代币',
@@ -103,26 +101,39 @@ window.BIRTHDAY_CONFIG = {
 
     // 稀有度档位：weight 是权重，越大越容易抽到；想改概率改这里
     rarities: [
-      { key: 'N',   label: '常见',     weight: 50 },
-      { key: 'R',   label: '稀有',     weight: 30 },
-      { key: 'SR',  label: '史诗',     weight: 15 },
-      { key: 'SSR', label: '镇店之宝', weight: 5  },
+      { key: 'N',  label: '普通', weight: 34 },
+      { key: 'R',  label: '稀有', weight: 33 },
+      { key: 'SR', label: '史诗', weight: 33 },
     ],
 
     // 奖品池：icon 对应 assets/icon-名字.webp；rarity 对应上面的 key
     // 想加奖品就加一行，想换图就往 assets/ 丢一张同名图，之后自己随便更新
     items: [
-      { name: '草莓蛋糕 ×1',      icon: 'birthday-cake',  rarity: 'N',   desc: '刚出炉，草莓加倍' },
-      { name: '奶茶一杯',         icon: 'bubble-tea',     rarity: 'N',   desc: '全糖去冰，快乐标配' },
-      { name: '游戏吧唧',         icon: 'medal',          rarity: 'N',   desc: '限定款，别处买不到' },
-      { name: '可爱贴纸包',       icon: 'party-popper',   rarity: 'N',   desc: '贴满笔记本和手机壳' },
-      { name: '可爱抱枕',         icon: 'pillow',         rarity: 'R',   desc: '抱着睡觉超安心' },
-      { name: '美貌 +100',        icon: 'makeup',         rarity: 'R',   desc: '用了都说好看' },
-      { name: '睡眠质量 +100',    icon: 'crescent-moon',  rarity: 'R',   desc: '一夜无梦到天亮' },
-      { name: '事业成长加速器',   icon: 'growth',         rarity: 'SR',  desc: '新的一岁，升级打怪' },
-      { name: '快乐永动机',       icon: 'smiley',         rarity: 'SR',  desc: '24 小时不停咧嘴' },
-      { name: '幸运光环',         icon: 'four-leaf-clover', rarity: 'SR', desc: '走到哪儿都顺便' },
-      { name: '5070Ti 显卡',      icon: 'gpu',            rarity: 'SSR', desc: '3A 大作随便跑（电脑自理）' },
+      // 普通
+      { name: '草莓蛋糕 ×1',    icon: 'birthday-cake', rarity: 'N',  desc: '刚出炉，草莓加倍' },
+      { name: '奶茶一杯',       icon: 'bubble-tea',    rarity: 'N',  desc: '全糖去冰，快乐标配' },
+      { name: '游戏吧唧',       icon: 'medal',         rarity: 'N',  desc: '限定款，别处买不到' },
+      { name: '可爱贴纸包',     icon: 'party-popper',  rarity: 'N',  desc: '贴满笔记本和手机壳' },
+      { name: '爆米花桶',       icon: 'popcorn',       rarity: 'N',  desc: '看电影标配' },
+      { name: '咖啡续命券',     icon: 'coffee',        rarity: 'N',  desc: '工作日回血必备' },
+      { name: '水饺一锅',       icon: 'dumplings',     rarity: 'N',  desc: '好吃不如饺子' },
+      // 稀有
+      { name: '可爱抱枕',       icon: 'pillow',        rarity: 'R',  desc: '抱着睡觉超安心' },
+      { name: '美貌 +100',      icon: 'makeup',        rarity: 'R',  desc: '用了都说好看' },
+      { name: '睡眠质量 +100',  icon: 'crescent-moon', rarity: 'R',  desc: '一夜无梦到天亮' },
+      { name: '巧克力大礼盒',   icon: 'chocolate',     rarity: 'R',  desc: '心情不好就吃一颗' },
+      { name: '电影票两张',     icon: 'cinema',        rarity: 'R',  desc: '想看什么都行' },
+      { name: '鲜花一束',       icon: 'flowers',       rarity: 'R',  desc: '家里放一周都香' },
+      { name: '美甲体验券',     icon: 'nails',         rarity: 'R',  desc: '换个颜色换心情' },
+      { name: '耳机升级券',     icon: 'headphones',    rarity: 'R',  desc: '听歌像在现场' },
+      // 史诗
+      { name: '事业成长加速器', icon: 'growth',        rarity: 'SR', desc: '新的一岁，升级打怪' },
+      { name: '快乐永动机',     icon: 'smiley',        rarity: 'SR', desc: '24 小时不停咧嘴' },
+      { name: '幸运光环',       icon: 'four-leaf-clover', rarity: 'SR', desc: '走到哪儿都顺便' },
+      { name: '5070Ti 显卡',    icon: 'gpu',           rarity: 'SR', desc: '3A 大作随便跑（电脑自理）' },
+      { name: '游戏手柄',       icon: 'joystick',      rarity: 'SR', desc: '搓玻璃快乐回来了' },
+      { name: '猫猫一只',       icon: 'cat',           rarity: 'SR', desc: '撸猫自由，实现！' },
+      { name: '火锅自由券',     icon: 'hotpot',        rarity: 'SR', desc: '牛油麻辣，随便点' },
     ],
   },
 

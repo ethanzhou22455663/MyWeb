@@ -85,7 +85,6 @@ export function initShop(cfg, bg) {
 
     cardsEl.innerHTML = results.map((it, i) => `
       <div class="draw-card r-${it.rarity}" style="animation-delay:${i * 240}ms">
-        ${it.rarity === 'SSR' ? '<i class="shine"></i>' : ''}
         <img src="./assets/icon-${it.icon}.webp" alt="">
         <div class="dc-name">${it.name}</div>
         <span class="si-tag">${rarityLabel[it.rarity] || it.rarity}</span>
@@ -96,9 +95,10 @@ export function initShop(cfg, bg) {
     renderBag();
     drawOverlay.hidden = false;
 
-    const best = results.some((it) => it.rarity === 'SSR');
-    const mid = results.some((it) => it.rarity === 'SR');
-    if (best) setTimeout(() => bg.celebrate(), 600);
+    // 史诗来一发全屏庆祝，稀有一朵小烟花
+    const top = results.some((it) => it.rarity === 'SR');
+    const mid = results.some((it) => it.rarity === 'R');
+    if (top) setTimeout(() => bg.celebrate(), 600);
     else if (mid) setTimeout(() => bg.burst(window.innerWidth / 2, window.innerHeight / 3, 40), 600);
   }
 

@@ -543,13 +543,6 @@ section { padding: 72px 20px; }
   transition: width 0.7s cubic-bezier(0.25, 1, 0.4, 1);
 }
 
-.fr-note {
-  margin-top: 22px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 12px;
-}
-
 /* ---- 页脚 ---- */
 footer {
   padding: 30px 20px calc(40px + env(safe-area-inset-bottom));
@@ -703,12 +696,6 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
 .r-R  .si-tag { background: #e89a44; }
 .r-SR { border-color: rgba(183, 165, 246, 0.8); box-shadow: 0 4px 14px rgba(183, 165, 246, 0.35); }
 .r-SR .si-tag { background: #9a7ee0; }
-.r-SSR {
-  border-color: #f5b940;
-  background: linear-gradient(160deg, #fffdf6 55%, #fff3d6);
-  box-shadow: 0 4px 16px rgba(245, 185, 64, 0.45);
-}
-.r-SSR .si-tag { background: linear-gradient(120deg, #f5b940, #e0567f); }
 
 .shop-actions {
   margin-top: 30px;
@@ -805,23 +792,6 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
 .draw-card img { width: 48px; height: 48px; }
 .dc-name { font-size: 12px; font-weight: 700; color: var(--text); margin: 8px 0 6px; line-height: 1.4; }
 .draw-card .si-tag { position: static; display: inline-block; }
-
-/* SSR 卡片扫光 */
-.draw-card .shine {
-  position: absolute;
-  top: -20%;
-  left: -60%;
-  width: 40%;
-  height: 140%;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.85), transparent);
-  transform: skewX(-20deg);
-  animation: shine-sweep 1.4s ease-in-out infinite;
-}
-@keyframes shine-sweep {
-  0%   { left: -60%; }
-  60%  { left: 130%; }
-  100% { left: 130%; }
-}
 
 /* 结账小票 */
 .receipt-card {
