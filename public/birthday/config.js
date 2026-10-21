@@ -111,7 +111,7 @@ window.BIRTHDAY_CONFIG = {
     items: [
       // 普通
       { name: '草莓蛋糕 ×1',    icon: 'birthday-cake', rarity: 'N',  desc: '刚出炉，草莓加倍' },
-      { name: '奶茶',           icon: 'bubble-tea',    rarity: 'N',  desc: '全糖去冰，快乐标配' },
+      { name: '白雾红尘奶茶',   icon: 'bubble-tea',    rarity: 'N',  desc: '全糖去冰，快乐标配' },
       { name: '桃胶木薯牛奶',   icon: 'milk',          rarity: 'N',  desc: '满满胶质，喝出好气色' },
       { name: '游戏吧唧',       icon: 'medal',         rarity: 'N',  desc: '限定款，别处买不到' },
       // 稀有

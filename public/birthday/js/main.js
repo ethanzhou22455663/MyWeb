@@ -78,6 +78,7 @@ $('#blowBtn').addEventListener('click', () => music.start());
 
 // ---- 跳过按钮：不想吹/吹不动 → 直接进入庆祝+信+抽签 ----
 $('#skipBlow').addEventListener('click', () => {
+  music.start();              // 和吹蜡烛一样，顺手把生日歌放起来
   cake.extinguishAllSilently();
   unlock();
 });
