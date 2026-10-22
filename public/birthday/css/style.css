@@ -747,19 +747,27 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
 
 .checkout-btn {
   margin-top: 18px;
-  border: 2px dashed var(--rose);
-  background: rgba(255, 255, 255, 0.7);
-  color: var(--rose);
-  font: inherit;
-  font-size: 15px;
-  font-weight: 700;
+  border: none;
   border-radius: 999px;
-  padding: 12px 30px;
+  padding: 14px 36px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(120deg, #f78fb0, var(--rose) 55%, #c94f76);
+  box-shadow: 0 8px 26px rgba(224, 86, 127, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  transition: transform 0.15s ease;
+  animation: checkout-pulse 2.4s ease-in-out infinite;
 }
-.checkout-btn:hover { background: #fff; }
+.checkout-btn::before { content: '🎁 '; }
+.checkout-btn:hover { transform: translateY(-2px); }
 .checkout-btn:active { transform: scale(0.96); }
+@keyframes checkout-pulse {
+  0%, 100% { box-shadow: 0 8px 26px rgba(224, 86, 127, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45); }
+  50%      { box-shadow: 0 8px 36px rgba(224, 86, 127, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.45); }
+}
 
 /* ---- 浮层（抽奖结果 / 结账清单共用）---- */
 .overlay {
