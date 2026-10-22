@@ -783,7 +783,7 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
   padding: 18px 10px 14px;
   text-align: center;
   overflow: hidden;
-  animation: card-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: card-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 @keyframes card-pop {
   from { transform: scale(0.3) rotate(-8deg); opacity: 0; }
@@ -793,28 +793,6 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
 .dc-name { font-size: 12px; font-weight: 700; color: var(--text); margin: 8px 0 4px; line-height: 1.4; }
 .dc-desc { font-size: 10px; color: var(--muted); line-height: 1.45; margin-bottom: 6px; }
 .draw-card .si-tag { position: static; display: inline-block; }
-/* 史诗卡：呼吸光晕 + 高光扫过 */
-.draw-card.r-SR {
-  border-color: rgba(183, 165, 246, 0.9);
-  animation: card-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both, sr-glow 1.6s ease-in-out infinite;
-}
-.draw-card.r-SR::after {
-  content: '';
-  position: absolute;
-  top: -60%; left: -80%;
-  width: 55%; height: 220%;
-  transform: rotate(24deg);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-  animation: sr-shine 2.2s ease-in-out infinite;
-}
-@keyframes sr-glow {
-  0%, 100% { box-shadow: 0 0 0 1px rgba(183, 165, 246, 0.35), 0 6px 20px rgba(183, 165, 246, 0.45); }
-  50%      { box-shadow: 0 0 0 2px rgba(247, 161, 192, 0.55), 0 8px 34px rgba(247, 161, 192, 0.6); }
-}
-@keyframes sr-shine {
-  0%        { left: -80%; }
-  55%, 100% { left: 170%; }
-}
 
 /* 结账小票 */
 .receipt-card {

@@ -94,7 +94,7 @@ export function initShop(cfg, bg) {
     if (!results.length) { renderTokens(); return; }
 
     cardsEl.innerHTML = results.map((it, i) => `
-      <div class="draw-card r-${it.rarity}" style="animation-delay:${i * 340}ms">
+      <div class="draw-card r-${it.rarity}" style="animation-delay:${i * 240}ms">
         <img src="./assets/icon-${it.icon}.webp" alt="">
         <div class="dc-name">${it.name}</div>
         ${it.desc ? `<div class="dc-desc">${it.desc}</div>` : ''}
@@ -106,11 +106,11 @@ export function initShop(cfg, bg) {
     renderBag();
     drawOverlay.hidden = false;
 
-    // 史诗来一发全屏庆祝（对准那张卡弹出的时机），稀有一朵小烟花
-    const srIdx = results.findIndex((it) => it.rarity === 'SR');
-    const rIdx = results.findIndex((it) => it.rarity === 'R');
-    if (srIdx >= 0) setTimeout(() => bg.celebrate(), srIdx * 340 + 420);
-    else if (rIdx >= 0) setTimeout(() => bg.burst(window.innerWidth / 2, window.innerHeight / 3, 40), rIdx * 340 + 420);
+    // 史诗来一发全屏庆祝，稀有一朵小烟花
+    const top = results.some((it) => it.rarity === 'SR');
+    const mid = results.some((it) => it.rarity === 'R');
+    if (top) setTimeout(() => bg.celebrate(), 600);
+    else if (mid) setTimeout(() => bg.burst(window.innerWidth / 2, window.innerHeight / 3, 40), 600);
   }
 
   // ---- 结账：把购物袋打成一张礼物清单小票 ----

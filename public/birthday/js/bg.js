@@ -55,29 +55,14 @@ export function initBg() {
     }
   }
 
-  // 庆祝高潮：多点连环喷彩带 + 顶部持续三秒的彩带雨（史诗奖品用）
+  // 庆祝高潮：多点连环喷彩带
   function celebrate() {
     if (reducedMotion) return;
     let i = 0;
     const timer = setInterval(() => {
-      burst(rand(W * 0.1, W * 0.9), rand(H * 0.12, H * 0.5), 44);
-      if (++i >= 8) clearInterval(timer);
-    }, 240);
-    let j = 0;
-    const rain = setInterval(() => {
-      for (let k = 0; k < 7; k++) {
-        pops.push({
-          x: rand(0, W), y: -12,
-          vx: rand(-0.6, 0.6), vy: rand(1.6, 3.2),
-          w: rand(5, 10), h: rand(8, 14),
-          life: 1, decay: rand(0.006, 0.012),
-          spin: rand(0, Math.PI * 2), vspin: rand(-0.18, 0.18),
-          color: PALETTE[(Math.random() * PALETTE.length) | 0],
-          round: Math.random() < 0.4,
-        });
-      }
-      if (++j >= 30) clearInterval(rain);
-    }, 100);
+      burst(rand(W * 0.12, W * 0.88), rand(H * 0.15, H * 0.45), 34);
+      if (++i >= 6) clearInterval(timer);
+    }, 260);
   }
 
   if (reducedMotion) {
