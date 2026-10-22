@@ -12,6 +12,7 @@ window.BIRTHDAY_CONFIG = {
   titleLine: '生日快乐！',
   birthdayText: '· 10 · 26 ·',     // 页面顶部的小日期牌（不显示年份）
   subtitle: 'HAPPY BIRTHDAY',
+  from: '为师就是这么低调',          // 页尾落款
 
   // ---- 蛋糕上方的一句话祝福 ----
   wish: '希望你天天开心幸福，身体健康，工作压力小，吃到更多好吃的！生日快乐！',
@@ -135,6 +136,17 @@ window.BIRTHDAY_CONFIG = {
       { name: '三亚自由行',     icon: 'airplane',      rarity: 'SR', desc: '冬天也能下海，阳光管够' },
       { name: '香港自由行',     icon: 'airplane',      rarity: 'SR', desc: '茶餐厅和太平山，一次集齐' },
       { name: '生日礼物盲盒',   icon: 'gift',          rarity: 'SR', desc: '本奖品请联系为师兑换' },
+    ],
+  },
+
+  // ---- 结尾祝福（页面最底下的收尾页）----
+  ending: {
+    title: '写在最后',
+    lines: [
+      '愿你无事绊心弦，所念皆如愿。',
+      '愿你所愿皆所得，所行皆坦途。',
+      '愿你一生努力，一生被爱，想要的都拥有，得不到的都释怀。',
+      '今天之后，也要一直快乐下去。',
     ],
   },
 

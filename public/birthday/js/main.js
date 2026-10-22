@@ -35,7 +35,12 @@ function revealFortune() {
   revealed = true;
   $('#fortune').hidden = false;
   $('#shop').hidden = false;   // 小卖部和抽签一起开门
+  $('#ending').hidden = false; // 结尾祝福也一起放出来
 }
+
+// ---- 结尾祝福：把 ending.lines 渲染成一段段祝福 ----
+const ending = cfg.ending || {};
+$('#endingLines').innerHTML = (ending.lines || []).map((l) => `<p>${l}</p>`).join('');
 
 function unlock() {
   stopBlow?.();               // 蜡烛全灭，麦克风可以下班了

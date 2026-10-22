@@ -94,7 +94,7 @@ export function initShop(cfg, bg) {
     if (!results.length) { renderTokens(); return; }
 
     cardsEl.innerHTML = results.map((it, i) => `
-      <div class="draw-card r-${it.rarity}" style="animation-delay:${i * 240}ms">
+      <div class="draw-card r-${it.rarity}" style="animation-delay:${i * 340}ms">
         <img src="./assets/icon-${it.icon}.webp" alt="">
         <div class="dc-name">${it.name}</div>
         ${it.desc ? `<div class="dc-desc">${it.desc}</div>` : ''}
