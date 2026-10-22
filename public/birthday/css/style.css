@@ -397,6 +397,16 @@ section { padding: 72px 20px; }
 
 #letterText.done::after { content: none; }
 
+/* 署名单独一行右对齐，不参与打字机，任何屏宽都不会折行 */
+#letterSign {
+  margin-top: 12px;
+  padding-right: 6px;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--rose-soft);
+}
+
 @keyframes caret { 50% { opacity: 0; } }
 
 #letterSkip {
@@ -854,4 +864,4 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
   margin: 0 auto;
   animation: panel-in 0.7s ease both;
 }
-.ending-card img { display: block; width: 239px; max-width: 100%; margin: 0 auto; }
+.ending-card img { display: block; width: 100%; margin: 0 auto; }

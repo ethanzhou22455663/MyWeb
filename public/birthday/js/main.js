@@ -47,7 +47,7 @@ function unlock() {
 
   const skipBtn = $('#letterSkip');
   const typer = typeLetter(cfg.letter || '', $('#letterText'), {
-    onDone: () => { skipBtn.hidden = true; revealFortune(); },
+    onDone: () => { skipBtn.hidden = true; $('#letterSign').hidden = false; revealFortune(); },
   });
   skipBtn.hidden = false;
   skipBtn.addEventListener('click', () => typer.skip(), { once: true });
