@@ -1,5 +1,5 @@
 // 抽奖小商店：代币抽奖 → 购物袋 → 结账清单
-// 模型很简单：按稀有度权重先抽档位，再在档内均匀挑一件；奖品可重复，购物袋按名字叠数量
+// 模型：按稀有度权重抽档位，档内均匀挑一件；奖品不重复获得；保底奖在第 N 抽固定掉落（config 里 guaranteed）
 // 所有文案/奖品/概率都在 config.js 的 shop 里改
 
 import { $, pick } from './util.js';
@@ -18,25 +18,33 @@ export function initShop(cfg, bg) {
   const draw5Btn = $('#draw5Btn');
 
   let tokens = s.startTokens || 10;
-  const bag = new Map(); // 奖品名 → 数量
+  let drawCount = 0;
+  const bag = new Map(); // 奖品名 → 数量（不重复规则下恒为 1）
 
   const rarities = s.rarities || [];
-  const totalWeight = rarities.reduce((sum, r) => sum + r.weight, 0);
   const rarityLabel = Object.fromEntries(rarities.map((r) => [r.key, r.label]));
   const items = s.items || [];
-  const groups = Object.fromEntries(rarities.map((r) => [r.key, items.filter((it) => it.rarity === r.key)]));
+  // 保底奖：不进随机池，只在第 guaranteedAt 抽固定掉落
+  const guaranteed = (s.guaranteed && s.guaranteed.name)
+    ? items.find((it) => it.name === s.guaranteed.name) || null
+    : null;
+  const guaranteedAt = guaranteed ? (s.guaranteed.at || 0) : 0;
 
-  // 抽一件：先按权重抽档位，档内均匀
+  // 抽一件：从还没抽到的奖品里按权重抽档位，档内均匀；空档位自动跳过
   function pickOne() {
-    let roll = Math.random() * totalWeight;
-    for (const r of rarities) {
+    const won = new Set(bag.keys());
+    const pool = items.filter((it) => !won.has(it.name) && it !== guaranteed);
+    if (!pool.length) return null;
+    const alive = rarities
+      .map((r) => ({ weight: r.weight, g: pool.filter((it) => it.rarity === r.key) }))
+      .filter((r) => r.g.length);
+    const aliveWeight = alive.reduce((sum, r) => sum + r.weight, 0);
+    let roll = Math.random() * aliveWeight;
+    for (const r of alive) {
       roll -= r.weight;
-      if (roll < 0) {
-        const g = groups[r.key];
-        return (g && g.length) ? pick(g) : null;
-      }
+      if (roll < 0) return pick(r.g);
     }
-    return pick(items) || null;
+    return pick(pool);
   }
 
   // ---- 货架：奖品全可见，带稀有度标 ----
@@ -76,10 +84,12 @@ export function initShop(cfg, bg) {
 
     const results = [];
     for (let i = 0; i < n; i++) {
-      const it = pickOne();
-      if (!it) break;
+      drawCount++;
+      // 保底：第 guaranteedAt 抽固定出盲盒
+      const it = (guaranteed && drawCount === guaranteedAt) ? guaranteed : pickOne();
+      if (!it) { drawCount--; break; }
       results.push(it);
-      bag.set(it.name, (bag.get(it.name) || 0) + 1);
+      bag.set(it.name, 1);
     }
     if (!results.length) { renderTokens(); return; }
 
@@ -87,6 +97,7 @@ export function initShop(cfg, bg) {
       <div class="draw-card r-${it.rarity}" style="animation-delay:${i * 240}ms">
         <img src="./assets/icon-${it.icon}.webp" alt="">
         <div class="dc-name">${it.name}</div>
+        ${it.desc ? `<div class="dc-desc">${it.desc}</div>` : ''}
         <span class="si-tag">${rarityLabel[it.rarity] || it.rarity}</span>
       </div>
     `).join('');
@@ -116,7 +127,7 @@ export function initShop(cfg, bg) {
         <div class="receipt-row">
           <img src="./assets/icon-${it.icon || 'gift'}.webp" alt="">
           <span class="rr-name">${name}</span>
-          <span class="rr-n">× ${n}</span>
+          ${n > 1 ? `<span class="rr-n">× ${n}</span>` : ''}
         </div>
       `;
     }).join('');
@@ -127,6 +138,7 @@ export function initShop(cfg, bg) {
   function reset() {
     if (bag.size && !confirm(s.resetText || '确定重置吗？')) return;
     tokens = s.startTokens || 10;
+    drawCount = 0;
     bag.clear();
     renderTokens();
     renderBag();

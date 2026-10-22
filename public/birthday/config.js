@@ -89,7 +89,7 @@ window.BIRTHDAY_CONFIG = {
     draw1Label: '抽一次 ×1',
     draw5Label: '五连抽 ×5',
     resultClose: '收下啦！',
-    resultTip: '点到什么拿什么，可以重复，欧气全开～',
+    resultTip: '件件不重复，抽到什么拿什么～',
     bagTitle: '🛍️ 购物袋',
     bagEmpty: '还没抽到东西，先抽一发试试手气？',
     resetLabel: '重置代币',
@@ -105,6 +105,9 @@ window.BIRTHDAY_CONFIG = {
       { key: 'R',  label: '稀有', weight: 33 },
       { key: 'SR', label: '史诗', weight: 29 },
     ],
+
+    // 保底：第 at 次抽取固定获得 name（该奖品不进随机池，只能在这一抽掉落）；删掉本行可关闭
+    guaranteed: { at: 5, name: '生日礼物盲盒' },
 
     // 奖品池：icon 对应 assets/icon-名字.webp；rarity 对应上面的 key
     // 想加奖品就加一行，想换图就往 assets/ 丢一张同名图，之后自己随便更新
@@ -128,6 +131,10 @@ window.BIRTHDAY_CONFIG = {
       { name: '苏州大闸蟹',     icon: 'crab',          rarity: 'SR', desc: '秋天的仪式感，鲜掉眉毛' },
       { name: '5070Ti 显卡',    icon: 'gpu',           rarity: 'SR', desc: '3A 大作随便跑（电脑自理）' },
       { name: '缅因猫一只',     icon: 'cat',           rarity: 'SR', desc: '撸猫自由，实现！' },
+      { name: '威海自由行',     icon: 'airplane',      rarity: 'SR', desc: '海边小城看天鹅，说走就走' },
+      { name: '三亚自由行',     icon: 'airplane',      rarity: 'SR', desc: '冬天也能下海，阳光管够' },
+      { name: '香港自由行',     icon: 'airplane',      rarity: 'SR', desc: '茶餐厅和太平山，一次集齐' },
+      { name: '生日礼物盲盒',   icon: 'gift',          rarity: 'SR', desc: '本奖品请联系为师兑换' },
     ],
   },
 

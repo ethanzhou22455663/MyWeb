@@ -790,7 +790,8 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
   to   { transform: scale(1) rotate(0); opacity: 1; }
 }
 .draw-card img { width: 48px; height: 48px; }
-.dc-name { font-size: 12px; font-weight: 700; color: var(--text); margin: 8px 0 6px; line-height: 1.4; }
+.dc-name { font-size: 12px; font-weight: 700; color: var(--text); margin: 8px 0 4px; line-height: 1.4; }
+.dc-desc { font-size: 10px; color: var(--muted); line-height: 1.45; margin-bottom: 6px; }
 .draw-card .si-tag { position: static; display: inline-block; }
 
 /* 结账小票 */
