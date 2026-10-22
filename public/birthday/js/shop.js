@@ -126,7 +126,7 @@ export function initShop(cfg, bg) {
       return `
         <div class="receipt-row">
           <img src="./assets/icon-${it.icon || 'gift'}.webp" alt="">
-          <span class="rr-name">${name}</span>
+          <span class="rr-name">${name}${it.receiptSuffix ? `（${it.receiptSuffix}）` : ''}</span>
           ${n > 1 ? `<span class="rr-n">× ${n}</span>` : ''}
         </div>
       `;

@@ -793,8 +793,12 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
 .dc-name { font-size: 12px; font-weight: 700; color: var(--text); margin: 8px 0 4px; line-height: 1.4; }
 .dc-desc { font-size: 10px; color: var(--muted); line-height: 1.45; margin-bottom: 6px; }
 .draw-card .si-tag { position: static; display: inline-block; }
-/* 史诗卡抽到时的光晕 */
-.draw-card.r-SR { box-shadow: 0 0 22px rgba(183, 165, 246, 0.6); }
+/* 史诗卡抽到时换淡金：描边、稀有度标、光晕都走金色 */
+.draw-card.r-SR {
+  border-color: rgba(233, 196, 106, 0.95);
+  box-shadow: 0 0 24px rgba(240, 205, 115, 0.75), 0 4px 14px rgba(240, 205, 115, 0.35);
+}
+.draw-card.r-SR .si-tag { background: #d9a441; }
 
 /* 结账小票 */
 .receipt-card {
@@ -845,35 +849,9 @@ footer .from { color: rgba(107, 68, 83, 0.85); font-weight: 600; }
   background: var(--paper);
   border-radius: 20px;
   border: 2px dashed rgba(224, 86, 127, 0.35);
-  padding: 34px 26px 30px;
+  padding: 26px 22px;
   max-width: 420px;
   margin: 0 auto;
   animation: panel-in 0.7s ease both;
 }
-.ending-card h2 {
-  font-family: 'Kaiti SC', 'STKaiti', 'KaiTi', 'BiauKai', serif;
-  font-size: 21px;
-  font-weight: 700;
-  color: var(--rose);
-  letter-spacing: 8px;
-  text-indent: 8px; /* 抵消最后一个字的字距，保持视觉居中 */
-}
-.ending-card h2::after {
-  content: '';
-  display: block;
-  width: 56px;
-  height: 2px;
-  margin: 14px auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, transparent, rgba(224, 86, 127, 0.5), transparent);
-}
-#endingLines p {
-  font-family: 'Kaiti SC', 'STKaiti', 'KaiTi', 'BiauKai', serif;
-  font-size: 16px;
-  line-height: 2.15;
-  letter-spacing: 1px;
-  color: var(--text);
-  margin-top: 14px;
-}
-#endingLines p:first-child { margin-top: 20px; }
-#endingLines p:last-child { margin-top: 22px; color: var(--rose); }
+.ending-card img { display: block; width: 239px; max-width: 100%; margin: 0 auto; }

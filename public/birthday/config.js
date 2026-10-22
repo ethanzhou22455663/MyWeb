@@ -135,17 +135,7 @@ window.BIRTHDAY_CONFIG = {
       { name: '威海自由行',     icon: 'airplane',      rarity: 'SR', desc: '海边小城看天鹅，说走就走' },
       { name: '三亚自由行',     icon: 'airplane',      rarity: 'SR', desc: '冬天也能下海，阳光管够' },
       { name: '香港自由行',     icon: 'airplane',      rarity: 'SR', desc: '茶餐厅和太平山，一次集齐' },
-      { name: '生日礼物盲盒',   icon: 'gift',          rarity: 'SR', desc: '本奖品请联系为师兑换' },
-    ],
-  },
-
-  // ---- 结尾祝福（页面最底下的收尾页）----
-  ending: {
-    title: '写在最后',
-    lines: [
-      '愿你无事绊心弦，所念皆如愿。',
-      '愿你所愿皆所得，所行皆坦途。',
-      '今天之后，也要一直快乐下去。',
+      { name: '生日礼物盲盒',   icon: 'gift',          rarity: 'SR', desc: '本奖品请联系为师兑换', receiptSuffix: '本奖品请联系为师兑换' },
     ],
   },
 
